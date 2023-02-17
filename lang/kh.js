@@ -8,5 +8,9 @@ export default{
     job: 'អំពីការងារ',
     search: 'ស្វែងរក',
     all_category: 'ទាំងអស់',
-    about_job: 'ការងារ'
+    about_job: 'ការងារ',
+    follow: 'តាមដានយើង',
+    contact: 'ទំនាក់ទំនងយើង',
+    address: 'អាសយដ្ឋាន',
+    about_us: 'អំពីយើង'
 }

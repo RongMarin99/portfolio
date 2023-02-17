@@ -24,7 +24,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/swiper.js', mode: 'client' }
+    {src: '~/plugins/flag.js',mode:'client'},
+    {src: '~/plugins/share.js',mode:'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,13 +37,14 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'vue-social-sharing/nuxt',
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    'nuxt-swiper',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'nuxt-material-design-icons-iconfont',
     	[
 			'nuxt-i18n',
 			{
@@ -71,7 +73,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'http://localhost:8000/api/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -85,6 +87,11 @@ export default {
   build: {
   },
   loading: {
-    color: 'blue',
-  }
+    color: '#FD7237',
+  },
+   loadingIndicator: {
+    name: 'wandering-cubes',
+    color: '#FD7237',
+    background: 'white'
+  },
 }

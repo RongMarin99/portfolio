@@ -10,7 +10,15 @@
     --bg-secondary: #fff;
     --border-color: #ddd;
   }
-  
+  .header{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+  }
+  .main-slide{
+    padding-top: 6rem;
+  }
   .dark-mode {
     background: var(--color-secondary);
     color: var(--bg-secondary);
@@ -70,6 +78,9 @@
 }
 .text-black{
     color: #000212;
+}
+a:hover{
+    text-decoration: none !important;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
     // background: #FD7237 !important;

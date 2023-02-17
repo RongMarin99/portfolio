@@ -8,5 +8,9 @@ export default{
     job: 'Jobs',
     search: 'Search',
     all_category: 'All Category',
-    about_job: 'Job'
+    about_job: 'Job',
+    follow: 'Follow',
+    contact: 'Contact',
+    address: 'Address',
+    about_us: 'About Us'
 }
