@@ -1,8 +1,8 @@
 <template>
-    <div :class="dark?'dark-mode':''">
+    <div>
       <!-- Start Header -->
       <b-container fluid 
-        :class="dark?'dark-mode' : 'bg-white' " 
+        :class="$colorMode.value=='dark'?'bg-dark' : 'bg-white' " 
         class="position-fixed header"
         style="border-bottom:0.1px solid #ededed">
           <b-navbar toggleable="lg">
@@ -15,11 +15,11 @@
                 target="nav-collapse" 
                 class="ml-auto"
               >
-              <span class="material-icons" :class="dark?'text-dark-mode' : 'text-light-mode'">menu</span>
+              <span class="material-icons" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">menu</span>
             </b-navbar-toggle>
   
               <b-collapse id="nav-collapse" is-nav>
-                <b-navbar-nav class="m-auto" :class="dark?'text-dark-mode' : 'text-light-mode'">
+                <b-navbar-nav class="m-auto" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
                   <b-nav-item class="pl-4" to="/" >
                     {{ $t('home') }}
                   </b-nav-item>
@@ -61,11 +61,16 @@
                   </b-nav-item-dropdown>
   
                   <b-nav-item>
-                    <span 
-                       @click="dark=!dark" 
-                       class="material-icons switchToDark"
-                       :class="dark?'text-dark-mode' : 'text-light-mode'"
+                    <span v-if="$colorMode.value=='dark'"
+                       @click="$colorMode.value='light'"
+                       class="material-icons"
+                       :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
                     >brightness_4</span>
+                    <span v-if="$colorMode.value!='dark'"
+                      @click="$colorMode.value='dark'"
+                      class="material-icons"
+                      :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
+                    >nights_stay</span>
                   </b-nav-item>
                 </b-navbar-nav>
   
@@ -78,17 +83,18 @@
       <Nuxt />
 
       <!-- Start Footer -->
-      <b-container fluid class="mt-5 p-5" style="border-top:0.1px solid #ededed" :class="dark?'bg-secondary':''">
+      <b-container fluid class="mt-5 p-5" style="border-top:0.1px solid #ededed" 
+             :class="$colorMode.value=='dark'?'bg-secondary':''">
         <b-container>
           <b-row>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
                 <img src="https://pxdraft.com/themeforest/maffei/assets/img/logo.svg" alt="">
-                <h6 class="mt-3 " :class="dark?'text-dark-mode' : 'text-secondary'">
+                <h6 class="mt-3 " :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, beatae.
                 </h6>
             </b-col>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-              <b-nav vertical class="footer-nav" :class="dark?'text-dark-mode' : 'text-light-mode'">
+              <b-nav vertical class="footer-nav" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
                 <b-nav-item>{{ $t('course') }}</b-nav-item>
                 <b-nav-item>{{ $t('article') }}</b-nav-item>
                 <b-nav-item>{{ $t('video') }}</b-nav-item>
@@ -119,10 +125,24 @@
 </template>
 <script>
 export default{
+    colorMode: 'light',
     data(){
         return {
-            dark: false,
         }
     }
 }
 </script>
+<style>
+body {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+}
+.dark-mode body {
+  background-color: #091a28;
+  color: #ebf4f1;
+}
+.sepia-mode body {
+  background-color: #f1e7d0;
+  color: #433422;
+}
+</style>

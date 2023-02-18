@@ -48,7 +48,7 @@
       <!-- Start Video -->
       <b-container class="mt-5">
         <h2 align="center" 
-          :class="dark?'text-orange' : 'text-black'"
+          :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
         >
           <b>Best Collection Videos in this Month</b>
         </h2>
@@ -58,7 +58,7 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide card" v-for="item in allVideos" :key="item">
                   <iframe width="100%" style="height:15rem" :src="item['url']" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  <p :class="dark?'text-light-mode' : 'text-light-mode'" class="pt-2">
+                  <p :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'" class="pt-2">
                    {{ item['title'] }}
                   </p>
                 </div>
@@ -73,15 +73,16 @@
       <b-container class="mt-5">
         <h2 
           align="center" 
-          :class="dark?'text-orange' : 'text-black'"
+          :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
         >
           <b>Explore New</b>
         </h2>
         <div class="mt-5">
-          <b-tabs pills align="center">
-            <b-tab active :title="$t('all_category')">
-                <b-row class="mt-5">
-                  <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in allCategory" :key="item" class="mb-4">
+          <b-tabs pills content-class="mt-3" align="center">
+            <b-tab :title="$t('all_category')" active>
+              <b-row class="mt-5">
+                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in allCategory" :key="item" class="mb-4">
+                  <nuxt-link to="/Detail">
                     <b-card >
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
@@ -90,7 +91,7 @@
                         <img :src="getImage(item['image'])" alt="">
                       </figure>
                       <b-card-text>
-                        <div :class="dark?'text-light-mode' : 'text-light-mode'">
+                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
                             {{ item['date'] }}
                           </span>
@@ -100,8 +101,9 @@
                         </div>
                       </b-card-text>
                     </b-card>
-                  </b-col>
-                </b-row>
+                  </nuxt-link>
+                </b-col>
+              </b-row>
             </b-tab>
             <b-tab :title="$t('course')">
               <b-row class="mt-5">
@@ -115,7 +117,7 @@
                         <img :src="item['image_url']" alt="">
                       </figure>
                       <b-card-text>
-                        <div :class="dark?'text-light-mode' : 'text-light-mode'">
+                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
                             {{ item['date'] }}
                           </span>
@@ -140,7 +142,7 @@
                       <img :src="getImage(item['image'])" alt="">
                     </figure>
                     <b-card-text>
-                      <div :class="dark?'text-light-mode' : 'text-light-mode'">
+                      <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                         <span class="mb-0 mt-0" style="font-size:13px">
                           {{ item['date'] }}
                         </span>
@@ -155,30 +157,31 @@
             </b-tab>
             <b-tab :title="$t('job')">
               <b-row class="mt-5">
-                  <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i" class="mb-4">
-                    <b-card >
-                      <figure class="position-relative">
-                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ $t('about_job') }}
-                        </b-badge>
-                        <img src="https://via.placeholder.com/250" alt="">
-                      </figure>
-                      <b-card-text>
-                        <div :class="dark?'text-light-mode' : 'text-light-mode'">
-                          <p class="mb-0 mt-0">
-                            27-2-2023
-                          </p>
-                          <h6>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          </h6>
-                        </div>
-                      </b-card-text>
-                    </b-card>
-                  </b-col>
-                </b-row>
+                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
+                  <b-card >
+                    <figure class="position-relative">
+                      <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
+                        {{ $t('article') }}
+                      </b-badge>
+                      <img :src="getImage(item['image'])" alt="">
+                    </figure>
+                    <b-card-text>
+                      <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
+                        <span class="mb-0 mt-0" style="font-size:13px">
+                          {{ item['date'] }}
+                        </span>
+                        <h6 class="two-line">
+                        {{ item['title'] }}
+                        </h6>
+                      </div>
+                    </b-card-text>
+                  </b-card>
+                </b-col>
+              </b-row>
             </b-tab>
           </b-tabs>
         </div>
+        
       </b-container>
       <!-- End Article -->
 
@@ -186,7 +189,7 @@
       <b-container class="mt-5">
         <h2 
           align="center" 
-          :class="dark?'text-orange' : 'text-black'"
+          :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
         >
           <b>Founder</b>
         </h2>
@@ -221,7 +224,7 @@
       </b-container>
       <!-- End Founder -->
 
-      
+    
   </div>
 </template>
 
@@ -234,7 +237,6 @@ export default {
   },
   data() {
     return {
-     
       api_key: '',
       allVideos: [],
       allCategory: [],
