@@ -80,13 +80,22 @@
         <div class="mt-5">
           <b-tabs pills content-class="mt-3" align="center">
             <b-tab :title="$t('all_category')" active>
-              <b-row class="mt-5">
-                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in allCategory" :key="item" class="mb-4">
+
+              <b-row  v-if="loading" class="mt-5" >
+                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
+                  <b-card no-body class="bg-white">
+                    <b-skeleton-img height="250px"></b-skeleton-img>
+                  </b-card>
+                </b-col>
+              </b-row>
+
+              <b-row v-else class="mt-5">
+                <b-col  cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in allCategory" :key="item" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
                     <b-card >
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ $t('course') }}
+                          {{ item.type==1?$t('course'):item.type==2?$t('article'):$t('about_job') }}
                         </b-badge>
                         <img :src="getImage(item['image'])" alt="">
                       </figure>
@@ -96,7 +105,7 @@
                             {{ item['date'] }}
                           </span>
                           <h6 class="two-line">
-                          {{ item['title'] }}
+                            {{ item['title'] }}
                           </h6>
                         </div>
                       </b-card-text>
@@ -108,7 +117,7 @@
             <b-tab :title="$t('course')">
               <b-row class="mt-5">
                 <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in courses" :key="item.index" class="mb-4">
-                  <nuxt-link to="/Detail">
+                  <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
                     <b-card >
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
@@ -134,48 +143,52 @@
             <b-tab :title="$t('article')">
               <b-row class="mt-5">
                 <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
-                  <b-card >
-                    <figure class="position-relative">
-                      <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                        {{ $t('article') }}
-                      </b-badge>
-                      <img :src="getImage(item['image'])" alt="">
-                    </figure>
-                    <b-card-text>
-                      <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                        <span class="mb-0 mt-0" style="font-size:13px">
-                          {{ item['date'] }}
-                        </span>
-                        <h6 class="two-line">
-                        {{ item['title'] }}
-                        </h6>
-                      </div>
-                    </b-card-text>
-                  </b-card>
+                  <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
+                    <b-card >
+                      <figure class="position-relative">
+                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
+                          {{ $t('article') }}
+                        </b-badge>
+                        <img :src="getImage(item['image'])" alt="">
+                      </figure>
+                      <b-card-text>
+                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
+                          <span class="mb-0 mt-0" style="font-size:13px">
+                            {{ item['date'] }}
+                          </span>
+                          <h6 class="two-line">
+                          {{ item['title'] }}
+                          </h6>
+                        </div>
+                      </b-card-text>
+                    </b-card>
+                  </nuxt-link>
                 </b-col>
               </b-row>
             </b-tab>
             <b-tab :title="$t('job')">
               <b-row class="mt-5">
                 <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
-                  <b-card >
-                    <figure class="position-relative">
-                      <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                        {{ $t('article') }}
-                      </b-badge>
-                      <img :src="getImage(item['image'])" alt="">
-                    </figure>
-                    <b-card-text>
-                      <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                        <span class="mb-0 mt-0" style="font-size:13px">
-                          {{ item['date'] }}
-                        </span>
-                        <h6 class="two-line">
-                        {{ item['title'] }}
-                        </h6>
-                      </div>
-                    </b-card-text>
-                  </b-card>
+                  <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
+                    <b-card >
+                      <figure class="position-relative">
+                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
+                          {{ $t('article') }}
+                        </b-badge>
+                        <img :src="getImage(item['image'])" alt="">
+                      </figure>
+                      <b-card-text>
+                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
+                          <span class="mb-0 mt-0" style="font-size:13px">
+                            {{ item['date'] }}
+                          </span>
+                          <h6 class="two-line">
+                          {{ item['title'] }}
+                          </h6>
+                        </div>
+                      </b-card-text>
+                    </b-card>
+                  </nuxt-link>
                 </b-col>
               </b-row>
             </b-tab>
@@ -237,6 +250,7 @@ export default {
   },
   data() {
     return {
+      loading: true,
       api_key: '',
       allVideos: [],
       allCategory: [],
@@ -302,6 +316,8 @@ export default {
       this.allCategory = this.allCategory.sort((a, b) => {
         return a.date.localeCompare(b.date);
       });
+
+      this.loading = false
     },
     getImage(image) {
         return 'http://localhost:8000/image_etec/' + image

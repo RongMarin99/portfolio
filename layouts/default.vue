@@ -23,10 +23,10 @@
                   <b-nav-item class="pl-4" to="/" >
                     {{ $t('home') }}
                   </b-nav-item>
-                  <b-nav-item class="pl-4">
+                  <b-nav-item class="pl-4" to="/Course">
                     {{ $t('course') }}
                   </b-nav-item>
-                  <b-nav-item class="pl-4">
+                  <b-nav-item class="pl-4" to="/Article">
                     {{ $t('article') }}
                   </b-nav-item>
                   <b-nav-item class="pl-4">
@@ -129,7 +129,13 @@ export default{
     data(){
         return {
         }
+    },
+    methods: {
+       category(type){
+          this.$router.push('Category?type='+type+'')
+        }
     }
+   
 }
 </script>
 <style>
