@@ -25,7 +25,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {src: '~/plugins/flag.js',mode:'client'},
-    {src: '~/plugins/share.js',mode:'client'}
+    {src: '~/plugins/share.js',mode:'client'},
+    {src: '~/plugins/main.js',mode:'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -93,4 +94,7 @@ export default {
     color: '#FD7237',
     background: 'white'
   },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  }
 }
