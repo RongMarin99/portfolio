@@ -1,15 +1,29 @@
 <template>
     <b-container class="main-slide" >
         <b-row>
-            <b-col cols="8" class="mt-3">
+            <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ detail['title'] }}​</h3>
                <b-row>
-                 <b-col cols="6" class="mt-3">
+                 <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
                         {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }}
                     </span>
                  </b-col>
-                 <b-col cols="6" class="mt-3">
+                 <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3 d-flex justify-content-end">
+                    <div class="float-right rounded px-2 py-1 ml-1"  style="font-size:12px; background-color:#1DA0F3">
+                        <ShareNetwork
+                            network="telegram"
+                            url="http://rongmarin.hyperphp.com"
+                            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+                            description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+                            quote="The hot reload is so fast it\'s near instant. - Evan You"
+                            hashtags="vuejs,vite"
+                        >
+                        <div class="text-white d-flex">
+                            <i class="material-icons" style="font-size:17px">send</i>&nbsp; Telegram
+                            </div> 
+                        </ShareNetwork>
+                    </div>  
                     <div class="float-right bg-primary rounded px-2 py-1 ml-1"  style="font-size:12px">
                             <ShareNetwork
                                 network="facebook"
@@ -21,20 +35,6 @@
                             >
                             <div class="text-white d-flex">
                                 <i class="material-icons" style="font-size:17px">share</i>&nbsp; Facebook
-                                </div> 
-                            </ShareNetwork>
-                    </div>
-                    <div class="float-right rounded px-2 py-1 ml-1"  style="font-size:12px; background-color:#1DA0F3">
-                            <ShareNetwork
-                                network="telegram"
-                                url="http://rongmarin.hyperphp.com"
-                                title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                                description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                                quote="The hot reload is so fast it\'s near instant. - Evan You"
-                                hashtags="vuejs,vite"
-                            >
-                            <div class="text-white d-flex">
-                                <i class="material-icons" style="font-size:17px">send</i>&nbsp; Telegram
                                 </div> 
                             </ShareNetwork>
                     </div>
@@ -54,17 +54,17 @@
                 </b-col>
                </b-row>
             </b-col>
-            <b-col cols="4" class="mt-3">
+            <b-col cols="12" xl="4" lg="12" md="12" xs="12" class="mt-3">
                <h5 class="pb-1" style="border-bottom: 3px solid #FD7237;width:fit-content;">
                 អត្ថបទទាក់ទង
                 </h5>
                 <b-row v-for="item in 10" :key="item">
-                    <b-col cols="4">
+                    <b-col cols="3" xl="4" lg="2" md="3" xs="3">
                         <figure>
                             <img src="https://via.placeholder.com/250" alt="">
                         </figure>
                     </b-col>
-                    <b-col cols="8" class="pl-0">
+                    <b-col cols="9" xl="8" lg="10" md="9" xs="9" class="pl-0">
                         <p>
                             តារាល្បីៗ ជូនពរ​គ្រួសារ​តារាចម្រៀង ទេព បូព្រឹក្ស ទើបសម្រាល​កូន ជាមួយ​ពាក្យពេចន៍​ដ៏កក់ក្ដៅផ្សេងៗគ្នា
                         </p>
@@ -226,6 +226,7 @@ export default{
     img{
         max-width: 100% !important;
         width: 100% !important;
+        height: auto !important;
     }
 }
 </style>
