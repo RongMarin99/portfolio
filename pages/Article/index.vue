@@ -45,7 +45,8 @@ export default{
             })
         },
         getImage(image) {
-            return 'http://localhost:8000/image_etec/' + image
+          return 'http://localhost:8000/image_etec/' + image
+          //  return 'http://etec-api.loveounnas.xyz/image_etec/' + image
         },
     }
 }
