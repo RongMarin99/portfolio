@@ -27,7 +27,7 @@
                     <div class="float-right bg-primary rounded px-2 py-1 ml-1"  style="font-size:12px">
                             <ShareNetwork
                                 network="facebook"
-                                :url="`https://effortless-froyo-c29932.netlify.app/`"
+                                :url="`https://effortless-froyo-c29932.netlify.app/Detail?id=15&type=1`"
                                 title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
                                 description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
                                 quote="The hot reload is so fast it\'s near instant. - Evan You"
