@@ -310,14 +310,14 @@ export default {
 
       await this.$axios.$get('getAllCourse').then(response => {
         this.courses = response.data
+        this.loading = false
       })
 
       this.allCategory = this.news.concat(this.courses)
-      this.allCategory = this.allCategory.sort((a, b) => {
-        return a.date.localeCompare(b.date);
-      });
+      // this.allCategory = this.allCategory.sort((a, b) => {
+      //   return a.date.localeCompare(b.date);
+      // });
 
-      this.loading = false
     },
     getImage(image) {
         return 'https://etec-api.loveounnas.xyz/image_etec/' + image
