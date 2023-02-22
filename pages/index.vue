@@ -102,7 +102,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                             {{ item['title'] }}
@@ -128,7 +128,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                           {{ item['title'] }}
@@ -154,7 +154,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                           {{ item['title'] }}
@@ -180,7 +180,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                           {{ item['title'] }}
@@ -244,6 +244,7 @@
 <script>
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
+import moment from 'moment';
 export default {
   name: 'IndexPage',
   components: {
@@ -322,6 +323,9 @@ export default {
     getImage(image) {
         return 'https://etec-api.loveounnas.xyz/image_etec/' + image
     },
+    dateFormat(date){
+      return moment(date).format('llll')
+    }
   }
 }
 </script>
