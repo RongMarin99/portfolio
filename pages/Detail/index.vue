@@ -27,11 +27,12 @@
                     <div class="float-right bg-primary rounded px-2 py-1 ml-1"  style="font-size:12px">
                             <ShareNetwork
                                 network="facebook"
-                                url="https://gitlab.com/idg-local-project/labor/veit/vip/core"
+                                :url="`https://effortless-froyo-c29932.netlify.app/Detail?id=15&type=1`"
                                 title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
                                 description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
                                 quote="The hot reload is so fast it\'s near instant. - Evan You"
                                 hashtags="etec,center,etec-center"
+                                media="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0MgKIRz1r2jrOw0KuuOnlnkgR-KOlsagi1w&usqp=CAU"
                             >
                             <div class="text-white d-flex">
                                 <i class="material-icons" style="font-size:17px">share</i>&nbsp; Facebook
