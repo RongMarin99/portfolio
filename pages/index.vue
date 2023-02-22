@@ -123,7 +123,7 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
                         </b-badge>
-                        <img :src="item['image_url']" alt="">
+                        <img :src="getImage(item['image_url'])" alt="">
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
