@@ -83,11 +83,23 @@ export default{
       return {
         meta:[
           { hid: 'og-type', property: 'og:type', content: 'website' },
+          {
+                hid: "og:title",
+                property: "og:title",
+                content: "My Amazing Blog on The Joy of Painting",
+            },
+            {
+                hid: "og:description",
+                property: "og:description",
+                content: "Articles focused on the beautiful art of landscape painting.",
+            },
           { 
             hid: 'og-image', property: 'og:image',
             content: 'https://etec-api.loveounnas.xyz/image_etec/63f5bffa0399e5.40405733.png'
           },
           { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
+          { property: "og:image:width", content: "740" },
+            { property: "og:image:height", content: "300" },
         ]
       }
     },
