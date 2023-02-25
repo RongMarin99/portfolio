@@ -88,15 +88,15 @@
         <b-container>
           <b-row>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-                <img src="https://pxdraft.com/themeforest/maffei/assets/img/logo.svg" alt="">
+                <img :src="getImage(footer.image)" alt="">
                 <h6 class="mt-3 " :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, beatae.
+                  {{ footer.title }}
                 </h6>
             </b-col>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
               <b-nav vertical class="footer-nav" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
-                <b-nav-item>{{ $t('course') }}</b-nav-item>
-                <b-nav-item>{{ $t('article') }}</b-nav-item>
+                <b-nav-item to="/Course">{{ $t('course') }}</b-nav-item>
+                <b-nav-item to="/Article">{{ $t('article') }}</b-nav-item>
                 <b-nav-item>{{ $t('video') }}</b-nav-item>
                 <b-nav-item>{{ $t('job') }}</b-nav-item>
               </b-nav>
@@ -106,7 +106,7 @@
                 {{ $t('address') }}
               </h6>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, maiores.
+                {{ address.description }}
               </p>
             </b-col>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
@@ -114,7 +114,7 @@
                 {{ $t('about_us') }}
               </h6>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, accusantium?
+                {{ about.description }}
               </p>
             </b-col>
           </b-row>
@@ -125,27 +125,41 @@
 </template>
 <script>
 export default{
-    head(){
-      return {
-        meta:[
-          { hid: 'og-type', property: 'og:type', content: 'website' },
-          { 
-            hid: 'og-image', property: 'og:image',
-            content: require('../assets/image/logo.jpg')
-          },
-          { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
-        ]
-      }
-    },
     colorMode: 'light',
     data(){
         return {
+          address: '',
+          about: '',
+          footer: ''
         }
+    },
+    created(){
+      this.getAddress()
+      this.getAbout()
+      this.getFooter()
     },
     methods: {
        category(type){
           this.$router.push('Category?type='+type+'')
-        }
+        },
+        getAddress(){
+          this.$axios.$get('getAddress').then(response => {
+            this.address = response
+          })
+        },
+        getAbout(){
+          this.$axios.$get('getAbout').then(response => {
+            this.about = response
+          })
+        },
+        getFooter(){
+          this.$axios.$get('getAllLogoFooter').then(response => {
+            this.footer = response
+          })
+        },
+        getImage(image) {
+          return 'https://etec-api.loveounnas.xyz/image_etec/' + image
+        },
     }
    
 }
