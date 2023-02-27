@@ -102,7 +102,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                             {{ item['title'] }}
@@ -123,12 +123,12 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
                         </b-badge>
-                        <img :src="item['image_url']" alt="">
+                        <img :src="getImage(item['image'])" alt="">
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                           {{ item['title'] }}
@@ -154,7 +154,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                           {{ item['title'] }}
@@ -180,7 +180,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ item['date'] }}
+                            {{ dateFormat(item['created_at']) }}
                           </span>
                           <h6 class="two-line">
                           {{ item['title'] }}
@@ -244,7 +244,20 @@
 <script>
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
+import moment from 'moment';
 export default {
+  head(){
+      return {
+        meta:[
+          { hid: 'og-type', property: 'og:type', content: 'website' },
+          { 
+            hid: 'og-image', property: 'og:image',
+            content: require('../assets/image/logo.jpg')
+          },
+          { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
+        ]
+      }
+    },
   name: 'IndexPage',
   components: {
   },
@@ -310,19 +323,21 @@ export default {
 
       await this.$axios.$get('getAllCourse').then(response => {
         this.courses = response.data
+        this.loading = false
       })
 
       this.allCategory = this.news.concat(this.courses)
-      this.allCategory = this.allCategory.sort((a, b) => {
-        return a.date.localeCompare(b.date);
-      });
+      // this.allCategory = this.allCategory.sort((a, b) => {
+      //   return a.date.localeCompare(b.date);
+      // });
 
-      this.loading = false
     },
     getImage(image) {
-         //return 'http://localhost:8000/image_etec/' + image
-        return 'http://etec-api.loveounnas.xyz/image_etec/' + image
+        return 'https://etec-api.loveounnas.xyz/image_etec/' + image
     },
+    dateFormat(date){
+      return moment(date).format('llll')
+    }
   }
 }
 </script>
