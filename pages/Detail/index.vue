@@ -95,7 +95,8 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/63f5bffa0399e5.40405733.png'
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.detail.image
+            //content: 'https://etec-api.loveounnas.xyz/image_etec/63f5bffa0399e5.40405733.png'
           },
           { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
           { property: "og:image:width", content: "740" },
