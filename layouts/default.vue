@@ -189,4 +189,9 @@ body {
   margin-top: 10px;
   margin-left:5px;
 }
+li a.nuxt-link-exact-active {
+    font-weight: bold;
+    color: #FD7237 !important;
+  }
+  
 </style>

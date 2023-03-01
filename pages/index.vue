@@ -23,6 +23,13 @@
                 a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
               </p>
             </b-carousel-slide>
+
+            <b-carousel-slide img-src="https://scontent.fpnh7-1.fna.fbcdn.net/v/t39.30808-6/305664414_1249514142562724_4490597012580547501_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHCsRWiV-5NFJt7YUM13mf3IAPhp99Lu8sgA-Gn30u7y6_3tTBlpw1c3j5yW6GO4JivIi0nxnLpi6exdxXs69pi&_nc_ohc=LkSeVVi_pR0AX_Sco89&_nc_oc=AQkE4x6eSpq9_txxeG-hKIGeVE2meXgtmFTwDcoMH0LiXriVwQpLMtJXx0A5jMKAYTI&_nc_ht=scontent.fpnh7-1.fna&oh=00_AfD4zyd68AyJPeRgmp_vGqTCeEF7cIu8GLvkeK54ahYteQ&oe=6404374E" img-alt="Blank image">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
+                a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+              </p>
+            </b-carousel-slide>
         </b-carousel>
       </b-container>
       <!-- End Slide -->
@@ -211,9 +218,11 @@
                   </a>
                 </b-col>
                 <b-col cols="6">
-                  <b-button block pill class="p-2" >
-                    {{ $t('contact') }}
-                  </b-button>
+                  <a target="_blank" href="https://m.me/marin.rong">
+                    <b-button block pill class="p-2" >
+                      {{ $t('contact') }}
+                    </b-button>
+                  </a>
                 </b-col>
               </b-row>
             </b-col>
@@ -231,6 +240,7 @@ import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
 import moment from 'moment';
 export default {
+  colorMode: 'light',
   head(){
       return {
         // meta:[
