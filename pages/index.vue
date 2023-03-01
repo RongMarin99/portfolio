@@ -218,7 +218,7 @@
                   </a>
                 </b-col>
                 <b-col cols="6">
-                  <a target="_blank" href="https://m.me/marin.rong">
+                  <a target="_blank" href="https://m.me/kroitchetlaor">
                     <b-button block pill class="p-2" >
                       {{ $t('contact') }}
                     </b-button>
