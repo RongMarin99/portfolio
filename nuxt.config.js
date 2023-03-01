@@ -8,10 +8,10 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
       { hid: 'og-type', property: 'og:type', content: 'website' },
-          { 
-            hid: 'og-image', property: 'og:image',
-            content: 'https://effortless-froyo-c29932.netlify.app/image/logo.jpg'
-          },
+      { 
+        hid: 'og-image', property: 'og:image',
+        content: 'https://scontent.fpnh16-1.fna.fbcdn.net/v/t39.30808-6/305664414_1249514142562724_4490597012580547501_n.jpg?stp=dst-jpg_p640x640&_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHCsRWiV-5NFJt7YUM13mf3IAPhp99Lu8sgA-Gn30u7y6_3tTBlpw1c3j5yW6GO4JivIi0nxnLpi6exdxXs69pi&_nc_ohc=LkSeVVi_pR0AX9EzPk_&_nc_oc=AQmYmE2hD5Wf1JpDEIQZxjXqqLcr-I_1lVzPu2hzF0bkwZhXYQU6sAEl2mKwEAR_ii4&_nc_ht=scontent.fpnh16-1.fna&oh=00_AfD9mI7tAsTTbcHtaVgLef2h8eD_cLnIa_uI8e_LKrTCIg&oe=6404374E'
+      },
           { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
     ],
     link: [
