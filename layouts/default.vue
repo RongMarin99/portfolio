@@ -126,6 +126,18 @@
 <script>
 export default{
     colorMode: 'light',
+    head(){
+      return {
+        meta:[
+          { hid: 'og-type', property: 'og:type', content: 'website' },
+          { 
+            hid: 'og-image', property: 'og:image',
+            content: require('../assets/image/logo.jpg')
+          },
+          { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
+        ]
+      }
+    },
     data(){
         return {
           address: '',
