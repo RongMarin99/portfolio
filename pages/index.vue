@@ -16,31 +16,13 @@
           @sliding-start="onSlideStart"
           @sliding-end="onSlideEnd"
           >
-            <!-- Text slides with image -->
-            <b-carousel-slide
-              caption="First slide"
-              text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-              img-src="https://via.placeholder.com/1024x480"
-            ></b-carousel-slide>
-
-            <!-- Slides with custom text -->
-            <b-carousel-slide img-src="https://via.placeholder.com/1024x480">
-              <h1>Hello world!</h1>
+            <!-- Slide with blank fluid image to maintain slide aspect ratio -->
+            <b-carousel-slide img-src="https://scontent.fpnh7-1.fna.fbcdn.net/v/t39.30808-6/305664414_1249514142562724_4490597012580547501_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHCsRWiV-5NFJt7YUM13mf3IAPhp99Lu8sgA-Gn30u7y6_3tTBlpw1c3j5yW6GO4JivIi0nxnLpi6exdxXs69pi&_nc_ohc=LkSeVVi_pR0AX_Sco89&_nc_oc=AQkE4x6eSpq9_txxeG-hKIGeVE2meXgtmFTwDcoMH0LiXriVwQpLMtJXx0A5jMKAYTI&_nc_ht=scontent.fpnh7-1.fna&oh=00_AfD4zyd68AyJPeRgmp_vGqTCeEF7cIu8GLvkeK54ahYteQ&oe=6404374E" img-alt="Blank image">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
+                a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+              </p>
             </b-carousel-slide>
-
-            <!-- Slides with image only -->
-            <b-carousel-slide img-src="https://via.placeholder.com/1024x480"></b-carousel-slide>
-
-            <!-- Slides with img slot -->
-            <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-
-  <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-  <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-      a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
-    </p>
-  </b-carousel-slide>
         </b-carousel>
       </b-container>
       <!-- End Slide -->
@@ -210,7 +192,8 @@
           <b-row>
             <b-col cols="12" xl="4" lg="4" md="4" sm="4">
               <figure>
-                  <img src="https://via.placeholder.com/200" alt="">
+                <!-- width 200 -->
+                  <img src="https://scontent.fpnh7-1.fna.fbcdn.net/v/t39.30808-6/313307825_1275751709938967_2909858508474953925_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHCtKpCgF6zYYFKBgJTqcWClm1CBeaYLTCWbUIF5pgtMNE_WCs5CsD5P49bfsa9b5Rm6Nmm68mYnXYUByl6CqO8&_nc_ohc=dzPXdUw2FhEAX-4gf7O&tn=0yl9aK4_G8xjrCgv&_nc_ht=scontent.fpnh7-1.fna&oh=00_AfBZUlrUexMZc0kwbi3O7VjMkR92Um7MAQzu46wg3uHEIw&oe=6403FD0C" alt="">
               </figure>
             </b-col>
             <b-col cols="12" xl="8" lg="8" md="8" sm="8">
@@ -221,9 +204,11 @@
               <hr class="mt-5">
               <b-row>
                 <b-col cols="6">
-                  <b-button block class="orange-bg p-2 ml-3 float-left" pill>
-                    {{ $t('follow') }}
-                  </b-button>
+                  <a target="_blank" class="text-white" href="https://www.facebook.com/kroitchetlaor">
+                    <b-button block class="orange-bg p-2 ml-3 float-left" pill>
+                      {{ $t('follow') }}
+                    </b-button>
+                  </a>
                 </b-col>
                 <b-col cols="6">
                   <b-button block pill class="p-2" >

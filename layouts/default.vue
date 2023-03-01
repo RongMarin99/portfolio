@@ -8,7 +8,7 @@
           <b-navbar toggleable="lg">
             <b-container class="p-2">
               <b-navbar-brand to="/">
-                <img src="https://pxdraft.com/themeforest/maffei/assets/img/logo.svg" alt="">
+                <img height="50" :src="getImage(header.image)" alt="">
               </b-navbar-brand>
   
               <b-navbar-toggle 
@@ -45,18 +45,18 @@
   
                   <b-nav-item-dropdown class="ml-2 mr-1" right>
                     <template #text>
-                      <span v-if="$i18n.locale == 'en'">
-                        <flag iso="gb" />
+                      <span v-if="$i18n.locale == 'en'" style="padding:0px">
+                        <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt="">
                       </span>
                       <span v-else>
-                        <flag iso="kh" />
+                        <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt="">
                       </span>
                     </template>
                     <b-dropdown-item :to="switchLocalePath('en')" >
-                      <flag iso="gb" /> {{ $t('english') }}
+                      <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
                     </b-dropdown-item>
                     <b-dropdown-item :to="switchLocalePath('kh')">
-                      <flag iso="kh" /> {{ $t('khmer') }}
+                      <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
                     </b-dropdown-item>
                   </b-nav-item-dropdown>
   
@@ -88,7 +88,7 @@
         <b-container>
           <b-row>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-                <img :src="getImage(footer.image)" alt="">
+                <img width="100" :src="getImage(footer.image)" alt="">
                 <h6 class="mt-3 " :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
                   {{ footer.title }}
                 </h6>
@@ -130,10 +130,12 @@ export default{
         return {
           address: '',
           about: '',
-          footer: ''
+          footer: '',
+          header: ''
         }
     },
     created(){
+      this.getHeader()
       this.getAddress()
       this.getAbout()
       this.getFooter()
@@ -157,6 +159,11 @@ export default{
             this.footer = response
           })
         },
+        getHeader(){
+          this.$axios.$get('getAllLogoHeader').then(response => {
+            this.header = response
+          })
+        },
         getImage(image) {
           return 'https://etec-api.loveounnas.xyz/image_etec/' + image
         },
@@ -176,5 +183,10 @@ body {
 .sepia-mode body {
   background-color: #f1e7d0;
   color: #433422;
+}
+.dropdown .nav-link{
+  padding: 0px !important;
+  margin-top: 10px;
+  margin-left:5px;
 }
 </style>
