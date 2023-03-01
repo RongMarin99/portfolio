@@ -10,7 +10,7 @@ export default {
       { hid: 'og-type', property: 'og:type', content: 'website' },
           { 
             hid: 'og-image', property: 'og:image',
-            content: './assets/image/logo.jpg'
+            content: 'https://effortless-froyo-c29932.netlify.app/image/logo.jpg'
           },
           { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
     ],
