@@ -340,23 +340,21 @@ export default {
   methods: {
     async get(key='course'){
       if(key==this.key.course){
-        if(this.courses==null){
+        if(this.course_loading){
           await this.$axios.$get('getAllCourse').then(response => {
             this.courses = response.data
             this.course_loading = false
           })
         }
-        
-        
       }else if(key==this.key.article){
-        if(this.news==null){
+        if(this.article_loading){
            await this.$axios.$get('getAllNews').then(response => {
             this.news = response.data
             this.article_loading = false
           })
         }
       }else if(key==this.key.job){
-        if(this.job==null){
+        if(this.job_loading){
           await this.$axios.$post('job/lists').then(response => {
             this.job = response.data.data
             this.job_loading = false
