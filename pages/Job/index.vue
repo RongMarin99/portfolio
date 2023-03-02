@@ -42,7 +42,7 @@ import moment from 'moment';
     methods:{
         get(){
             this.$axios.$post('job/lists').then(response => {
-                this.jobs = response.data
+                this.jobs = response.data.data
             })
         },
         dateFormat(date){
