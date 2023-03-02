@@ -32,7 +32,7 @@
                   <b-nav-item class="pl-4" to="/Video">
                     {{ $t('video') }}
                   </b-nav-item>
-                  <b-nav-item class="pl-4">
+                  <b-nav-item class="pl-4" to="/Job">
                     {{ $t('job') }}
                   </b-nav-item>
                 </b-navbar-nav>

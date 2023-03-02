@@ -317,7 +317,7 @@ export default {
         this.loading = false
       })
  
-      await this.$axios.$post('job/get').then(response => {
+      await this.$axios.$post('job/lists').then(response => {
         this.job = response.data
       })
 

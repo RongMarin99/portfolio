@@ -28,6 +28,7 @@
 </template>
 <script>
 export default{
+  colorMode: 'light',
     data(){
         return {
             Category:[],

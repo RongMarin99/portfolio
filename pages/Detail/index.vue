@@ -78,6 +78,7 @@
 <script>
 import moment from 'moment'
 export default{
+    colorMode: 'light',
     name: "Detail",
     head(){
       return {
