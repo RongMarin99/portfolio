@@ -68,7 +68,7 @@
         </h2>
         <div class="mt-5">
           <b-tabs pills content-class="mt-3" align="center">
-            <b-tab :title="$t('all_category')" active>
+            <!-- <b-tab :title="$t('all_category')" active>
 
               <b-row  v-if="loading" class="mt-5" >
                 <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
@@ -102,7 +102,7 @@
                   </nuxt-link>
                 </b-col>
               </b-row>
-            </b-tab>
+            </b-tab> -->
             <b-tab :title="$t('course')">
               <b-row class="mt-5">
                 <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in courses" :key="item.index" class="mb-4">
@@ -257,9 +257,9 @@ export default {
       loading: true,
       api_key: '',
       allVideos: [],
-      allCategory: [],
       news: [],
-      courses: []
+      courses: [],
+      job: []
     }
   },
   created() {
@@ -316,11 +316,10 @@ export default {
         this.courses = response.data
         this.loading = false
       })
-
-      this.allCategory = this.news.concat(this.courses)
-      // this.allCategory = this.allCategory.sort((a, b) => {
-      //   return a.date.localeCompare(b.date);
-      // });
+ 
+      await this.$axios.$post('job/get').then(response => {
+        this.job = response.data
+      })
 
     },
     getImage(image) {
