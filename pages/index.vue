@@ -291,6 +291,10 @@ export default {
             },
             // when window width is >= 640px
             640: {
+              slidesPerView: 2,
+              spaceBetween: 40
+            },
+            900: {
               slidesPerView: 3,
               spaceBetween: 40
             }
