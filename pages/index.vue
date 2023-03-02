@@ -19,15 +19,15 @@
             <!-- Slide with blank fluid image to maintain slide aspect ratio -->
             <b-carousel-slide img-src="https://scontent.fpnh7-1.fna.fbcdn.net/v/t39.30808-6/305664414_1249514142562724_4490597012580547501_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHCsRWiV-5NFJt7YUM13mf3IAPhp99Lu8sgA-Gn30u7y6_3tTBlpw1c3j5yW6GO4JivIi0nxnLpi6exdxXs69pi&_nc_ohc=LkSeVVi_pR0AX_Sco89&_nc_oc=AQkE4x6eSpq9_txxeG-hKIGeVE2meXgtmFTwDcoMH0LiXriVwQpLMtJXx0A5jMKAYTI&_nc_ht=scontent.fpnh7-1.fna&oh=00_AfD4zyd68AyJPeRgmp_vGqTCeEF7cIu8GLvkeK54ahYteQ&oe=6404374E" img-alt="Blank image">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-                a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+                <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
+                a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum. -->
               </p>
             </b-carousel-slide>
 
             <b-carousel-slide img-src="https://scontent.fpnh7-1.fna.fbcdn.net/v/t39.30808-6/305664414_1249514142562724_4490597012580547501_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHCsRWiV-5NFJt7YUM13mf3IAPhp99Lu8sgA-Gn30u7y6_3tTBlpw1c3j5yW6GO4JivIi0nxnLpi6exdxXs69pi&_nc_ohc=LkSeVVi_pR0AX_Sco89&_nc_oc=AQkE4x6eSpq9_txxeG-hKIGeVE2meXgtmFTwDcoMH0LiXriVwQpLMtJXx0A5jMKAYTI&_nc_ht=scontent.fpnh7-1.fna&oh=00_AfD4zyd68AyJPeRgmp_vGqTCeEF7cIu8GLvkeK54ahYteQ&oe=6404374E" img-alt="Blank image">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-                a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+                <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
+                a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum. -->
               </p>
             </b-carousel-slide>
         </b-carousel>
@@ -103,8 +103,16 @@
                 </b-col>
               </b-row>
             </b-tab> -->
-            <b-tab :title="$t('course')">
-              <b-row class="mt-5">
+            <b-tab :title="$t('course')" active @click="get(key.course)">
+              <b-row  v-if="course_loading" class="mt-5" >
+                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
+                  <b-card no-body class="bg-white">
+                    <b-skeleton-img height="250px"></b-skeleton-img>
+                  </b-card>
+                </b-col>
+              </b-row>
+
+              <b-row v-else class="mt-5">
                 <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in courses" :key="item.index" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
                     <b-card >
@@ -128,9 +136,18 @@
                   </nuxt-link>
                 </b-col>
               </b-row>
+
             </b-tab>
-            <b-tab :title="$t('article')">
-              <b-row class="mt-5">
+            <b-tab :title="$t('article')" @click="get(key.article)">
+              <b-row  v-if="article_loading" class="mt-5" >
+                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
+                  <b-card no-body class="bg-white">
+                    <b-skeleton-img height="250px"></b-skeleton-img>
+                  </b-card>
+                </b-col>
+              </b-row>
+             
+              <b-row v-else class="mt-5">
                 <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
                     <b-card >
@@ -155,7 +172,15 @@
                 </b-col>
               </b-row>
             </b-tab>
-            <b-tab :title="$t('job')">
+            <b-tab :title="$t('job')" @click="get(key.job)">
+              <b-row  v-if="job_loading" class="mt-5" >
+                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
+                  <b-card no-body class="bg-white">
+                    <b-skeleton-img height="250px"></b-skeleton-img>
+                  </b-card>
+                </b-col>
+              </b-row>
+             
               <b-row class="mt-5">
                 <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in job" :key="item.index" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
@@ -253,16 +278,24 @@ export default {
   },
   data() {
     return {
-      loading: true,
+      course_loading: true,
+      article_loading: true,
+      job_loading: true,
       api_key: '',
       allVideos: [],
       news: [],
       courses: [],
-      job: []
+      job: [],
+      key: {
+        course: 'course',
+        article: 'article',
+        job: 'job'
+      },
+      url: 'getAllCourse',
     }
   },
   created() {
-    
+    this.get()
   },
    mounted() {
      setTimeout(() => {
@@ -300,30 +333,39 @@ export default {
           }
         });
     }, 2000);
-    
-      this.get()
+    this.getVideo()
   },
   watch: {
   },
   methods: {
-    async get(){
+    async get(key=this.key.course){
+      if(key==this.key.course){
+        if(this.course.length<0){
+          await this.$axios.$get('getAllCourse').then(response => {
+            this.courses = response.data
+            this.course_loading = false
+          })
+        }
+      }else if(key==this.key.article){
+        if(this.news.length<0){
+          await this.$axios.$get('getAllNews').then(response => {
+            this.news = response.data
+            this.article_loading = false
+          })
+        } 
+      }else if(key==this.key.job){
+        if(this.job.length<0){
+          await this.$axios.$post('job/lists').then(response => {
+            this.job = response.data.data
+            this.job_loading = false
+          })
+        }
+      }
+    },
+    async getVideo(){
       await this.$axios.$get('getAllVideo').then(response => {
         this.allVideos = response.data
       })
-
-      await this.$axios.$get('getAllNews').then(response => {
-        this.news = response.data
-      })
-
-      await this.$axios.$get('getAllCourse').then(response => {
-        this.courses = response.data
-        this.loading = false
-      })
- 
-      await this.$axios.$post('job/lists').then(response => {
-        this.job = response.data.data
-      })
-
     },
     getImage(image) {
         return 'https://etec-api.loveounnas.xyz/image_etec/' + image
