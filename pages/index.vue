@@ -340,26 +340,26 @@ export default {
   methods: {
     async get(key='course'){
       if(key==this.key.course){
-        if(this.courses.length<0){
+        
           await this.$axios.$get('getAllCourse').then(response => {
             this.courses = response.data
             this.course_loading = false
           })
-        }
+        
       }else if(key==this.key.article){
-        if(this.news.length<0){
+     
           await this.$axios.$get('getAllNews').then(response => {
             this.news = response.data
             this.article_loading = false
           })
-        } 
+       
       }else if(key==this.key.job){
-        if(this.job.length<0){
+     
           await this.$axios.$post('job/lists').then(response => {
             this.job = response.data.data
             this.job_loading = false
           })
-        }
+        
       }
     },
     async getVideo(){
