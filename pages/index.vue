@@ -239,7 +239,6 @@
 import Swiper from 'swiper/swiper-bundle.min';
 import 'swiper/swiper-bundle.min.css';
 import moment from 'moment';
-import ogImage from '@/assets/image/logo.jpg';
 export default {
   colorMode: 'light',
   head () {
