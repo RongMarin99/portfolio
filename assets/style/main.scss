@@ -12,9 +12,6 @@
   }
  
   /* exact link will show the primary color for only the exact matching link */
-  a.nuxt-link-exact-active {
-    color: #00c58e;
-  }
   .bg-dark{
     background-color: #091a28 !important;
   }
@@ -257,7 +254,4 @@ body {
   background-color: var(--bg);
   color: var(--color);
   transition: background-color 0.3s;
-}
-a {
-  color: var(--color-primary);
 }

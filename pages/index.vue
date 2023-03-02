@@ -187,7 +187,7 @@
                     <b-card >
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ $t('article') }}
+                          {{ $t('about_job') }}
                         </b-badge>
                         <img :src="getImage(item['image'])" alt="">
                       </figure>

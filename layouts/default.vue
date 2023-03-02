@@ -83,15 +83,16 @@
       <Nuxt />
 
       <!-- Start Footer -->
-      <b-container fluid class="mt-5 p-5" style="border-top:0.1px solid #ededed" 
+      <b-container fluid class="mt-5 " style="border-top:0.1px solid #ededed" 
              :class="$colorMode.value=='dark'?'bg-secondary':''">
-        <b-container>
+        <b-container class="p-4">
           <b-row>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
                 <img width="100" :src="getImage(footer.image)" alt="">
                 <h6 class="mt-3 " :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
                   {{ footer.title }}
                 </h6>
+                
             </b-col>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
               <b-nav vertical class="footer-nav" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
@@ -128,6 +129,9 @@
             </b-col>
           </b-row>
         </b-container>
+        <h6 align="right" class="mb-0 pb-2" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
+          Developed by: <a :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'" href="https://www.facebook.com/marin.rong" target="_blank" rel="noopener noreferrer">Rong Marin</a>
+        </h6>
       </b-container>
       <!-- End Footer -->
     </div>
