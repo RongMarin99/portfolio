@@ -6,7 +6,7 @@
                   <b-card >
                     <figure class="position-relative">
                       <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                        {{ $t('article') }}
+                        {{ $t('job') }}
                       </b-badge>
                       <img :src="getImage(item['image'])" alt="">
                     </figure>
@@ -47,7 +47,10 @@ import moment from 'moment';
         },
         dateFormat(date){
             return moment(date).format('llll')
-        }
+        },
+        getImage(image) {
+            return 'https://etec-api.loveounnas.xyz/image_etec/' + image
+        },
     }
  }
 </script>
