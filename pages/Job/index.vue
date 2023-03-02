@@ -41,7 +41,7 @@ import moment from 'moment';
     },
     methods:{
         get(){
-            this.$axios.$get('job/lists').then(response => {
+            this.$axios.$post('job/lists').then(response => {
                 this.jobs = response.data
             })
         },
