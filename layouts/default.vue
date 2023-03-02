@@ -116,6 +116,15 @@
               <p>
                 {{ about.description }}
               </p>
+              <div>
+                <b-row>
+                  <b-col cols='2' v-for="item in social" :key="item.index">
+                    <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                      <img height="30" class="rounded-circle" :src="getImage(item.image)" alt="">
+                    </a>
+                  </b-col>
+                </b-row>
+              </div>
             </b-col>
           </b-row>
         </b-container>
@@ -139,7 +148,8 @@ export default{
           address: '',
           about: '',
           footer: '',
-          header: ''
+          header: '',
+          social: ''
         }
     },
     created(){
@@ -147,6 +157,7 @@ export default{
       this.getAddress()
       this.getAbout()
       this.getFooter()
+      this.getSocial()
     },
     methods: {
        category(type){
@@ -170,6 +181,11 @@ export default{
         getHeader(){
           this.$axios.$get('getAllLogoHeader').then(response => {
             this.header = response
+          })
+        },
+        getSocial(){
+          this.$axios.$get('getAllSocialMedia').then(response => {
+            this.social = response.data
           })
         },
         getImage(image) {
