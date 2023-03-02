@@ -157,7 +157,7 @@
             </b-tab>
             <b-tab :title="$t('job')">
               <b-row class="mt-5">
-                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
+                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in job" :key="item.index" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
                     <b-card >
                       <figure class="position-relative">
