@@ -322,7 +322,7 @@ export default {
       })
  
       await this.$axios.$post('job/lists').then(response => {
-        this.job = response.data
+        this.job = response.data.data
       })
 
     },
