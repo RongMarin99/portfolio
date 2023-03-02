@@ -97,7 +97,7 @@ export default {
     color: '#FD7237',
   },
    loadingIndicator: {
-    name: 'wandering-cubes',
+    name: 'folding-cube',
     color: '#FD7237',
     background: 'white'
   },
