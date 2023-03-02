@@ -338,9 +338,9 @@ export default {
   watch: {
   },
   methods: {
-    async get(key=this.key.course){
+    async get(key='course'){
       if(key==this.key.course){
-        if(this.course.length<0){
+        if(this.courses.length<0){
           await this.$axios.$get('getAllCourse').then(response => {
             this.courses = response.data
             this.course_loading = false
