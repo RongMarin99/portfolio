@@ -200,9 +200,14 @@ export default{
 }
 </script>
 <style>
+@font-face {
+  font-family: KantumruyPro;
+  src: url('../assets/fonts/KantumruyPro-VariableFont_wght.ttf');
+}
 body {
   background-color: #fff;
   color: rgba(0, 0, 0, 0.8);
+  font-family: KantumruyPro !important;
 }
 .dark-mode body {
   background-color: #091a28 ;
