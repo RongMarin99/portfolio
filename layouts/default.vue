@@ -205,7 +205,7 @@ body {
   color: rgba(0, 0, 0, 0.8);
 }
 .dark-mode body {
-  background-color: #1a2130;;
+  background-color: #091a28 ;
   color: #ebf4f1;
 }
 .footer-dark{

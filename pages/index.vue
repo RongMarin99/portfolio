@@ -219,25 +219,27 @@
             <b-col cols="12" xl="4" lg="4" md="4" sm="4">
               <figure>
                 <!-- width 200 -->
-                  <img src="https://scontent.fpnh7-1.fna.fbcdn.net/v/t39.30808-6/313307825_1275751709938967_2909858508474953925_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHCtKpCgF6zYYFKBgJTqcWClm1CBeaYLTCWbUIF5pgtMNE_WCs5CsD5P49bfsa9b5Rm6Nmm68mYnXYUByl6CqO8&_nc_ohc=dzPXdUw2FhEAX-4gf7O&tn=0yl9aK4_G8xjrCgv&_nc_ht=scontent.fpnh7-1.fna&oh=00_AfBZUlrUexMZc0kwbi3O7VjMkR92Um7MAQzu46wg3uHEIw&oe=6403FD0C" alt="">
+                  <img :src="getImage(founder.image)" alt="">
               </figure>
             </b-col>
             <b-col cols="12" xl="8" lg="8" md="8" sm="8">
-              <h5>Etec center</h5>
+              <h5>
+                {{ founder.name }}
+              </h5>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sint laborum labore eius quo! Quam nam provident officia maiores asperiores molestias est tempora mollitia, quaerat cumque voluptatem, laboriosam deleniti quod.
+                {{ founder.description }}
               </p>
               <hr class="mt-5">
               <b-row>
                 <b-col cols="6">
-                  <a target="_blank" class="text-white" href="https://www.facebook.com/kroitchetlaor">
+                  <a target="_blank" class="text-white" :href="founder.social_media_url">
                     <b-button block class="orange-bg p-2 ml-3 float-left" pill>
                       {{ $t('follow') }}
                     </b-button>
                   </a>
                 </b-col>
                 <b-col cols="6">
-                  <a target="_blank" href="https://m.me/kroitchetlaor">
+                  <a target="_blank" :href="founder.contact_url">
                     <b-button block pill class="p-2" >
                       {{ $t('contact') }}
                     </b-button>
@@ -287,11 +289,13 @@ export default {
       },
       slide: [],
       url: 'getAllCourse',
+      founder: ''
     }
   },
   created() {
     this.getSlide()
     this.get()
+    this.getFounder()
   },
    mounted() {
      setTimeout(() => {
@@ -366,6 +370,11 @@ export default {
     async getVideo(){
       await this.$axios.$get('getAllVideo').then(response => {
         this.allVideos = response.data
+      })
+    },
+    async getFounder(){
+      await this.$axios.$get('founder/get').then(response => {
+        this.founder = response
       })
     },
     getImage(image) {
