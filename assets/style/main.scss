@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Battambang&family=Exo&display=swap');
-*{
-    font-family: sans-serif,'Battambang';
-}
+
 :root {
     --color: #243746;
     --color-primary: #158876;
@@ -252,4 +250,7 @@ body {
   background-color: var(--bg);
   color: var(--color);
   transition: background-color 0.3s;
+}
+*{
+  font-family: sans-serif,'Battambang';
 }
