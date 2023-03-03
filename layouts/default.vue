@@ -202,7 +202,7 @@ export default{
 <style>
 @font-face {
   font-family: KantumruyPro;
-  src: url('../assets/fonts/KantumruyPro-Italic-VariableFont_wght.ttf');
+  src: url('../assets/fonts/KantumruyPro-VariableFont_wght.ttf');
 }
 body {
   background-color: #fff;
@@ -226,7 +226,6 @@ body {
   margin-left:5px;
 }
 li a.nuxt-link-exact-active {
-    font-weight: bold;
     color: #FD7237 !important;
   }
   
