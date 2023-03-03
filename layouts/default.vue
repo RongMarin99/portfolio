@@ -84,7 +84,7 @@
 
       <!-- Start Footer -->
       <b-container fluid class="mt-5 " style="border-top:0.1px solid #ededed" 
-             :class="$colorMode.value=='dark'?'bg-secondary':''">
+             :class="$colorMode.value=='dark'?'bg-dark':''">
         <b-container class="p-4">
           <b-row>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
@@ -205,8 +205,11 @@ body {
   color: rgba(0, 0, 0, 0.8);
 }
 .dark-mode body {
-  background-color: #091a28;
+  background-color: #1a2130;;
   color: #ebf4f1;
+}
+.footer-dark{
+  background-color: #1a2130;
 }
 .sepia-mode body {
   background-color: #f1e7d0;
