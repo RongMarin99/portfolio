@@ -59,18 +59,23 @@
                <h5 class="pb-1" style="border-bottom: 3px solid #FD7237;width:fit-content;">
                 អត្ថបទទាក់ទង
                 </h5>
-                <b-row v-for="item in 10" :key="item">
-                    <b-col cols="3" xl="4" lg="2" md="3" xs="3">
-                        <figure>
-                            <img src="https://via.placeholder.com/250" alt="">
-                        </figure>
-                    </b-col>
-                    <b-col cols="9" xl="8" lg="10" md="9" xs="9" class="pl-0">
-                        <p>
-                            តារាល្បីៗ ជូនពរ​គ្រួសារ​តារាចម្រៀង ទេព បូព្រឹក្ស ទើបសម្រាល​កូន ជាមួយ​ពាក្យពេចន៍​ដ៏កក់ក្ដៅផ្សេងៗគ្នា
-                        </p>
-                    </b-col>
-                </b-row>
+                <div v-for="item in relate_content" :key="item" :class="$colorMode.value=='dark'?'text-white' : 'text-light-mode'">
+                     <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`" style="color:white" >
+                        <b-row >
+                              <b-col cols="3" xl="4" lg="2" md="3" xs="3">
+                                  <figure>
+                                      <img :src="getImage(item.image)" alt="">
+                                  </figure>
+                              </b-col>
+                              <b-col cols="9" xl="8" lg="10" md="9" xs="9" class="pl-0">
+                                  <p class="three-line">
+                                  {{ item.title }}
+                                  </p>
+                              </b-col>
+                      </b-row>
+                    </nuxt-link>
+                </div>
+                
             </b-col>
         </b-row>
     </b-container>
@@ -111,10 +116,12 @@ export default{
            url: null,
            id: null,
            type: null,
+           relate_content: []
         }
     },
     mounted() {
         this.findById()
+        this.get()
         this.getApp()
     },
     computed: {
@@ -136,7 +143,15 @@ export default{
                 this.detail.date = moment(this.detail.created_at, "YYYYMMDD").fromNow();
             })
         },
-
+        get(){
+            var input = {
+                id: this.id,
+                type: this.type
+            }
+            this.$axios.$post('relate/content',input).then(response => {
+                this.relate_content = response
+            })
+        },
         getApp(){
            this.url = this.$route.fullPath
         },
@@ -245,6 +260,9 @@ export default{
 			}
 			return numbers;
 		},
+        getImage(image) {
+            return 'https://etec-api.loveounnas.xyz/image_etec/' + image
+        },
     }
 }
 </script>
