@@ -28,8 +28,8 @@
                             <ShareNetwork
                                 network="facebook"
                                 :url="`https://effortless-froyo-c29932.netlify.app/Detail?id=5&type=2`"
-                                title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                                description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+                                :title="detail['title']"
+                                :description="detail['description']"
                                 quote="The hot reload is so fast it\'s near instant. - Evan You"
                                 hashtags="etec,center,etec-center"
                                 media="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0MgKIRz1r2jrOw0KuuOnlnkgR-KOlsagi1w&usqp=CAU"
@@ -88,25 +88,29 @@ export default{
     head(){
       return {
         meta:[
-          { hid: 'og-type', property: 'og:type', content: 'website' },
+          { hid: 'og-type', property: 'og:type', 
+            content: 'Etec Center' 
+          },
           {
                 hid: "og:title",
                 property: "og:title",
-                content: "My Amazing Blog on The Joy of Painting",
+                content: this.detail.title,
             },
             {
                 hid: "og:description",
                 property: "og:description",
-                content: "Articles focused on the beautiful art of landscape painting.",
+                content: this.detail.description,
             },
           { 
             hid: 'og-image', property: 'og:image',
             content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.detail.image
             //content: 'https://etec-api.loveounnas.xyz/image_etec/63f5bffa0399e5.40405733.png'
           },
-          { hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' },
+          { hid: 'og-url', property: 'og:url', 
+            content: this.url
+          },
           { property: "og:image:width", content: "740" },
-            { property: "og:image:height", content: "300" },
+          { property: "og:image:height", content: "300" },
         ]
       }
     },
