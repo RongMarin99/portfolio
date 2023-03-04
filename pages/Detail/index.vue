@@ -117,7 +117,7 @@ export default{
     data(){
         return {
            detail: {},
-           url: null,
+           url: process.env.BASE_URL + this.$route.fullPath,
            id: null,
            type: null,
            relate_content: []
@@ -126,7 +126,7 @@ export default{
     mounted() {
         this.findById()
         this.get()
-        this.getApp()
+        //this.getApp()
     },
     computed: {
         description: function(){
@@ -157,7 +157,7 @@ export default{
             })
         },
         getApp(){
-           this.url = this.$route.fullPath
+           this.url =  process.env.baseUrl + this.$route.fullPath
         },
 
         convertDateEnToKh(date) {
