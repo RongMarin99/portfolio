@@ -29,7 +29,7 @@
       <!-- End Slide -->
 
       <!-- Start Video -->
-      <b-container class="mt-5">
+      <!-- <b-container class="mt-5">
         <h2 align="center" 
           :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
         >
@@ -49,7 +49,7 @@
             </div>
           </div>
         </client-only>
-      </b-container>
+      </b-container> -->
       <!-- End Video -->
 
       <!-- Start Article -->
@@ -62,54 +62,41 @@
         </h2>
         <div class="mt-5">
           <b-tabs pills content-class="mt-3" align="center">
-            <!-- <b-tab :title="$t('all_category')" active>
-
-              <b-row  v-if="loading" class="mt-5" >
-                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
-                  <b-card no-body class="bg-white">
-                    <b-skeleton-img height="250px"></b-skeleton-img>
-                  </b-card>
-                </b-col>
-              </b-row>
-
-              <b-row v-else class="mt-5">
-                <b-col  cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in allCategory" :key="item" class="mb-4">
-                  <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
-                    <b-card >
-                      <figure class="position-relative">
-                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ item.type==1?$t('course'):item.type==2?$t('article'):$t('about_job') }}
-                        </b-badge>
-                        <img :src="getImage(item['image'])" alt="">
-                      </figure>
-                      <b-card-text>
-                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ dateFormat(item['created_at']) }}
-                          </span>
-                          <h6 class="two-line">
-                            {{ item['title'] }}
-                          </h6>
-                        </div>
-                      </b-card-text>
-                    </b-card>
-                  </nuxt-link>
-                </b-col>
-              </b-row>
-            </b-tab> -->
             <b-tab :title="$t('course')" active @click="get(key.course)">
-              <b-row  v-if="course_loading" class="mt-5" >
-                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
-                  <b-card no-body class="bg-white">
-                    <b-skeleton-img height="250px"></b-skeleton-img>
+              <b-row v-if="course_loading" class="mt-5" >
+                <b-col cols="12" style="margin-bottom:-3rem">
+                  <b-skeleton-img height="550px"></b-skeleton-img>
+                </b-col>
+                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
+                  <b-card no-body class="bg-white p-2">
+                    <b-skeleton animation="wave" width="90%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
+                    <b-skeleton-img height="200px"></b-skeleton-img>
+                    <b-skeleton animation="wave" class="mt-1" width="100%"></b-skeleton>
+                    <b-skeleton animation="wave" width="95%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
                   </b-card>
                 </b-col>
               </b-row>
 
               <b-row v-else class="mt-5">
-                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in courses" :key="item.index" class="mb-4">
+                <b-col cols="12" class="position-relative">
+                  <figure>
+                    <img src="https://via.placeholder.com/1000x500" alt="">
+                    <h3 class="main-content-title" >
+                      ក្រុមហ៊ុនធំមួយ​នៅប្រទេសឡាវ​បានប្ដេជ្ញាចំពោះភាគី​កម្ពុជា​ថា នឹងមកវិនិយោគបង្កើតផលិតផលទេសចរណ៍ ផ្សព្វផ្សាយពីទេសចរណ៍នៅកម្ពុជា ជំរុញការហោះហើរត្រង់បន្ថែមពីឡាវមកកម្ពុជា ពិសេសនៅតំបន់សមុទ្រកម្ពុជា ដើម្បីទាក់ទាញទេសចរឡាវ និងទេសចរចិនឱ្យមកទស្សនាកម្ពុជាកាន់តែច្រើនថែមទៀត។
+                    </h3>
+                  </figure>
+                </b-col>
+                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in courses" :key="item.index" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
-                    <b-card >
+                    <b-card no-body class="p-2" >
+                      <span class="mb-0 mt-0" style="font-size:13px">
+                            {{ dateFormat(item['created_at']) }}
+                      </span>
+                      <h6 class="three-line">
+                          {{ item['title'] }}
+                      </h6>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
@@ -118,11 +105,8 @@
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ dateFormat(item['created_at']) }}
-                          </span>
-                          <h6 class="two-line">
-                          {{ item['title'] }}
+                          <h6>
+                            {{ item['description'] }}
                           </h6>
                         </div>
                       </b-card-text>
@@ -133,18 +117,40 @@
 
             </b-tab>
             <b-tab :title="$t('article')" @click="get(key.article)">
-              <b-row  v-if="article_loading" class="mt-5" >
-                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
-                  <b-card no-body class="bg-white">
-                    <b-skeleton-img height="250px"></b-skeleton-img>
+              <b-row v-if="article_loading" class="mt-5" >
+                <b-col cols="12" style="margin-bottom:-3rem">
+                  <b-skeleton-img height="550px"></b-skeleton-img>
+                </b-col>
+                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
+                  <b-card no-body class="bg-white p-2">
+                    <b-skeleton animation="wave" width="90%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
+                    <b-skeleton-img height="200px"></b-skeleton-img>
+                    <b-skeleton animation="wave" class="mt-1" width="100%"></b-skeleton>
+                    <b-skeleton animation="wave" width="95%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
                   </b-card>
                 </b-col>
               </b-row>
              
               <b-row v-else class="mt-5">
-                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
+                <b-col cols="12" class="position-relative">
+                  <figure>
+                    <img src="https://via.placeholder.com/1000x500" alt="">
+                    <h3 class="main-content-title" >
+                      ក្រុមហ៊ុនធំមួយ​នៅប្រទេសឡាវ​បានប្ដេជ្ញាចំពោះភាគី​កម្ពុជា​ថា នឹងមកវិនិយោគបង្កើតផលិតផលទេសចរណ៍ ផ្សព្វផ្សាយពីទេសចរណ៍នៅកម្ពុជា ជំរុញការហោះហើរត្រង់បន្ថែមពីឡាវមកកម្ពុជា ពិសេសនៅតំបន់សមុទ្រកម្ពុជា ដើម្បីទាក់ទាញទេសចរឡាវ និងទេសចរចិនឱ្យមកទស្សនាកម្ពុជាកាន់តែច្រើនថែមទៀត។
+                    </h3>
+                  </figure>
+                </b-col>
+                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
-                    <b-card >
+                    <b-card no-body class="p-2" >
+                      <span class="mb-0 mt-0" style="font-size:13px">
+                            {{ dateFormat(item['created_at']) }}
+                      </span>
+                      <h6 class="three-line">
+                          {{ item['title'] }}
+                      </h6>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('article') }}
@@ -153,11 +159,8 @@
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ dateFormat(item['created_at']) }}
-                          </span>
-                          <h6 class="two-line">
-                          {{ item['title'] }}
+                          <h6>
+                            {{ item['description'] }}
                           </h6>
                         </div>
                       </b-card-text>
@@ -167,18 +170,42 @@
               </b-row>
             </b-tab>
             <b-tab :title="$t('job')" @click="get(key.job)">
-              <b-row  v-if="job_loading" class="mt-5" >
-                <b-col class="mb-4" cols="12" xl="3" lg="3" md="6" sm="6" v-for="i in 8" :key="i">
-                  <b-card no-body class="bg-white">
-                    <b-skeleton-img height="250px"></b-skeleton-img>
+              <b-row v-if="job_loading" class="mt-5" >
+                <b-col cols="12" style="margin-bottom:-3rem">
+                  <b-skeleton-img height="550px"></b-skeleton-img>
+                </b-col>
+                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
+                  <b-card no-body class="bg-white p-2">
+                    <b-skeleton animation="wave" width="90%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
+                    <b-skeleton-img height="200px"></b-skeleton-img>
+                    <b-skeleton animation="wave" class="mt-1" width="100%"></b-skeleton>
+                    <b-skeleton animation="wave" width="95%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
                   </b-card>
                 </b-col>
               </b-row>
              
-              <b-row class="mt-5">
-                <b-col cols="12" xl="3" lg="3" md="6" sm="6" v-for="item in job" :key="item.index" class="mb-4">
+              <b-row v-else class="mt-5">
+                <b-col cols="12" class="position-relative">
+                  <figure>
+                    <img src="https://via.placeholder.com/1000x500" alt="">
+                    <h3 class="main-content-title" >
+                      ក្រុមហ៊ុនធំមួយ​នៅប្រទេសឡាវ​បានប្ដេជ្ញាចំពោះភាគី​កម្ពុជា​ថា នឹងមកវិនិយោគបង្កើតផលិតផលទេសចរណ៍ ផ្សព្វផ្សាយពីទេសចរណ៍នៅកម្ពុជា ជំរុញការហោះហើរត្រង់បន្ថែមពីឡាវមកកម្ពុជា ពិសេសនៅតំបន់សមុទ្រកម្ពុជា ដើម្បីទាក់ទាញទេសចរឡាវ និងទេសចរចិនឱ្យមកទស្សនាកម្ពុជាកាន់តែច្រើនថែមទៀត។
+                    </h3>
+                  </figure>
+                </b-col>
+                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in job" :key="item.index" class="mb-4">
                   <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
-                    <b-card >
+                    <b-card no-body class="p-2" >
+                      <b-card-text>
+                        <span class="mb-0 mt-0" style="font-size:13px">
+                              {{ dateFormat(item['created_at']) }}
+                        </span>
+                        <h6 class="three-line">
+                            {{ item['title'] }}
+                        </h6>
+                      </b-card-text>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('about_job') }}
@@ -187,11 +214,8 @@
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ dateFormat(item['created_at']) }}
-                          </span>
-                          <h6 class="two-line">
-                          {{ item['title'] }}
+                          <h6>
+                            {{ item['description'] }}
                           </h6>
                         </div>
                       </b-card-text>
@@ -257,8 +281,8 @@
 </template>
 
 <script>
-import Swiper from 'swiper/swiper-bundle.min';
-import 'swiper/swiper-bundle.min.css';
+// import Swiper from 'swiper/swiper-bundle.min';
+// import 'swiper/swiper-bundle.min.css';
 import moment from 'moment';
 export default {
   colorMode: 'light',
@@ -298,42 +322,42 @@ export default {
     this.getFounder()
   },
    mounted() {
-     setTimeout(() => {
-       this.$nextTick();
-        new Swiper(this.$refs.swiper, {
-          slidesPerView: 3,
-          spaceBetween: 5,
-          // navigation: {
-          //   nextEl: '.swiper-button-next',
-          //   prevEl: '.swiper-button-prev',
-          // },
-          autoplay: {
-            delay: 10000,
-          },
-          breakpoints: {
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 20
-            },
-            // when window width is >= 480px
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 30
-            },
-            // when window width is >= 640px
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 40
-            },
-            900: {
-              slidesPerView: 3,
-              spaceBetween: 40
-            }
-          }
-        });
-    }, 2000);
-    this.getVideo()
+    //  setTimeout(() => {
+    //    this.$nextTick();
+    //     new Swiper(this.$refs.swiper, {
+    //       slidesPerView: 3,
+    //       spaceBetween: 5,
+    //       // navigation: {
+    //       //   nextEl: '.swiper-button-next',
+    //       //   prevEl: '.swiper-button-prev',
+    //       // },
+    //       autoplay: {
+    //         delay: 10000,
+    //       },
+    //       breakpoints: {
+    //         // when window width is >= 320px
+    //         320: {
+    //           slidesPerView: 1,
+    //           spaceBetween: 20
+    //         },
+    //         // when window width is >= 480px
+    //         480: {
+    //           slidesPerView: 1,
+    //           spaceBetween: 30
+    //         },
+    //         // when window width is >= 640px
+    //         640: {
+    //           slidesPerView: 2,
+    //           spaceBetween: 40
+    //         },
+    //         900: {
+    //           slidesPerView: 3,
+    //           spaceBetween: 40
+    //         }
+    //       }
+    //     });
+    // }, 2000);
+    // this.getVideo()
   },
   watch: {
   },
