@@ -45,7 +45,7 @@ export default {
   plugins: [
     {src: '~/plugins/flag.js',mode:'client'},
     {src: '~/plugins/share.js',mode:'client'},
-    {src: '~/plugins/main.js',mode:'client'}
+    {src: '~/plugins/main.client.js'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

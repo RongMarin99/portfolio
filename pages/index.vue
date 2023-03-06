@@ -95,7 +95,7 @@
                             {{ dateFormat(item['created_at']) }}
                       </span>
                       <h6 class="three-line">
-                          {{ item['title'] }}
+                          {{ getNameByLocalByLang(item['title']) }}
                       </h6>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
@@ -106,7 +106,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <h6>
-                            {{ item['description'] }}
+                            {{ getNameByLocalByLang(item['description']) }}
                           </h6>
                         </div>
                       </b-card-text>
@@ -203,7 +203,7 @@
                               {{ dateFormat(item['created_at']) }}
                         </span>
                         <h6 class="three-line">
-                            {{ item['title'] }}
+                            {{ getNameByLocalByLang(item['title']) }}
                         </h6>
                       </b-card-text>
                       <figure class="position-relative">
@@ -363,7 +363,23 @@ export default {
     },
     dateFormat(date){
       return moment(date).format('llll')
-    }
+    },
+    getNameByLocalByLang(name, local = 'latin_name') {
+				if (name != '') {
+					try {
+						name = JSON.parse(name)
+						if (this.$i18n.locale == 'en') {
+							return name.latin_name
+						} else {
+							return name.local_name
+						}
+					} catch (e) {
+						return name
+					}
+				} else {
+					return null
+				}
+		    },
   }
 }
 </script>
