@@ -137,16 +137,15 @@
     </div>
 </template>
 <script>
- import ogImage from '@/assets/image/logo.jpg';
 export default{
     colorMode: 'light',
-    head () {
-    return {
-      meta: [
-        { hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg') }
-      ]
-    }
-  },
+  //   head () {
+  //   return {
+  //     meta: [
+  //       { hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg') }
+  //     ]
+  //   }
+  // },
     data(){
         return {
           address: '',

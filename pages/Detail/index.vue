@@ -9,7 +9,7 @@
                         {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }}
                     </span>
                  </b-col>
-                 <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3 d-flex justify-content-end">
+                 <b-col v-if="share" cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3 d-flex justify-content-end">
                     <div class="float-right rounded px-2 py-1 ml-1"  style="font-size:12px; background-color:#1DA0F3">
                         <ShareNetwork
                             network="telegram"
@@ -27,7 +27,7 @@
                     <div class="float-right bg-primary rounded px-2 py-1 ml-1"  style="font-size:12px">
                             <ShareNetwork
                                 network="facebook"
-                                :url="`https://effortless-froyo-c29932.netlify.app/Detail?id=5&type=2`"
+                                :url="`https://etec-center1.netlify.app/${url}`"
                                 :title="detail['title']"
                                 :description="detail['description']"
                                 quote="The hot reload is so fast it\'s near instant. - Evan You"
@@ -85,45 +85,45 @@ import moment from 'moment'
 export default{
     colorMode: 'light',
     name: "Detail",
-    head(){
-      return {
-        meta:[
-          { hid: 'og-type', property: 'og:type', 
-            content: 'Etec Center' 
-          },
-          {
-                hid: "og:title",
-                property: "og:title",
-                content: this.detail.title,
-            },
-            {
-                hid: "og:description",
-                property: "og:description",
-                content: this.detail.description,
-            },
-          { 
-            hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.detail.image
-            //content: 'https://etec-api.loveounnas.xyz/image_etec/63f5bffa0399e5.40405733.png'
-          },
-          { hid: 'og-url', property: 'og:url', 
-            content: this.url
-          },
-          { property: "og:image:width", content: "740" },
-          { property: "og:image:height", content: "300" },
-        ]
-      }
-    },
+    // head(){
+    //   return {
+    //     meta:[
+    //       { hid: 'og-type', property: 'og:type', 
+    //         content: 'Etec Center' 
+    //       },
+    //       {
+    //             hid: "og:title",
+    //             property: "og:title",
+    //             content: this.detail.title,
+    //         },
+    //         {
+    //             hid: "og:description",
+    //             property: "og:description",
+    //             content: this.detail.description,
+    //         },
+    //       { 
+    //         hid: 'og-image', property: 'og:image',
+    //         content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.detail.image
+    //         //content: 'https://etec-api.loveounnas.xyz/image_etec/63f5bffa0399e5.40405733.png'
+    //       },
+    //       { hid: 'og-url', property: 'og:url', 
+    //         content: this.url
+    //       },
+    //       { property: "og:image:width", content: "740" },
+    //       { property: "og:image:height", content: "300" },
+    //     ]
+    //   }
+    // },
     data(){
         return {
            detail: {},
-           url: process.env.BASE_URL + this.$route.fullPath,
+           url: this.$route.fullPath,
            id: null,
            type: null,
-           relate_content: []
+           relate_content: [],
         }
     },
-    mounted() {
+    created() {
         this.findById()
         this.get()
         //this.getApp()
@@ -142,7 +142,6 @@ export default{
                 type: this.type
             }
             this.$axios.$post('detail',input).then(response => {
-                console.log(100,response);
                 this.detail = response
                 this.detail.date = moment(this.detail.created_at, "YYYYMMDD").fromNow();
             })
