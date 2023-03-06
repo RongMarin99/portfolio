@@ -321,44 +321,6 @@ export default {
     this.get()
     this.getFounder()
   },
-   mounted() {
-    //  setTimeout(() => {
-    //    this.$nextTick();
-    //     new Swiper(this.$refs.swiper, {
-    //       slidesPerView: 3,
-    //       spaceBetween: 5,
-    //       // navigation: {
-    //       //   nextEl: '.swiper-button-next',
-    //       //   prevEl: '.swiper-button-prev',
-    //       // },
-    //       autoplay: {
-    //         delay: 10000,
-    //       },
-    //       breakpoints: {
-    //         // when window width is >= 320px
-    //         320: {
-    //           slidesPerView: 1,
-    //           spaceBetween: 20
-    //         },
-    //         // when window width is >= 480px
-    //         480: {
-    //           slidesPerView: 1,
-    //           spaceBetween: 30
-    //         },
-    //         // when window width is >= 640px
-    //         640: {
-    //           slidesPerView: 2,
-    //           spaceBetween: 40
-    //         },
-    //         900: {
-    //           slidesPerView: 3,
-    //           spaceBetween: 40
-    //         }
-    //       }
-    //     });
-    // }, 2000);
-    // this.getVideo()
-  },
   watch: {
   },
   methods: {
@@ -389,11 +351,6 @@ export default {
     async getSlide(){
       await this.$axios.$post('slide/lists').then(response => {
         this.slide = response.data.data
-      })
-    },
-    async getVideo(){
-      await this.$axios.$get('getAllVideo').then(response => {
-        this.allVideos = response.data
       })
     },
     async getFounder(){
