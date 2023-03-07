@@ -12,5 +12,6 @@ export default{
     follow: 'Follow',
     contact: 'Contact',
     address: 'Address',
-    about_us: 'About Us'
+    about_us: 'About Us',
+    read_more: 'Read More'
 }

@@ -80,12 +80,30 @@
               </b-row>
 
               <b-row v-else class="mt-5">
-                <b-col cols="12" class="position-relative">
-                  <figure>
-                    <img src="https://via.placeholder.com/1000x500" alt="">
-                    <h3 class="main-content-title" >
-                      ក្រុមហ៊ុនធំមួយ​នៅប្រទេសឡាវ​បានប្ដេជ្ញាចំពោះភាគី​កម្ពុជា​ថា នឹងមកវិនិយោគបង្កើតផលិតផលទេសចរណ៍ ផ្សព្វផ្សាយពីទេសចរណ៍នៅកម្ពុជា ជំរុញការហោះហើរត្រង់បន្ថែមពីឡាវមកកម្ពុជា ពិសេសនៅតំបន់សមុទ្រកម្ពុជា ដើម្បីទាក់ទាញទេសចរឡាវ និងទេសចរចិនឱ្យមកទស្សនាកម្ពុជាកាន់តែច្រើនថែមទៀត។
-                    </h3>
+                <b-col cols="12" class="position-relative " >
+                  <figure >
+                    <div
+                    class="defualt-show w-100"
+                     style="height:500px"
+                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${getImage(default_course['image'])}');`">
+                        <div class="main-content-title">
+                            <p class="text-white">
+                              {{ dateFormat(default_course['created_at']) }}
+                            </p>
+                            <nuxt-link :to="`/Detail?id=${default_course['id']}&type=${default_course['type']}&default=1`">
+                              <h3 class="text-white bg-image-default" >
+                                    {{ getNameByLocalByLang(default_course['title']) }}
+                              </h3> 
+                            </nuxt-link>
+                            <div class="button">
+                              <nuxt-link 
+                              :to="`/Detail?id=${default_course['id']}&type=${default_course['type']}&default=1`"
+                              >
+                                {{ $t('read_more') }}
+                              </nuxt-link>
+                            </div>
+                        </div>
+                  </div>
                   </figure>
                 </b-col>
                 <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in courses" :key="item.index" class="mb-4">
@@ -134,12 +152,28 @@
               </b-row>
              
               <b-row v-else class="mt-5">
-                <b-col cols="12" class="position-relative">
-                  <figure>
-                    <img src="https://via.placeholder.com/1000x500" alt="">
-                    <h3 class="main-content-title" >
-                      ក្រុមហ៊ុនធំមួយ​នៅប្រទេសឡាវ​បានប្ដេជ្ញាចំពោះភាគី​កម្ពុជា​ថា នឹងមកវិនិយោគបង្កើតផលិតផលទេសចរណ៍ ផ្សព្វផ្សាយពីទេសចរណ៍នៅកម្ពុជា ជំរុញការហោះហើរត្រង់បន្ថែមពីឡាវមកកម្ពុជា ពិសេសនៅតំបន់សមុទ្រកម្ពុជា ដើម្បីទាក់ទាញទេសចរឡាវ និងទេសចរចិនឱ្យមកទស្សនាកម្ពុជាកាន់តែច្រើនថែមទៀត។
-                    </h3>
+                <b-col cols="12" class="position-relative " >
+                  <figure >
+                    <div
+                     style="height:500px"
+                     class="defualt-show w-100"
+                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${getImage(default_article['image'])}');`">
+                        <div class="main-content-title">
+                            <p class="text-white">
+                              {{ dateFormat(default_article['created_at']) }}
+                            </p>
+                            <nuxt-link :to="`/Detail?id=${default_article['id']}&type=${default_article['type']}&default=1`">
+                              <h3 class="text-white bg-image-default" >
+                                    {{ getNameByLocalByLang(default_article['title']) }}
+                              </h3> 
+                            </nuxt-link>
+                            <div class="button">
+                              <nuxt-link :to="`/Detail?id=${default_article['id']}&type=${default_article['type']}&default=1`">
+                                {{ $t('read_more') }}
+                              </nuxt-link>
+                            </div>
+                        </div>
+                  </div>
                   </figure>
                 </b-col>
                 <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
@@ -187,12 +221,28 @@
               </b-row>
              
               <b-row v-else class="mt-5">
-                <b-col cols="12" class="position-relative">
-                  <figure>
-                    <img src="https://via.placeholder.com/1000x500" alt="">
-                    <h3 class="main-content-title" >
-                      ក្រុមហ៊ុនធំមួយ​នៅប្រទេសឡាវ​បានប្ដេជ្ញាចំពោះភាគី​កម្ពុជា​ថា នឹងមកវិនិយោគបង្កើតផលិតផលទេសចរណ៍ ផ្សព្វផ្សាយពីទេសចរណ៍នៅកម្ពុជា ជំរុញការហោះហើរត្រង់បន្ថែមពីឡាវមកកម្ពុជា ពិសេសនៅតំបន់សមុទ្រកម្ពុជា ដើម្បីទាក់ទាញទេសចរឡាវ និងទេសចរចិនឱ្យមកទស្សនាកម្ពុជាកាន់តែច្រើនថែមទៀត។
-                    </h3>
+                <b-col cols="12" class="position-relative " >
+                  <figure >
+                    <div
+                     style="height:500px"
+                     class="defualt-show w-100"
+                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${getImage(default_job['image'])}');`">
+                        <div class="main-content-title">
+                            <p class="text-white">
+                              {{ dateFormat(default_job['created_at']) }}
+                            </p>
+                            <nuxt-link :to="`/Detail?id=${default_job['id']}&type=${default_job['type']}&default=1`">
+                              <h3 class="text-white bg-image-default" >
+                                    {{ getNameByLocalByLang(default_job['title']) }}
+                              </h3> 
+                            </nuxt-link>
+                            <div class="button">
+                              <nuxt-link :to="`/Detail?id=${default_job['id']}&type=${default_job['type']}&default=1`">
+                                {{ $t('read_more') }}
+                              </nuxt-link>
+                            </div>
+                        </div>
+                  </div>
                   </figure>
                 </b-col>
                 <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in job" :key="item.index" class="mb-4">
@@ -306,6 +356,9 @@ export default {
       news: [],
       courses: [],
       job: [],
+      default_course: '',
+      default_article: '',
+      default_job: '',
       key: {
         course: 'course',
         article: 'article',
@@ -327,13 +380,20 @@ export default {
     async get(key='course'){
       if(key==this.key.course){
         if(this.course_loading){
+          await this.$axios.$get('setting/course').then(response => {
+            this.default_course = response
+          })
           await this.$axios.$get('getAllCourse').then(response => {
             this.courses = response.data
             this.course_loading = false
           })
         }
+        
       }else if(key==this.key.article){
         if(this.article_loading){
+            await this.$axios.$get('setting/article').then(response => {
+              this.default_article = response
+            })
            await this.$axios.$get('getAllNews').then(response => {
             this.news = response.data
             this.article_loading = false
@@ -341,6 +401,9 @@ export default {
         }
       }else if(key==this.key.job){
         if(this.job_loading){
+          await this.$axios.$get('setting/job').then(response => {
+              this.default_job = response
+          })
           await this.$axios.$post('job/lists').then(response => {
             this.job = response.data.data
             this.job_loading = false

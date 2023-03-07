@@ -137,9 +137,11 @@ export default{
         findById(){
             this.id = this.$route.query.id
             this.type = this.$route.query.type
+            this.default = this.$route.query.default ?? null
             var input = {
                 id: this.id,
-                type: this.type
+                type: this.type,
+                default: this.default
             }
             this.$axios.$post('detail',input).then(response => {
                 this.detail = response

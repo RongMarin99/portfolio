@@ -12,5 +12,6 @@ export default{
     follow: 'តាមដានយើង',
     contact: 'ទំនាក់ទំនងយើង',
     address: 'អាសយដ្ឋាន',
-    about_us: 'អំពីយើង'
+    about_us: 'អំពីយើង',
+    read_more: 'បន្តការអាន'
 }
