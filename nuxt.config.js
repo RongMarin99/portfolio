@@ -81,7 +81,7 @@ export default {
 						iso: 'kh'
 					}
 				],
-				lazy: true,
+				//lazy: true,
 				defaultLocale: 'kh',
 				langDir: 'lang/'
 				// vueI18nLoader: true

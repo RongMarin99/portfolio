@@ -66,7 +66,7 @@ export default {
     generateURLs(event) {
       if (event.target.checkValidity()) {
         this.success = true;
-        this.facebookURL =  'http://www.facebook.com/sharer/sharer.php?u=' + this.encodedURL + '&title=' + this.encodedText;
+        this.facebookURL =  'https://www.facebook.com/dialog/feed?app_id=1389892087910588%20&redirect_uri=https://etec-center1.netlify.app&link=https://etec-center1.netlify.app&picture=http://placekitten.com/500/500%20&caption=This%20is%20the%20caption%20&description=This%20is%20the%20description'
         this.twitterURL =  'https://twitter.com/intent/tweet?text=' + this.encodedText + '&url=' + this.encodedURL;
         this.linkedinURL = 'http://www.linkedin.com/shareArticle?mini=true&url=' + this.encodedURL + '&title=' + this.encodedText;
       }

@@ -200,13 +200,13 @@ export default{
 </script>
 <style>
 @font-face {
-  font-family: KantumruyPro;
+  font-family: Hanuman;
   src: url('../assets/fonts/KantumruyPro-VariableFont_wght.ttf');
 }
 body {
   background-color: #fff;
   color: rgba(0, 0, 0, 0.8);
-  font-family: KantumruyPro !important;
+  font-family: Hanuman !important;
 }
 .dark-mode body {
   background-color: #091a28 ;

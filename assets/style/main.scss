@@ -257,3 +257,21 @@ body {
   bottom: 10%;
   text-shadow: 0px 0px 10px 0px black;
 }
+.card {
+  .badge {
+    z-index: 99;
+  }
+  img{
+    transition: all 0.5s;
+  }
+  figure{
+    overflow: hidden;
+  }
+  border-radius: 0px !important;
+    h6{
+    color: #181818;
+  }
+  &:hover img{
+   transform:rotate(1deg) scale(1.05) ;
+  }
+}

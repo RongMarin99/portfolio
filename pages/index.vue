@@ -149,7 +149,7 @@
                             {{ dateFormat(item['created_at']) }}
                       </span>
                       <h6 class="three-line">
-                          {{ item['title'] }}
+                          {{ getNameByLocalByLang(item['title']) }}
                       </h6>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
@@ -160,7 +160,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <h6>
-                            {{ item['description'] }}
+                            {{ getNameByLocalByLang(item['description']) }}
                           </h6>
                         </div>
                       </b-card-text>
@@ -215,7 +215,7 @@
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <h6>
-                            {{ item['description'] }}
+                            {{ getNameByLocalByLang(item['description']) }}
                           </h6>
                         </div>
                       </b-card-text>

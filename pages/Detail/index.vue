@@ -2,7 +2,7 @@
     <b-container class="main-slide" >
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
-               <h3>{{ detail['title'] }}​</h3>
+               <h3>{{ getNameByLocalByLang(detail['title']) }}​</h3>
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
@@ -69,7 +69,7 @@
                               </b-col>
                               <b-col cols="9" xl="8" lg="10" md="9" xs="9" class="pl-0">
                                   <p class="three-line">
-                                  {{ item.title }}
+                                  {{ getNameByLocalByLang(item.title) }}
                                   </p>
                               </b-col>
                       </b-row>
@@ -266,6 +266,22 @@ export default{
         getImage(image) {
             return 'https://etec-api.loveounnas.xyz/image_etec/' + image
         },
+        getNameByLocalByLang(name, local = 'latin_name') {
+				if (name != '') {
+					try {
+						name = JSON.parse(name)
+						if (this.$i18n.locale == 'en') {
+							return name.latin_name
+						} else {
+							return name.local_name
+						}
+					} catch (e) {
+						return name
+					}
+				} else {
+					return null
+				}
+		},
     }
 }
 </script>
