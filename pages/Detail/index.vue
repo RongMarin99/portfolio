@@ -4,7 +4,7 @@
             data-href="https://etec-center1.netlify.app/Detail?id=24&type=1" 
             data-layout="button_count">
         </div> -->
-        <a class="scmFacebook" href='http://www.facebook.com/sharer.php?s=100&amp;p[title]=Welcome&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=https://etec-center1.netlify.app/&amp;&p[images][0]=https://scontent.fpnh16-1.fna.fbcdn.net/v/t39.30808-6/333309514_219764437094188_5466940893098615208_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHPwBDei8EcfWcKLSN9KOzqIJTfQmBKzrAglN9CYErOsNRQtIMbjmAgTh5WthdU05a0VDShfp8fi76RsZOrBH2G&_nc_ohc=DlKYRjkVOeQAX-lKEVH&_nc_ht=scontent.fpnh16-1.fna&oh=00_AfBekKXpIDNN-T6Ile5SevDIquFIkuMUnvp5YTH0XheI1g&oe=640F16EF'>Facebook</a>
+        <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=24&type=1">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(detail.title) }}​</h3>
@@ -52,12 +52,14 @@
                 </div>
             </b-col>
         </b-row>
-        {{ detail }}
     </b-container>
 </template>
 <script>
 import moment from 'moment'
 export default{
+    metaInfo: {
+        title: 'Hello World 2!'
+    },
     // async asyncData({$axios , query, app }  ){
     //     console.log(200,app);
     //      var input = {
