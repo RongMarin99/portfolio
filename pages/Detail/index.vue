@@ -1,7 +1,7 @@
 <template>
     <b-container class="main-slide" >
         <div class="fb-share-button" 
-            data-href="https://etec-center1.netlify.app/Detail?id=22&type=1" 
+            data-href="https://etec-center1.netlify.app/Detail?id=24&type=1" 
             data-layout="button_count">
         </div>
         <b-row>
@@ -56,15 +56,15 @@
 <script>
 import moment from 'moment'
 export default{
-    async asyncData({$axios , query }  ){
-         var input = {
-                id: query.id,
-                type: query.type,
-                default: query.default
-        }
-         const detail = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
-         return {detail}
-      },
+    // async asyncData({$axios , query }  ){
+    //      var input = {
+    //             id: query.id,
+    //             type: query.type,
+    //             default: query.default
+    //     }
+    //      const detail = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+    //      return {detail}
+    //   },
     colorMode: 'light',
     name: "Detail",
     head(){
@@ -85,7 +85,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.detail.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.$route.query.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -97,6 +97,7 @@ export default{
     },
     data(){
         return {
+            detail: '',
            url: this.$route.fullPath,
            id: null,
            type: null,
@@ -105,7 +106,7 @@ export default{
         }
     },
     created() {
-      //  this.findById()
+        this.findById()
      //   this.get()
     },
     mounted(){
