@@ -77,7 +77,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/64022aef8e0389.03972207.png'
+            content: this.detail.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
