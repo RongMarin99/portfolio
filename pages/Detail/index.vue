@@ -4,6 +4,7 @@
             data-href="https://etec-center1.netlify.app/Detail?id=22&type=1" 
             data-layout="button_count">
         </div>
+        <a href="https://www.facebook.com/sharer.php?u=link">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(detail['title']) }}​</h3>
@@ -60,6 +61,7 @@ export default{
     colorMode: 'light',
     name: "Detail",
     head(){
+        console.log(100,this.$route.query.image);
       return {
         meta:[
           { hid: 'og-type', property: 'og:type', 
@@ -77,7 +79,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.$route.query.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
