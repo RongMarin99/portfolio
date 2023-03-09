@@ -77,7 +77,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: this.detail.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -94,6 +94,7 @@ export default{
            id: null,
            type: null,
            relate_content: [],
+           image: ''
         }
     },
     created() {
@@ -129,6 +130,7 @@ export default{
             this.$axios.$post('detail',input).then(response => {
                 this.detail = response
                 this.detail.date = moment(this.detail.created_at, "YYYYMMDD").fromNow();
+                this.image = this.detail.image
             })
         },
         get(){
