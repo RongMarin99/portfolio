@@ -6,11 +6,11 @@
         </div>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
-               <h3>{{ getNameByLocalByLang(detail['title']) }}​</h3>
+               <h3>{{ getNameByLocalByLang(detail.title) }}​</h3>
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
-                        {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }}
+                        {{ convertDateEnToKh(detail.created_at).day }}, {{ convertDateEnToKh(detail.created_at).month }} {{ convertDateEnToKh(detail.created_at).year }}
                     </span>
                  </b-col>
           
@@ -18,7 +18,7 @@
                <hr>
                <b-row>
                 <b-col cols="12" class="content-detail">
-                    <div v-html="description"></div>
+                    <div v-html="detail.text"></div>
                     
                     <!-- <p>ក្នុងប្រវត្តិសាស្រ្តពិភពលោក​រាប់ពាន់​ឆ្នាំមកនេះ មាន​ការលេចឡើង​ចក្រភពជាច្រើន។ ខាងក្រោមនេះ​គឺ​ជាចក្រភពធំៗទាំង១០០ ដោយ​ក្នុងនោះ​នៅតំបន់អាស៊ីអាគ្នេយ៍​ក៏មាន ៤ចក្រភពផងដែរ រួមមាន​ចក្រភពខ្មែរ (Khmer Empire), ភូមា (Taungoo Empire), Srivijaya Empire និង Majaphit Empire ដែល​ចក្រភពទាំងពីរជាផ្នែកមួយ​នៃឥណ្ឌូណេស៊ី និងម៉ាឡេស៊ី​​បច្ចុប្បន្ន។ អតីតចក្រភព​ធំជាងគេ គឺអង់គ្លេស បន្ទាប់មក ម៉ុងហ្គោល និង​រុស្ស៊ី។</p>
                     <figure>
@@ -49,7 +49,6 @@
                       </b-row>
                     </nuxt-link>
                 </div>
-                
             </b-col>
         </b-row>
     </b-container>
@@ -57,6 +56,15 @@
 <script>
 import moment from 'moment'
 export default{
+    async asyncData({$axios , query }  ){
+         var input = {
+                id: query.id,
+                type: query.type,
+                default: query.default
+        }
+         const detail = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+         return {detail}
+      },
     colorMode: 'light',
     name: "Detail",
     head(){
@@ -68,16 +76,16 @@ export default{
           {
                 hid: "og:title",
                 property: "og:title",
-                content: this.detail.title,
+                content: detail.title,
             },
             {
                 hid: "og:description",
                 property: "og:description",
-                content: "description",
+                content: detail.description,
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+detail.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -89,7 +97,6 @@ export default{
     },
     data(){
         return {
-           detail: {},
            url: this.$route.fullPath,
            id: null,
            type: null,
@@ -98,14 +105,8 @@ export default{
         }
     },
     created() {
-        this.findById()
-        this.get()
-        //this.getApp()
-    },
-    computed: {
-        description: function(){
-            return this.detail.text
-        }
+      //  this.findById()
+     //   this.get()
     },
     mounted(){
         (function(d, s, id) {
