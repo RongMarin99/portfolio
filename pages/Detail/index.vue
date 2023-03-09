@@ -1,8 +1,9 @@
 <template>
     <b-container class="main-slide" >
-        <a href="http://www.facebook.com/sharer.php?s=100&p[url]=http://etec.loveounnas.xyz/&p[images][0]=https://etec-api.loveounnas.xyz/image_etec/64022aef8e0389.03972207.png&p[title]=mytitle&p[summary]=containsummary" target="_blank" rel="noopener noreferrer">
-            share
-          </a>
+        <div class="fb-share-button" 
+            data-href="https://etec-center1.netlify.app/Detail?id=22&type=1" 
+            data-layout="button_count">
+        </div>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(detail['title']) }}​</h3>
@@ -12,37 +13,7 @@
                         {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }}
                     </span>
                  </b-col>
-                 <b-col v-if="share" cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3 d-flex justify-content-end">
-                    <div class="float-right rounded px-2 py-1 ml-1"  style="font-size:12px; background-color:#1DA0F3">
-                        <ShareNetwork
-                            network="telegram"
-                            url="http://rongmarin.hyperphp.com"
-                            title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                            description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                            quote="The hot reload is so fast it\'s near instant. - Evan You"
-                            hashtags="vuejs,vite"
-                        >
-                        <div class="text-white d-flex">
-                            <i class="material-icons" style="font-size:17px">send</i>&nbsp; Telegram
-                            </div> 
-                        </ShareNetwork>
-                    </div>  
-                    <div class="float-right bg-primary rounded px-2 py-1 ml-1"  style="font-size:12px">
-                            <ShareNetwork
-                                network="facebook"
-                                :url="`https://etec-center1.netlify.app/${url}`"
-                                :title="detail['title']"
-                                :description="detail['description']"
-                                quote="The hot reload is so fast it\'s near instant. - Evan You"
-                                hashtags="etec,center,etec-center"
-                                media="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0MgKIRz1r2jrOw0KuuOnlnkgR-KOlsagi1w&usqp=CAU"
-                            >
-                            <div class="text-white d-flex">
-                                <i class="material-icons" style="font-size:17px">share</i>&nbsp; Facebook
-                                </div> 
-                            </ShareNetwork>
-                    </div>
-                 </b-col>
+          
                </b-row>
                <hr>
                <b-row>
@@ -88,35 +59,34 @@ import moment from 'moment'
 export default{
     colorMode: 'light',
     name: "Detail",
-    // head(){
-    //   return {
-    //     meta:[
-    //       { hid: 'og-type', property: 'og:type', 
-    //         content: 'Etec Center' 
-    //       },
-    //       {
-    //             hid: "og:title",
-    //             property: "og:title",
-    //             content: this.detail.title,
-    //         },
-    //         {
-    //             hid: "og:description",
-    //             property: "og:description",
-    //             content: this.detail.description,
-    //         },
-    //       { 
-    //         hid: 'og-image', property: 'og:image',
-    //         content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.detail.image
-    //         //content: 'https://etec-api.loveounnas.xyz/image_etec/63f5bffa0399e5.40405733.png'
-    //       },
-    //       { hid: 'og-url', property: 'og:url', 
-    //         content: this.url
-    //       },
-    //       { property: "og:image:width", content: "740" },
-    //       { property: "og:image:height", content: "300" },
-    //     ]
-    //   }
-    // },
+    head(){
+      return {
+        meta:[
+          { hid: 'og-type', property: 'og:type', 
+            content: 'Etec Center' 
+          },
+          {
+                hid: "og:title",
+                property: "og:title",
+                content: this.detail.title,
+            },
+            {
+                hid: "og:description",
+                property: "og:description",
+                content: "description",
+            },
+          { 
+            hid: 'og-image', property: 'og:image',
+            content: 'https://etec-api.loveounnas.xyz/image_etec/64022aef8e0389.03972207.png'
+          },
+          { hid: 'og-url', property: 'og:url', 
+            content: this.url
+          },
+          { property: "og:image:width", content: "740" },
+          { property: "og:image:height", content: "300" },
+        ]
+      }
+    },
     data(){
         return {
            detail: {},
@@ -135,6 +105,16 @@ export default{
         description: function(){
             return this.detail.text
         }
+    },
+    mounted(){
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+            }
+        (document, 'script', 'facebook-jssdk'))
     },
     methods: {
         findById(){
