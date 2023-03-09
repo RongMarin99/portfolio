@@ -58,16 +58,15 @@
 import moment from 'moment'
 export default{
     async asyncData({$axios , query, app }  ){
-        
         console.log(200,app);
          var input = {
                 id: query.id,
                 type: query.type,
                 default: query.default
         }
-         const detail = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+         const getData = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
          app.head.title = query.title
-         return {detail}
+         return {getData}
       },
     // asyncData(context) {
     //     var input = {
@@ -115,6 +114,7 @@ export default{
    
     data(){
         return {
+            detail: '',
            url: this.$route.fullPath,
            id: null,
            type: null,
@@ -123,7 +123,7 @@ export default{
         }
     },
     created() {
-      //  this.findById()
+        this.findById()
      //   this.get()
     },
     mounted(){
