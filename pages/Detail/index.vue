@@ -61,8 +61,8 @@ export default{
     colorMode: 'light',
     name: "Detail",
     head(){
-        console.log(100,this.$route.query.image);
-      return {
+      setTimeout(() => {
+        return {
         meta:[
           { hid: 'og-type', property: 'og:type', 
             content: 'Etec Center' 
@@ -88,6 +88,8 @@ export default{
           { property: "og:image:height", content: "300" },
         ]
       }
+      }, 2000);
+      
     },
     data(){
         return {
