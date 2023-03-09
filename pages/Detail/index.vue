@@ -6,11 +6,11 @@
         </div>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
-               <h3>{{ getNameByLocalByLang(detail.title) }}​</h3>
+               <!-- <h3>{{ getNameByLocalByLang(detail.title) }}​</h3> -->
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
-                        {{ convertDateEnToKh(detail.created_at).day }}, {{ convertDateEnToKh(detail.created_at).month }} {{ convertDateEnToKh(detail.created_at).year }}
+                        <!-- {{ convertDateEnToKh(detail.created_at).day }}, {{ convertDateEnToKh(detail.created_at).month }} {{ convertDateEnToKh(detail.created_at).year }} -->
                     </span>
                  </b-col>
           
@@ -18,7 +18,7 @@
                <hr>
                <b-row>
                 <b-col cols="12" class="content-detail">
-                    <div v-html="detail.text"></div>
+                    <!-- <div v-html="detail.text"></div> -->
                     
                     <!-- <p>ក្នុងប្រវត្តិសាស្រ្តពិភពលោក​រាប់ពាន់​ឆ្នាំមកនេះ មាន​ការលេចឡើង​ចក្រភពជាច្រើន។ ខាងក្រោមនេះ​គឺ​ជាចក្រភពធំៗទាំង១០០ ដោយ​ក្នុងនោះ​នៅតំបន់អាស៊ីអាគ្នេយ៍​ក៏មាន ៤ចក្រភពផងដែរ រួមមាន​ចក្រភពខ្មែរ (Khmer Empire), ភូមា (Taungoo Empire), Srivijaya Empire និង Majaphit Empire ដែល​ចក្រភពទាំងពីរជាផ្នែកមួយ​នៃឥណ្ឌូណេស៊ី និងម៉ាឡេស៊ី​​បច្ចុប្បន្ន។ អតីតចក្រភព​ធំជាងគេ គឺអង់គ្លេស បន្ទាប់មក ម៉ុងហ្គោល និង​រុស្ស៊ី។</p>
                     <figure>
@@ -51,20 +51,35 @@
                 </div>
             </b-col>
         </b-row>
+        {{ detail }}
     </b-container>
 </template>
 <script>
 import moment from 'moment'
 export default{
-    async asyncData({$axios , query }  ){
+    async asyncData({$axios , query, app }  ){
+        
+        console.log(200,app);
          var input = {
                 id: query.id,
                 type: query.type,
                 default: query.default
         }
          const detail = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+         app.head.title = query.title
          return {detail}
       },
+    // asyncData(context) {
+    //     var input = {
+    //             id: context.route.query.id,
+    //             type: context.route.query.type,
+    //             default: context.route.query.default
+    //     }
+    //     const detail =  context.$axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+    //     console.log(100,detail);
+    //     return {detail}
+    //     context.app.head.title = "hello guy"
+    // },
     colorMode: 'light',
     name: "Detail",
     // head(){
@@ -97,12 +112,9 @@ export default{
     //     }
     //   }
     // },
-    head () {
-        return this.getPostMeta()
-    },
+   
     data(){
         return {
-            detail: '',
            url: this.$route.fullPath,
            id: null,
            type: null,
@@ -125,27 +137,6 @@ export default{
         (document, 'script', 'facebook-jssdk'))
     },
     methods: {
-        getPostMeta: async function () {
-            let promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const result = {
-                title: 'Promise Title Test',
-                meta: [
-                    { charset: 'utf-8' },
-                    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-                    { name: 'keywords', content: 'keyword 1, keyword 2'},
-                    { hid: 'description', name: 'description', content: 'PROMISE. This is the generic promise descr.'}
-                ]
-                }
-                resolve(result)
-            }, 1000)
-            })
-
-            let result = await promise
-            console.log('result: ', result)
-
-            return result
-        },
         findById(){
             this.id = this.$route.query.id
             this.type = this.$route.query.type
