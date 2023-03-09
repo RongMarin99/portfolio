@@ -1,5 +1,8 @@
 <template>
     <b-container class="main-slide" >
+        <a href="http://www.facebook.com/sharer.php?s=100&p[url]=http://etec.loveounnas.xyz/&p[images][0]=https://etec-api.loveounnas.xyz/image_etec/64022aef8e0389.03972207.png&p[title]=mytitle&p[summary]=containsummary" target="_blank" rel="noopener noreferrer">
+            share
+          </a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(detail['title']) }}​</h3>

@@ -303,6 +303,9 @@
               <p>
                 {{ founder.description }}
               </p>
+              <div id="wrapper">
+                <a class="fb-share" href="#">Share This</a> 
+              </div>
               <hr class="mt-5">
               <b-row>
                 <b-col cols="6">
@@ -325,6 +328,7 @@
         </div>
       </b-container>
       <!-- End Founder -->
+
 
     
   </div>
@@ -373,6 +377,34 @@ export default {
     this.getSlide()
     this.get()
     this.getFounder()
+  },
+  mounted(){
+    // window.fbAsyncInit = function() {
+    //     FB.init({
+    //       appId      : '145634995501895',
+    //       status           : true,
+    //       cookie           : true,
+    //       version    : 'v2.1'
+    //     });
+    //   };
+
+    //   (function(d, s, id){
+    //       var js, fjs = d.getElementsByTagName(s)[0];
+    //       if (d.getElementById(id)) {return;}
+    //       js = d.createElement(s); js.id = id;
+    //       js.src = "//connect.facebook.net/en_US/sdk.js";
+    //       fjs.parentNode.insertBefore(js, fjs);
+    //   }(document, 'script', 'facebook-jssdk'));
+
+    //    document.querySelector('.fb-share').onclick = function(){
+    //     FB.ui({
+    //       method: 'feed',
+    //       link: 'https://developers.facebook.com/docs/'
+    //     }, function(response){});
+              
+    //    }
+       
+
   },
   watch: {
   },
