@@ -76,16 +76,16 @@ export default{
           {
                 hid: "og:title",
                 property: "og:title",
-                content: detail.title,
+                content: this.detail.title,
             },
             {
                 hid: "og:description",
                 property: "og:description",
-                content: detail.description,
+                content: this.detail.description,
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+detail.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.detail.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
