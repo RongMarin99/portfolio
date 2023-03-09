@@ -1,16 +1,17 @@
 <template>
     <b-container class="main-slide" >
-        <div class="fb-share-button" 
+        <!-- <div class="fb-share-button" 
             data-href="https://etec-center1.netlify.app/Detail?id=24&type=1" 
             data-layout="button_count">
-        </div>
+        </div> -->
+        <a class="scmFacebook" href='http://www.facebook.com/sharer.php?s=100&amp;p[title]=Welcome&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=https://etec-center1.netlify.app/&amp;&p[images][0]=https://scontent.fpnh16-1.fna.fbcdn.net/v/t39.30808-6/333309514_219764437094188_5466940893098615208_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHPwBDei8EcfWcKLSN9KOzqIJTfQmBKzrAglN9CYErOsNRQtIMbjmAgTh5WthdU05a0VDShfp8fi76RsZOrBH2G&_nc_ohc=DlKYRjkVOeQAX-lKEVH&_nc_ht=scontent.fpnh16-1.fna&oh=00_AfBekKXpIDNN-T6Ile5SevDIquFIkuMUnvp5YTH0XheI1g&oe=640F16EF'>Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
-               <!-- <h3>{{ getNameByLocalByLang(detail.title) }}​</h3> -->
+               <h3>{{ getNameByLocalByLang(detail.title) }}​</h3>
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
-                        <!-- {{ convertDateEnToKh(detail.created_at).day }}, {{ convertDateEnToKh(detail.created_at).month }} {{ convertDateEnToKh(detail.created_at).year }} -->
+                        {{ convertDateEnToKh(detail.created_at).day }}, {{ convertDateEnToKh(detail.created_at).month }} {{ convertDateEnToKh(detail.created_at).year }}
                     </span>
                  </b-col>
           
@@ -18,7 +19,7 @@
                <hr>
                <b-row>
                 <b-col cols="12" class="content-detail">
-                    <!-- <div v-html="detail.text"></div> -->
+                    <div v-html="detail.text"></div>
                     
                     <!-- <p>ក្នុងប្រវត្តិសាស្រ្តពិភពលោក​រាប់ពាន់​ឆ្នាំមកនេះ មាន​ការលេចឡើង​ចក្រភពជាច្រើន។ ខាងក្រោមនេះ​គឺ​ជាចក្រភពធំៗទាំង១០០ ដោយ​ក្នុងនោះ​នៅតំបន់អាស៊ីអាគ្នេយ៍​ក៏មាន ៤ចក្រភពផងដែរ រួមមាន​ចក្រភពខ្មែរ (Khmer Empire), ភូមា (Taungoo Empire), Srivijaya Empire និង Majaphit Empire ដែល​ចក្រភពទាំងពីរជាផ្នែកមួយ​នៃឥណ្ឌូណេស៊ី និងម៉ាឡេស៊ី​​បច្ចុប្បន្ន។ អតីតចក្រភព​ធំជាងគេ គឺអង់គ្លេស បន្ទាប់មក ម៉ុងហ្គោល និង​រុស្ស៊ី។</p>
                     <figure>
@@ -57,28 +58,17 @@
 <script>
 import moment from 'moment'
 export default{
-    async asyncData({$axios , query, app }  ){
-        console.log(200,app);
-         var input = {
-                id: query.id,
-                type: query.type,
-                default: query.default
-        }
-        // const getData = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
-         app.head.title = query.title
-        // return {getData}
-      },
-    // asyncData(context) {
-    //     var input = {
-    //             id: context.route.query.id,
-    //             type: context.route.query.type,
-    //             default: context.route.query.default
+    // async asyncData({$axios , query, app }  ){
+    //     console.log(200,app);
+    //      var input = {
+    //             id: query.id,
+    //             type: query.type,
+    //             default: query.default
     //     }
-    //     const detail =  context.$axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
-    //     console.log(100,detail);
-    //     return {detail}
-    //     context.app.head.title = "hello guy"
-    // },
+    //     // const getData = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+    //      app.head.title = query.title
+    //     // return {getData}
+    //   },
     colorMode: 'light',
     name: "Detail",
     // head(){
