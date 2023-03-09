@@ -67,35 +67,38 @@ export default{
       },
     colorMode: 'light',
     name: "Detail",
-    head(){
-      if (this.detail) {
-        return {
-            meta:[
-            { hid: 'og-type', property: 'og:type', 
-                content: 'Etec Center' 
-            },
-            {
-                hid: "og:title",
-                property: "og:title",
-                content: `Title- ${this.detail.title}`,
-            },
-            {
-                hid: "og:description",
-                property: "og:description",
-                content: this.detail.description,
-            },
-            { 
-                hid: 'og-image', property: 'og:image',
-                content: `https://etec-api.loveounnas.xyz/image_etec/${this.detail.image}`
-            },
-            { hid: 'og-url', property: 'og:url', 
-                content: this.url
-            },
-            { property: "og:image:width", content: "740" },
-            { property: "og:image:height", content: "300" },
-            ]
-        }
-      }
+    // head(){
+    //   if (this.detail) {
+    //     return {
+    //         meta:[
+    //         { hid: 'og-type', property: 'og:type', 
+    //             content: 'Etec Center' 
+    //         },
+    //         {
+    //             hid: "og:title",
+    //             property: "og:title",
+    //             content: `Title- ${this.detail.title}`,
+    //         },
+    //         {
+    //             hid: "og:description",
+    //             property: "og:description",
+    //             content: this.detail.description,
+    //         },
+    //         { 
+    //             hid: 'og-image', property: 'og:image',
+    //             content: `https://etec-api.loveounnas.xyz/image_etec/${this.detail.image}`
+    //         },
+    //         { hid: 'og-url', property: 'og:url', 
+    //             content: this.url
+    //         },
+    //         { property: "og:image:width", content: "740" },
+    //         { property: "og:image:height", content: "300" },
+    //         ]
+    //     }
+    //   }
+    // },
+    head () {
+        return this.getPostMeta()
     },
     data(){
         return {
@@ -122,6 +125,27 @@ export default{
         (document, 'script', 'facebook-jssdk'))
     },
     methods: {
+        getPostMeta: async function () {
+            let promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const result = {
+                title: 'Promise Title Test',
+                meta: [
+                    { charset: 'utf-8' },
+                    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                    { name: 'keywords', content: 'keyword 1, keyword 2'},
+                    { hid: 'description', name: 'description', content: 'PROMISE. This is the generic promise descr.'}
+                ]
+                }
+                resolve(result)
+            }, 1000)
+            })
+
+            let result = await promise
+            console.log('result: ', result)
+
+            return result
+        },
         findById(){
             this.id = this.$route.query.id
             this.type = this.$route.query.type
