@@ -1,17 +1,16 @@
 <template>
     <b-container class="main-slide" >
-        <!-- <div class="fb-share-button" 
-            data-href="https://etec-center1.netlify.app/Detail?id=24&type=1" 
+        <div class="fb-share-button" 
+            data-href="https://etec-center1.netlify.app/Detail?id=22&type=1" 
             data-layout="button_count">
-        </div> -->
-        <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=24&type=1">Facebook</a>
+        </div>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
-               <h3>{{ getNameByLocalByLang(detail.title) }}​</h3>
+               <h3>{{ getNameByLocalByLang(detail['title']) }}​</h3>
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
-                        {{ convertDateEnToKh(detail.created_at).day }}, {{ convertDateEnToKh(detail.created_at).month }} {{ convertDateEnToKh(detail.created_at).year }}
+                        {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }}
                     </span>
                  </b-col>
           
@@ -19,7 +18,7 @@
                <hr>
                <b-row>
                 <b-col cols="12" class="content-detail">
-                    <div v-html="detail.text"></div>
+                    <div v-html="description"></div>
                     
                     <!-- <p>ក្នុងប្រវត្តិសាស្រ្តពិភពលោក​រាប់ពាន់​ឆ្នាំមកនេះ មាន​ការលេចឡើង​ចក្រភពជាច្រើន។ ខាងក្រោមនេះ​គឺ​ជាចក្រភពធំៗទាំង១០០ ដោយ​ក្នុងនោះ​នៅតំបន់អាស៊ីអាគ្នេយ៍​ក៏មាន ៤ចក្រភពផងដែរ រួមមាន​ចក្រភពខ្មែរ (Khmer Empire), ភូមា (Taungoo Empire), Srivijaya Empire និង Majaphit Empire ដែល​ចក្រភពទាំងពីរជាផ្នែកមួយ​នៃឥណ្ឌូណេស៊ី និងម៉ាឡេស៊ី​​បច្ចុប្បន្ន។ អតីតចក្រភព​ធំជាងគេ គឺអង់គ្លេស បន្ទាប់មក ម៉ុងហ្គោល និង​រុស្ស៊ី។</p>
                     <figure>
@@ -50,6 +49,7 @@
                       </b-row>
                     </nuxt-link>
                 </div>
+                
             </b-col>
         </b-row>
     </b-container>
@@ -57,56 +57,39 @@
 <script>
 import moment from 'moment'
 export default{
-    metaInfo: {
-        title: 'Hello World 2!'
-    },
-    // async asyncData({$axios , query, app }  ){
-    //     console.log(200,app);
-    //      var input = {
-    //             id: query.id,
-    //             type: query.type,
-    //             default: query.default
-    //     }
-    //     // const getData = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
-    //      app.head.title = query.title
-    //     // return {getData}
-    //   },
     colorMode: 'light',
     name: "Detail",
-    // head(){
-    //   if (this.detail) {
-    //     return {
-    //         meta:[
-    //         { hid: 'og-type', property: 'og:type', 
-    //             content: 'Etec Center' 
-    //         },
-    //         {
-    //             hid: "og:title",
-    //             property: "og:title",
-    //             content: `Title- ${this.detail.title}`,
-    //         },
-    //         {
-    //             hid: "og:description",
-    //             property: "og:description",
-    //             content: this.detail.description,
-    //         },
-    //         { 
-    //             hid: 'og-image', property: 'og:image',
-    //             content: `https://etec-api.loveounnas.xyz/image_etec/${this.detail.image}`
-    //         },
-    //         { hid: 'og-url', property: 'og:url', 
-    //             content: this.url
-    //         },
-    //         { property: "og:image:width", content: "740" },
-    //         { property: "og:image:height", content: "300" },
-    //         ]
-    //     }
-    //   }
-    // },
-   
+    head(){
+      return {
+        meta:[
+          { hid: 'og-type', property: 'og:type', 
+            content: 'Etec Center' 
+          },
+          {
+                hid: "og:title",
+                property: "og:title",
+                content: this.detail.title,
+            },
+            {
+                hid: "og:description",
+                property: "og:description",
+                content: "description",
+            },
+          { 
+            hid: 'og-image', property: 'og:image',
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.image
+          },
+          { hid: 'og-url', property: 'og:url', 
+            content: this.url
+          },
+          { property: "og:image:width", content: "740" },
+          { property: "og:image:height", content: "300" },
+        ]
+      }
+    },
     data(){
         return {
-            detail: '',
+           detail: {},
            url: this.$route.fullPath,
            id: null,
            type: null,
@@ -116,7 +99,13 @@ export default{
     },
     created() {
         this.findById()
-     //   this.get()
+        this.get()
+        //this.getApp()
+    },
+    computed: {
+        description: function(){
+            return this.detail.text
+        }
     },
     mounted(){
         (function(d, s, id) {
