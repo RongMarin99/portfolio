@@ -56,43 +56,45 @@
 <script>
 import moment from 'moment'
 export default{
-    // async asyncData({$axios , query }  ){
-    //      var input = {
-    //             id: query.id,
-    //             type: query.type,
-    //             default: query.default
-    //     }
-    //      const detail = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
-    //      return {detail}
-    //   },
+    async asyncData({$axios , query }  ){
+         var input = {
+                id: query.id,
+                type: query.type,
+                default: query.default
+        }
+         const detail = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+         return {detail}
+      },
     colorMode: 'light',
     name: "Detail",
     head(){
-      return {
-        meta:[
-          { hid: 'og-type', property: 'og:type', 
-            content: 'Etec Center' 
-          },
-          {
+      if (this.detail) {
+        return {
+            meta:[
+            { hid: 'og-type', property: 'og:type', 
+                content: 'Etec Center' 
+            },
+            {
                 hid: "og:title",
                 property: "og:title",
-                content: this.detail.title,
+                content: `Title- ${this.detail.title}`,
             },
             {
                 hid: "og:description",
                 property: "og:description",
                 content: this.detail.description,
             },
-          { 
-            hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.$route.query.image
-          },
-          { hid: 'og-url', property: 'og:url', 
-            content: this.url
-          },
-          { property: "og:image:width", content: "740" },
-          { property: "og:image:height", content: "300" },
-        ]
+            { 
+                hid: 'og-image', property: 'og:image',
+                content: `https://etec-api.loveounnas.xyz/image_etec/${this.detail.image}`
+            },
+            { hid: 'og-url', property: 'og:url', 
+                content: this.url
+            },
+            { property: "og:image:width", content: "740" },
+            { property: "og:image:height", content: "300" },
+            ]
+        }
       }
     },
     data(){
@@ -106,7 +108,7 @@ export default{
         }
     },
     created() {
-        this.findById()
+      //  this.findById()
      //   this.get()
     },
     mounted(){
