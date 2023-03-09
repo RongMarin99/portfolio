@@ -64,9 +64,9 @@ export default{
                 type: query.type,
                 default: query.default
         }
-         const getData = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+        // const getData = await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
          app.head.title = query.title
-         return {getData}
+        // return {getData}
       },
     // asyncData(context) {
     //     var input = {
