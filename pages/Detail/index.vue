@@ -70,7 +70,12 @@ export default{
     //     return {meta: detail}
     // },
     asyncData({ params, error, $axios }) {
-        return $axios.get(`https://etec-api.loveounnas.xyz/api/getAllNews`)
+        var input = {
+                id: params.id,
+                type: params.type,
+                default: params.default
+        } 
+        return $axios.post(`https://etec-api.loveounnas.xyz/api/detail`,input)
         .then((res) => {
             return { meta: res.data.data[0] }
         })
