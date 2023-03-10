@@ -26,7 +26,6 @@
     "vue": "^2.7.10",
     "vue-awesome-swiper": "^5.0.1",
     "vue-flag-icon": "^2.1.0",
-    "vue-meta": "^2.4.0",
     "vue-server-renderer": "^2.7.10",
     "vue-social-sharing": "^3.0.9",
     "vue-template-compiler": "^2.7.10"

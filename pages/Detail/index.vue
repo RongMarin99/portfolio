@@ -108,7 +108,7 @@ export default{
         }
     },
     created() {
-      //  this.findById()
+        this.findById()
         this.get()
         //this.getApp()
     },
