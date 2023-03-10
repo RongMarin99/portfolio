@@ -62,7 +62,6 @@ export default{
     name: "Detail",
     async asyncData(context) {
       const detail = await context.$axios.get('https://etec-api.loveounnas.xyz/api/getAllNews')
-      console.log(100,detail);
       return {meta: detail.data.data[0]}
     },
     head(){
@@ -83,7 +82,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.share_image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
