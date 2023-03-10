@@ -303,9 +303,6 @@
               <p>
                 {{ founder.description }}
               </p>
-              <div id="wrapper">
-                <a class="fb-share" href="#">Share This</a> 
-              </div>
               <hr class="mt-5">
               <b-row>
                 <b-col cols="6">
