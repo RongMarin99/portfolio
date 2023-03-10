@@ -60,14 +60,23 @@ import moment from 'moment'
 export default{
     colorMode: 'light',
     name: "Detail",
-    async asyncData(context) {
-        var input = {
-                id: context.query.id,
-                type: context.query.type,
-                default: context.query.default
-        }
-        const detail = await context.$axios.$post('https://etec-api.loveounnas.xyz/api/detail',input)
-        return {meta: detail}
+    // async asyncData(context) {
+    //     var input = {
+    //             id: context.query.id,
+    //             type: context.query.type,
+    //             default: context.query.default
+    //     }
+    //     const detail = await context.$axios.$post('https://etec-api.loveounnas.xyz/api/detail',input)
+    //     return {meta: detail}
+    // },
+    asyncData({ params, error, $axios }) {
+        return $axios.get(`https://etec-api.loveounnas.xyz/api/getAllNews`)
+        .then((res) => {
+            return { meta: res.data.data[0] }
+        })
+        .catch((e) => {
+            error({ statusCode: 404, message: 'Post not found' })
+        })
     },
     head(){
         return {

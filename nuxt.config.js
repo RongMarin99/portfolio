@@ -1,8 +1,4 @@
 export default {
-  target: 'static' ,
-  generate: {
-    subFolders: false
-  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Etec Center',
