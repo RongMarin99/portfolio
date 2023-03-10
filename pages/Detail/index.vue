@@ -1,7 +1,7 @@
 <template>
     <b-container class="main-slide" >
         <div class="fb-share-button" 
-            data-href="https://etec-center1.netlify.app/Detail?id=22&type=1" 
+            data-href="https://etec-center1.netlify.app/Detail?id=5&type=2&image=640358ffb69c17.36735928.png" 
             data-layout="button_count">
         </div>
         <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png">Facebook</a>
@@ -60,8 +60,12 @@ import moment from 'moment'
 export default{
     colorMode: 'light',
     name: "Detail",
+    async asyncData(context) {
+      const detail = await context.$axios.get('https://etec-api.loveounnas.xyz/api/getAllNews')
+      console.log(100,detail);
+      return {meta: detail.data.data[0]}
+    },
     head(){
-      setTimeout(() => {
         return {
         meta:[
           { hid: 'og-type', property: 'og:type', 
@@ -79,7 +83,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.$route.query.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.share_image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -88,12 +92,11 @@ export default{
           { property: "og:image:height", content: "300" },
         ]
       }
-      }, 2000);
-      
     },
     data(){
         return {
            detail: {},
+           share_image: this.$route.query.image,
            url: this.$route.fullPath,
            id: null,
            type: null,
@@ -102,7 +105,7 @@ export default{
         }
     },
     created() {
-        this.findById()
+      //  this.findById()
         this.get()
         //this.getApp()
     },
