@@ -61,8 +61,13 @@ export default{
     colorMode: 'light',
     name: "Detail",
     async asyncData(context) {
-      const detail = await context.$axios.get('https://etec-api.loveounnas.xyz/api/getAllNews')
-      return {meta: detail.data.data[0]}
+        var input = {
+                id: context.query.id,
+                type: context.query.type,
+                default: context.query.default
+        }
+        const detail = await context.$axios.$post('https://etec-api.loveounnas.xyz/api/detail',input)
+        return {meta: detail}
     },
     head(){
         return {
@@ -73,12 +78,12 @@ export default{
           {
                 hid: "og:title",
                 property: "og:title",
-                content: this.detail.title,
+                content: this.meta.title,
             },
             {
                 hid: "og:description",
                 property: "og:description",
-                content: "description",
+                content: this.meta.description,
             },
           { 
             hid: 'og-image', property: 'og:image',
@@ -95,7 +100,6 @@ export default{
     data(){
         return {
            detail: {},
-           share_image: this.$route.query.image,
            url: this.$route.fullPath,
            id: null,
            type: null,
