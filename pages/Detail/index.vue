@@ -61,11 +61,6 @@ export default{
     colorMode: 'light',
     name: "Detail",
     async asyncData({ query, error, $axios }) {
-        var input = {
-            id: query.id,
-            type: query.type,
-            default: query.default
-        }
         return await $axios.get(`https://etec-api.loveounnas.xyz/api/getAllNews`)
         .then((res) => {
             return { meta: res.data.data[0] }
