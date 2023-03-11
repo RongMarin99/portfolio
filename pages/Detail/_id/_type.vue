@@ -60,8 +60,8 @@ import moment from 'moment'
 export default{
     colorMode: 'light',
     name: "Detail",
-    async asyncData({ query, error, $axios }) {
-        return await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${query['id']}/${query['type']}`)
+    async asyncData({ params, error, $axios }) {
+        return await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
         .then((res) => {
             return { meta: res }
         })
@@ -159,7 +159,6 @@ export default{
         getApp(){
            this.url =  process.env.baseUrl + this.$route.fullPath
         },
-
         convertDateEnToKh(date) {
             var day = moment(date).format('DD').toString()
             var month = moment(date).format('MM').toString()
@@ -181,7 +180,6 @@ export default{
             }
             return result;
         },
-
         convertNmberEnKh(number) {
 			let numbers = '';
 			switch (parseInt(number)) {
@@ -218,7 +216,6 @@ export default{
 			}
 			return numbers;
 		},
-
         convertMonthEnKh(number) {
 			let numbers = '';
 			switch (parseInt(number)) {
