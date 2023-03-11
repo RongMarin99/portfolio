@@ -3,6 +3,9 @@ export default {
   mode: "universal", 
   target: "static",
   ssr: true,
+  generate: {
+    fallback: true
+  },
   head: {
     title: 'Etec Center',
     meta: [
