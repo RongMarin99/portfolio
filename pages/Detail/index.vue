@@ -1,7 +1,7 @@
 <template>
     <b-container class="main-slide" >
         <div class="fb-share-button" 
-            data-href="http://localhost:3000/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png" 
+            data-href="https://etec-center1.netlify.app/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png" 
             data-layout="button_count">
         </div>
         <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png">Facebook</a>
