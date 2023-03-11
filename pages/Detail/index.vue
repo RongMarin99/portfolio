@@ -1,7 +1,7 @@
 <template>
     <b-container class="main-slide" >
         <div class="fb-share-button" 
-            :data-href="`https://etec-center1.netlify.app/detail/?id=5&type=2&image=640358ffb69c17.36735928.png`" 
+            data-href="`https://etec-center1.netlify.app/detail/?id=5&type=2&image=640358ffb69c17.36735928.png`" 
             data-layout="button_count">
         </div>
         <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png">Facebook</a>
@@ -66,9 +66,9 @@ export default{
             type: query.type,
             default: query.default
         }
-        return await $axios.$post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+        return await $axios.get(`https://etec-api.loveounnas.xyz/api/getAllNews`)
         .then((res) => {
-            return { meta: res }
+            return { meta: res.data.data[0] }
         })
         .catch((e) => {
             error({ statusCode: 404, message: 'Post not found' })
