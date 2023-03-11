@@ -4,7 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build":  [
+      {
+       "src": "nuxt.config.js",
+        "use": "@nuxtjs/vercel-builder@0.23.0",
+        "config": {}
+       }
+    ],
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
