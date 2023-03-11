@@ -12,20 +12,20 @@ export default {
       { 
         hid: 'og-title', property: 'og:title', content: 'Etec Center' 
       },
-      { 
-        hid: 'description', name: 'description', 
-        content: "Looking for the latest information and resources on information technology? Our website offers the latest news, tips, and insights to help you stay ahead in the fast-paced world of IT.Explore the world of information technology with our comprehensive website. From hardware to software, we cover everything you need to know to stay up-to-date in this ever-changing industry.Looking for expert guidance on information technology? Look no further than our website, where you'll find in-depth articles and tutorials on the latest trends and best practices.Discover the power of information technology with our website. We offer a wealth of resources, including news, analysis, and tutorials, to help you master the latest tools and techniques.Whether you're a seasoned IT professional or just getting started, our website has everything you need to stay ahead of the curve. Explore our comprehensive collection of resources today." 
-      },
+      // { 
+      //   hid: 'description', name: 'description', 
+      //   content: "Looking for the latest information and resources on information technology? Our website offers the latest news, tips, and insights to help you stay ahead in the fast-paced world of IT.Explore the world of information technology with our comprehensive website. From hardware to software, we cover everything you need to know to stay up-to-date in this ever-changing industry.Looking for expert guidance on information technology? Look no further than our website, where you'll find in-depth articles and tutorials on the latest trends and best practices.Discover the power of information technology with our website. We offer a wealth of resources, including news, analysis, and tutorials, to help you master the latest tools and techniques.Whether you're a seasoned IT professional or just getting started, our website has everything you need to stay ahead of the curve. Explore our comprehensive collection of resources today." 
+      // },
       { 
         name: 'format-detection', content: 'telephone=no' 
       },
       // { 
       //   hid: 'og-type', property: 'og:type', content: 'Information Technology, Etec Center' 
       // },
-      { 
-        hid: 'og-image', property: 'og:image',
-        content: 'https://scontent.fpnh16-1.fna.fbcdn.net/v/t39.30808-6/305664414_1249514142562724_4490597012580547501_n.jpg?stp=dst-jpg_p640x640&_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHCsRWiV-5NFJt7YUM13mf3IAPhp99Lu8sgA-Gn30u7y6_3tTBlpw1c3j5yW6GO4JivIi0nxnLpi6exdxXs69pi&_nc_ohc=LkSeVVi_pR0AX9EzPk_&_nc_oc=AQmYmE2hD5Wf1JpDEIQZxjXqqLcr-I_1lVzPu2hzF0bkwZhXYQU6sAEl2mKwEAR_ii4&_nc_ht=scontent.fpnh16-1.fna&oh=00_AfD9mI7tAsTTbcHtaVgLef2h8eD_cLnIa_uI8e_LKrTCIg&oe=6404374E'
-      },
+      // { 
+      //   hid: 'og-image', property: 'og:image',
+      //   content: 'https://scontent.fpnh16-1.fna.fbcdn.net/v/t39.30808-6/305664414_1249514142562724_4490597012580547501_n.jpg?stp=dst-jpg_p640x640&_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHCsRWiV-5NFJt7YUM13mf3IAPhp99Lu8sgA-Gn30u7y6_3tTBlpw1c3j5yW6GO4JivIi0nxnLpi6exdxXs69pi&_nc_ohc=LkSeVVi_pR0AX9EzPk_&_nc_oc=AQmYmE2hD5Wf1JpDEIQZxjXqqLcr-I_1lVzPu2hzF0bkwZhXYQU6sAEl2mKwEAR_ii4&_nc_ht=scontent.fpnh16-1.fna&oh=00_AfD9mI7tAsTTbcHtaVgLef2h8eD_cLnIa_uI8e_LKrTCIg&oe=6404374E'
+      // },
       // { 
       //   hid: 'og-url', property: 'og:url', content: 'https://effortless-froyo-c29932.netlify.app/' 
       // },
