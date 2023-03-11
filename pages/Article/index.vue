@@ -64,8 +64,6 @@ export default{
         get(){
             this.$axios.$post('article').then(response => {
                 this.Category = response
-  //   context.store.dispatch('articles/setArticle', data[0])
-                this.$store.dispatch('articles/setArticle','hello')
                 this.article_loading = false
             })
         },

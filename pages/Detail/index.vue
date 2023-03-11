@@ -57,28 +57,24 @@
 </template>
 <script>
 import moment from 'moment'
-import { mapGetters } from 'vuex'
 export default{
     colorMode: 'light',
     name: "Detail",
-    // asyncData({ query, error, $axios }) {
-    //     var input = {
-    //         id: query.id,
-    //         type: query.type,
-    //         default: query.default
-    //     }
-    //     return $axios.get(`https://etec-api.loveounnas.xyz/api/detail/22/1`)
-    //     .then((res) => {
-    //         return { meta: res }
-    //     })
-    //     .catch((e) => {
-    //         error({ statusCode: 404, message: 'Post not found' })
-    //     })
-    // },
+    asyncData({ query, error, $axios }) {
+        var input = {
+            id: query.id,
+            type: query.type,
+            default: query.default
+        }
+        return $axios.post(`https://etec-api.loveounnas.xyz/api/detail`,input)
+        .then((res) => {
+            return { meta: res }
+        })
+        .catch((e) => {
+            error({ statusCode: 404, message: 'Post not found' })
+        })
+    },
     computed: {
-    ...mapGetters({
-      getChapter: "articles/article",
-    }),
   },
     head(){
         return {
