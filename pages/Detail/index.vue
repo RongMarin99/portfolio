@@ -89,7 +89,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image+'?'+this.meta.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
