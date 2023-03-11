@@ -1,7 +1,7 @@
 <template>
     <b-container class="main-slide" >
         <div class="fb-share-button" 
-            data-href="https://etec-center1.netlify.app/Detail?id=5&type=2&image=640358ffb69c17.36735928.png" 
+            data-href="http://localhost:3000/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png" 
             data-layout="button_count">
         </div>
         <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png">Facebook</a>
@@ -60,20 +60,20 @@ import moment from 'moment'
 export default{
     colorMode: 'light',
     name: "Detail",
-    asyncData({ query, error, $axios }) {
-        var input = {
-            id: query.id,
-            type: query.type,
-            default: query.default
-        }
-        return $axios.post(`https://etec-api.loveounnas.xyz/api/detail`,input)
-        .then((res) => {
-            return { meta: res }
-        })
-        .catch((e) => {
-            error({ statusCode: 404, message: 'Post not found' })
-        })
-    },
+    // asyncData({ query, error, $axios }) {
+    //     var input = {
+    //         id: query.id,
+    //         type: query.type,
+    //         default: query.default
+    //     }
+    //     return $axios.get(`https://etec-api.loveounnas.xyz/api/detail/5/2`)
+    //     .then((res) => {
+    //         return { meta: res }
+    //     })
+    //     .catch((e) => {
+    //         error({ statusCode: 404, message: 'Post not found' })
+    //     })
+    // },
     computed: {
   },
     head(){
@@ -94,7 +94,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.image_share
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -108,6 +108,7 @@ export default{
         return {
            detail: {},
            url: this.$route.fullPath,
+           image_share: this.$route.query.image,
            id: null,
            type: null,
            relate_content: [],
