@@ -1,6 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  target: 'static',
+  mode: "universal", 
+  target: "static",
   ssr: true,
   head: {
     title: 'Etec Center',
