@@ -7,7 +7,7 @@
         <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
-               <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
+               <!-- <h3>{{ getNameByLocalByLang(meta.title) }}​</h3> -->
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
@@ -57,32 +57,29 @@
 </template>
 <script>
 import moment from 'moment'
+import { mapGetters } from 'vuex'
 export default{
     colorMode: 'light',
     name: "Detail",
-    // async asyncData(context) {
+    // asyncData({ query, error, $axios }) {
     //     var input = {
-    //             id: context.query.id,
-    //             type: context.query.type,
-    //             default: context.query.default
+    //         id: query.id,
+    //         type: query.type,
+    //         default: query.default
     //     }
-    //     const detail = await context.$axios.$post('https://etec-api.loveounnas.xyz/api/detail',input)
-    //     return {meta: detail}
+    //     return $axios.get(`https://etec-api.loveounnas.xyz/api/detail/22/1`)
+    //     .then((res) => {
+    //         return { meta: res }
+    //     })
+    //     .catch((e) => {
+    //         error({ statusCode: 404, message: 'Post not found' })
+    //     })
     // },
-    asyncData({ query, error, $axios }) {
-        var input = {
-            id: query.id,
-            type: query.type,
-            default: query.default
-        }
-        return $axios.get(`https://etec-api.loveounnas.xyz/api/detail/22/1`)
-        .then((res) => {
-            return { meta: res }
-        })
-        .catch((e) => {
-            error({ statusCode: 404, message: 'Post not found' })
-        })
-    },
+    computed: {
+    ...mapGetters({
+      getChapter: "articles/article",
+    }),
+  },
     head(){
         return {
         meta:[
@@ -92,16 +89,16 @@ export default{
           {
                 hid: "og:title",
                 property: "og:title",
-                content: this.meta.title,
+                content: 'hello',
             },
             {
                 hid: "og:description",
                 property: "og:description",
-                content: this.meta.description,
+                content: "hello",
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -122,7 +119,7 @@ export default{
         }
     },
     created() {
-      //  this.findById()
+        this.findById()
         this.get()
         //this.getApp()
     },
@@ -151,7 +148,7 @@ export default{
                 type: this.type,
                 default: this.default
             }
-            this.$axios.$post('detail',input).then(response => {
+            this.$axios.$post('https://etec-api.loveounnas.xyz/api/detail',input).then(response => {
                 this.detail = response
                 this.detail.date = moment(this.detail.created_at, "YYYYMMDD").fromNow();
                 this.image = this.detail.image
