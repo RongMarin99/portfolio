@@ -1,4 +1,14 @@
+import axios from 'axios'
 export default {
+  generate: {
+    routes() {
+      return axios.get('https://etec-api.loveounnas.xyz/api/course').then(res => {
+        return res.data.map(user => {
+          return '/Detail/' + user.id + '/1'
+        })
+      })
+    }
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   mode: "universal", 
   target: "static",
