@@ -2,7 +2,7 @@ import axios from 'axios'
 var dynamicRoutes = []
 for (let index = 1; index <= 3; index++) {
   for (let j = 1; j <= 100; j++) {
-    dynamicRoutes.push(`route: /Detail/${j}/${index}`)
+    dynamicRoutes.push(`{route: /Detail/${j}/${index}}`)
   }
 }
 // const dynamicRoutes = async () => {
