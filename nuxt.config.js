@@ -3,8 +3,8 @@ const dynamicRoutes = async () => {
   for (let index = 1; index <= 3; index++) {
     for (let j = 1; j <= 100; j++) {
       return {
-        route: `/Detail/${obj.id}/${obj.type}`,
-        payload: obj
+        route: `/Detail/${j}/${i}`,
+        //payload: obj
       }
     }
   }
