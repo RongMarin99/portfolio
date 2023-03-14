@@ -1,25 +1,33 @@
 import axios from 'axios'
 const dynamicRoutes = async () => {
-   const course = await this.$axios.$post(
-     'course'
-   )
-   const article = await this.$axios.$post(
-     'article'
-   )
-   const routesForCourse = course.data.map(obj => {
-    return {
-      route: `/Detail/${obj.id}/${obj.type}`,
-      payload: obj
+  for (let index = 1; index <= 3; index++) {
+    for (let j = 1; j <= 100; j++) {
+      return {
+        route: `/Detail/${obj.id}/${obj.type}`,
+        payload: obj
+      }
     }
-   })
-   const routesForArticle = article.data.map(obj => {
-    return {
-      route: `/Detail/${obj.id}/${obj.type}`,
-      payload: obj
-    }
-   })
-   const routes = routesForCourse.concat(routesForArticle)
-   return routes
+  }
+  //  const course = await this.$axios.$post(
+  //    'course'
+  //  )
+  //  const article = await this.$axios.$post(
+  //    'article'
+  //  )
+  //  const routesForCourse = course.data.map(obj => {
+  //   return {
+  //     route: `/Detail/${obj.id}/${obj.type}`,
+  //     payload: obj
+  //   }
+  //  })
+  //  const routesForArticle = article.data.map(obj => {
+  //   return {
+  //     route: `/Detail/${obj.id}/${obj.type}`,
+  //     payload: obj
+  //   }
+  //  })
+   //const routes = routesForCourse.concat(routesForArticle)
+  //  return routes
 }
 export default {
   
