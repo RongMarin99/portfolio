@@ -78,18 +78,18 @@ export default{
         return {
         meta:[
           { hid: 'og-type', property: 'og:type', 
-            content: 'Etec Center' 
+            content: this.getNameByLocalByLang(this.meta.title) 
           },
           {
                 hid: "og:title",
                 property: "og:title",
-                content: this.meta.title,
+                content: this.getNameByLocalByLang(this.meta.title),
             },
             {
                 hid: "og:description",
                 name: 'og:description',
                 property: "og:description",
-                content: this.meta.description,
+                content: this.getNameByLocalByLang(this.meta.description),
             },
           { 
             hid: 'og-image', property: 'og:image',
