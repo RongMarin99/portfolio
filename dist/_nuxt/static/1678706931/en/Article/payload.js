@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/Article", {data:[{}],fetch:{},mutations:[]});

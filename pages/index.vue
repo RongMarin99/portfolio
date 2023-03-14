@@ -177,7 +177,7 @@
                   </figure>
                 </b-col>
                 <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
-                  <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
+                  <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
                     <b-card no-body class="p-2" >
                       <span class="mb-0 mt-0" style="font-size:13px">
                             {{ dateFormat(item['created_at']) }}
@@ -246,7 +246,7 @@
                   </figure>
                 </b-col>
                 <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in job" :key="item.index" class="mb-4">
-                  <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
+                  <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
                     <b-card no-body class="p-2" >
                       <b-card-text>
                         <span class="mb-0 mt-0" style="font-size:13px">

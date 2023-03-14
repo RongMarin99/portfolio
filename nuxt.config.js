@@ -1,11 +1,26 @@
+import axios from 'axios'
 export default {
+  generate: {
+    routes() {
+      for(i=1;i<=3;i++){
+        for(j=1;j<=100;j++){
+          return '/Detail/' + j + '/' + i
+        }
+      }
+      // return axios.post('https://etec-api.loveounnas.xyz/api/course').then(res => {
+      //   return res.data.map(user => {
+      //     return '/Detail/' + user.id + '/1'
+      //   })
+      // })
+    }
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   mode: "universal", 
   target: "static",
-  ssr: false,
-  generate: {
-    fallback: true
-  },
+  ssr: true,
+  // generate: {
+  //   fallback: true
+  // },
   head: {
     title: 'Etec Center',
     meta: [
