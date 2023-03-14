@@ -1,47 +1,41 @@
 import axios from 'axios'
-var dynamicRoutes = []
-for (let index = 1; index <= 3; index++) {
-  for (let j = 1; j <= 100; j++) {
-    dynamicRoutes.push(`{route: /Detail/${j}/${index}}`)
-  }
-}
-// const dynamicRoutes = async () => {
+
+const dynamicRoutes = async () => {
   
-//   //  const course = await this.$axios.$post(
-//   //    'course'
-//   //  )
-//   //  const article = await this.$axios.$post(
-//   //    'article'
-//   //  )
-//   //  const routesForCourse = course.data.map(obj => {
-//   //   return {
-//   //     route: `/Detail/${obj.id}/${obj.type}`,
-//   //     payload: obj
-//   //   }
-//   //  })
-//   //  const routesForArticle = article.data.map(obj => {
-//   //   return {
-//   //     route: `/Detail/${obj.id}/${obj.type}`,
-//   //     payload: obj
-//   //   }
-//   //  })
-//    //const routes = routesForCourse.concat(routesForArticle)
-//   //  return routes
-// }
+   const course = await this.$axios.$post(
+     'course'
+   )
+   const article = await this.$axios.$post(
+     'article'
+   )
+   const routesForCourse = course.data.map(obj => {
+    return {
+      route: `/Detail/${obj.id}/${obj.type}`,
+      payload: obj
+    }
+   })
+   const routesForArticle = article.data.map(obj => {
+    return {
+      route: `/Detail/${obj.id}/${obj.type}`,
+      payload: obj
+    }
+   })
+   const routes = routesForCourse.concat(routesForArticle)
+   return routes
+}
 export default {
   
   generate: {
-    routes: [
-      dynamicRoutes
-    ]
-    // routes() {
-      
-    //   // return axios.post('https://etec-api.loveounnas.xyz/api/course').then(res => {
-    //   //   return res.data.map(user => {
-    //   //     return '/Detail/' + user.id + '/1'
-    //   //   })
-    //   // })
-    // }
+    // routes: [
+    //   dynamicRoutes
+    // ]
+    routes() {
+      return axios.get('https://etec-api.loveounnas.xyz/api/generate/route').then(res => {
+        return res.map(user => {
+          return '/Detail/' + user.id + '/'+user.type
+        })
+      })
+    }
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   mode: "universal", 
