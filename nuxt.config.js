@@ -1,10 +1,10 @@
 import axios from 'axios'
 const dynamicRoutes = async () => {
-   const course = await axios.post(
-     'https://etec-api.loveounnas.xyz/api/course'
+   const course = await this.$axios.$post(
+     'course'
    )
-   const article = await axios.post(
-     'https://etec-api.loveounnas.xyz/api/article'
+   const article = await this.$axios.$post(
+     'article'
    )
    const routesForCourse = course.data.map(obj => {
     return {
