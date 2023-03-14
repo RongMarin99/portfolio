@@ -2,8 +2,8 @@ import axios from 'axios'
 export default {
   generate: {
     routes() {
-      for(i=1;i<=3;i++){
-        for(j=1;j<=100;j++){
+      for(var i=1;i<=3;i++){
+        for(var j=1;j<=100;j++){
           return '/Detail/' + j + '/' + i
         }
       }
