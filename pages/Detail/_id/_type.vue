@@ -1,10 +1,10 @@
 <template>
     <b-container class="main-slide" >
         <div class="fb-share-button" 
-            data-href="https://etec-center1.netlify.app/detail/?id=7&type=2&image=6405f6dcea9651.30450625.png" 
+            :data-href="`https://etec-center1.netlify.app${url}`" 
             data-layout="button_count">
         </div>
-        <a href="https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app/Detail?id=7&type=2&image=6405f6dcea9651.30450625.png">Facebook</a>
+        <a :href="`https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app${url}`">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
@@ -19,7 +19,7 @@
                <hr>
                <b-row>
                 <b-col cols="12" class="content-detail">
-                    <div v-html="meta.description"></div>
+                    <div v-html="meta.text"></div>
                     
                     <!-- <p>ក្នុងប្រវត្តិសាស្រ្តពិភពលោក​រាប់ពាន់​ឆ្នាំមកនេះ មាន​ការលេចឡើង​ចក្រភពជាច្រើន។ ខាងក្រោមនេះ​គឺ​ជាចក្រភពធំៗទាំង១០០ ដោយ​ក្នុងនោះ​នៅតំបន់អាស៊ីអាគ្នេយ៍​ក៏មាន ៤ចក្រភពផងដែរ រួមមាន​ចក្រភពខ្មែរ (Khmer Empire), ភូមា (Taungoo Empire), Srivijaya Empire និង Majaphit Empire ដែល​ចក្រភពទាំងពីរជាផ្នែកមួយ​នៃឥណ្ឌូណេស៊ី និងម៉ាឡេស៊ី​​បច្ចុប្បន្ន។ អតីតចក្រភព​ធំជាងគេ គឺអង់គ្លេស បន្ទាប់មក ម៉ុងហ្គោល និង​រុស្ស៊ី។</p>
                     <figure>
@@ -60,10 +60,10 @@ import moment from 'moment'
 export default{
     colorMode: 'light',
     name: "Detail",
-    async asyncData({ query, error, $axios }) {
-        return await $axios.get(`https://etec-api.loveounnas.xyz/api/getAllNews`)
+    async asyncData({ params, error, $axios }) {
+        return await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
         .then((res) => {
-            return { meta: res.data.data[0] }
+            return { meta: res }
         })
         .catch((e) => {
             error({ statusCode: 404, message: 'Post not found' })
@@ -87,12 +87,13 @@ export default{
             },
             {
                 hid: "og:description",
+                name: 'og:description',
                 property: "og:description",
                 content: this.meta.description,
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image
+            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image+'?'+this.meta.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -161,7 +162,6 @@ export default{
         getApp(){
            this.url =  process.env.baseUrl + this.$route.fullPath
         },
-
         convertDateEnToKh(date) {
             var day = moment(date).format('DD').toString()
             var month = moment(date).format('MM').toString()
@@ -183,7 +183,6 @@ export default{
             }
             return result;
         },
-
         convertNmberEnKh(number) {
 			let numbers = '';
 			switch (parseInt(number)) {
@@ -220,7 +219,6 @@ export default{
 			}
 			return numbers;
 		},
-
         convertMonthEnKh(number) {
 			let numbers = '';
 			switch (parseInt(number)) {
