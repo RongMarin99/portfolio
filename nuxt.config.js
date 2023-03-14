@@ -31,7 +31,7 @@ export default {
     // ]
     routes() {
       return axios.get('https://etec-api.loveounnas.xyz/api/generate/route').then(res => {
-        return res.data.map(user => {
+        return res.map(user => {
           return '/Detail/' + user.id + '/'+user.type
         })
       })
