@@ -1,18 +1,38 @@
 import axios from 'axios'
-export default {
-  generate: {
-    routes() {
-      for(var i=1;i<=3;i++){
-        for(var j=1;j<=100;j++){
-          return '/Detail/' + j + '/' + i
-        }
-      }
-      // return axios.post('https://etec-api.loveounnas.xyz/api/course').then(res => {
-      //   return res.data.map(user => {
-      //     return '/Detail/' + user.id + '/1'
-      //   })
-      // })
+const dynamicRoutes = async () => {
+   const course = await axios.post(
+     'https://etec-api.loveounnas.xyz/api/course'
+   )
+   const article = await axios.post(
+     'https://etec-api.loveounnas.xyz/api/article'
+   )
+   const routesForCourse = course.data.map(obj => {
+    return {
+      route: `/Detail/${obj.id}/${obj.type}`,
+      payload: obj
     }
+   })
+   const routesForArticle = article.data.map(obj => {
+    return {
+      route: `/Detail/${obj.id}/${obj.type}`,
+      payload: obj
+    }
+   })
+   const routes = routesForCourse.concat(routesForArticle)
+   return routes
+}
+export default {
+  
+  generate: {
+    routes: dynamicRoutes
+    // routes() {
+      
+    //   // return axios.post('https://etec-api.loveounnas.xyz/api/course').then(res => {
+    //   //   return res.data.map(user => {
+    //   //     return '/Detail/' + user.id + '/1'
+    //   //   })
+    //   // })
+    // }
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   mode: "universal", 
