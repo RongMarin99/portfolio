@@ -99,7 +99,13 @@ export default {
   buildModules: [
     '@nuxtjs/color-mode'
   ],
-
+  publicRuntimeConfig: {
+    WEB_URL: process.env.WEB_URL,
+  },
+  privateRuntimeConfig: {
+    baseURL: process.env.BASE_URL || "http://localhost:3000",
+    nodeEnv: process.env.NODE_ENV || "dev",
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     'vue-social-sharing/nuxt',
