@@ -1,4 +1,4 @@
-
+const pkg = require('./package')
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   mode: "universal", 
@@ -8,7 +8,7 @@ export default {
     fallback: true
   },
   head: {
-    title: 'Etec Center',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { 
@@ -36,7 +36,11 @@ export default {
       // },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+				rel: 'icon',
+				type: 'image/x-icon',
+				href: '/etec-logo.png'
+			}
       
     ],
     script: [
@@ -121,6 +125,9 @@ export default {
       lang: 'kh',
       useWebmanifestExtension: false,
     },
+    icon: {
+      source: '~/static/etec-logo.png' 
+   }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
