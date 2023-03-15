@@ -1,6 +1,6 @@
 <template>
     <b-container class="main-slide" >
-        <a target="_blank" :href="`https://www.facebook.com/sharer.php?u=https://nuxt-ssr-ten.vercel.app/Detail${url}`">Facebook</a>
+        <a target="_blank" :href="`https://www.facebook.com/sharer.php?u=https://nuxt-ssr-ten.vercel.app${url}`">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
