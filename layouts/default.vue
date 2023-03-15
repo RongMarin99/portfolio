@@ -1,5 +1,6 @@
 <template>
     <div>
+      <client-only>
       <!-- Start Header -->
       <b-container fluid 
         :class="$colorMode.value=='dark'?'bg-dark' : 'bg-white' " 
@@ -134,6 +135,7 @@
         </h6>
       </b-container>
       <!-- End Footer -->
+      </client-only>
     </div>
 </template>
 <script>
@@ -155,7 +157,7 @@ export default{
           social: ''
         }
     },
-    created(){
+    mounted(){
       this.getHeader()
       this.getAddress()
       this.getAbout()

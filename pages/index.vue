@@ -28,30 +28,6 @@
       </b-container>
       <!-- End Slide -->
 
-      <!-- Start Video -->
-      <!-- <b-container class="mt-5">
-        <h2 align="center" 
-          :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
-        >
-          <b>Best Collection Videos in this Month</b>
-        </h2>
-        <client-only>
-          <div class="video-slide mt-5">
-            <div class="swiper mySwiper" ref="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide card" v-for="item in allVideos" :key="item">
-                  <iframe width="100%" style="height:15rem" :src="item['url']" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  <p :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'" class="pt-2">
-                   {{ item['title'] }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </client-only>
-      </b-container> -->
-      <!-- End Video -->
-
       <!-- Start Article -->
       <b-container class="mt-5">
         <h2 
@@ -331,8 +307,6 @@
 </template>
 
 <script>
-// import Swiper from 'swiper/swiper-bundle.min';
-// import 'swiper/swiper-bundle.min.css';
 import moment from 'moment';
 export default {
   colorMode: 'light',
@@ -370,7 +344,7 @@ export default {
       api_url: process.env.API_URL
     }
   },
-  created() {
+  mounted() {
     this.getSlide()
     this.get()
     this.getFounder()
