@@ -55,7 +55,7 @@
                     <b-dropdown-item :to="switchLocalePath('en')" >
                       <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
                     </b-dropdown-item>
-                    <b-dropdown-item :to="switchLocalePath('km')">
+                    <b-dropdown-item :to="switchLocalePath('kh')">
                       <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
                     </b-dropdown-item>
                   </b-nav-item-dropdown>

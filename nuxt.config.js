@@ -1,28 +1,4 @@
-import axios from 'axios'
 
-const dynamicRoutes = async () => {
-  
-   const course = await this.$axios.$post(
-     'course'
-   )
-   const article = await this.$axios.$post(
-     'article'
-   )
-   const routesForCourse = course.data.map(obj => {
-    return {
-      route: `/Detail/${obj.id}/${obj.type}`,
-      payload: obj
-    }
-   })
-   const routesForArticle = article.data.map(obj => {
-    return {
-      route: `/Detail/${obj.id}/${obj.type}`,
-      payload: obj
-    }
-   })
-   const routes = routesForCourse.concat(routesForArticle)
-   return routes
-}
 export default {
   
   // generate: {
@@ -118,39 +94,25 @@ export default {
     'nuxt-material-design-icons-iconfont',
 			'nuxt-i18n',
   ],
-  i18n: {
-    detectBrowserLanguage: false,
+  i18n:{
     locales: [
       {
-        code: "en",
-        iso: "en-US",
-        file: "en-US.js",
-        dir: "ltr",
-        moment: "en",
+        code: 'en',
+        name: 'English',
+        file: 'en.js',
+        iso: 'en'
       },
       {
-        code: "km",
-        iso: "kh-KH",
-        file: "kh-KH.js",
-        dir: "ltr",
-        moment: "km",
-      },
+        code: 'kh',
+        name: 'khmer',
+        file: 'kh.js',
+        iso: 'kh'
+      }
     ],
-    defaultLocale: "km",
-    fallbackLocale: "km",
-    // rootRedirect: "kh",
-    // strategy: "prefix",
-    noPrefixDefaultLocale: true,
     lazy: true,
-    loadLanguagesAsync: true,
-    langDir: "locales/",
-    vueI18n: {
-      fallbackLocale: "km",
-      messages: {
-        "en-US": require("./locales/en-US"),
-        "kh-KH": require("./locales/kh-KH"),
-      },
-    },
+    defaultLocale: 'kh',
+    langDir: 'lang/'
+    // vueI18nLoader: true
   },
   
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
