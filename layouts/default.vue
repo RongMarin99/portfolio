@@ -1,6 +1,5 @@
 <template>
     <div>
-  
       <!-- Start Header -->
       <b-container fluid 
         :class="$colorMode.value=='dark'?'bg-dark' : 'bg-white' " 
@@ -56,7 +55,7 @@
                     <b-dropdown-item :to="switchLocalePath('en')" >
                       <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
                     </b-dropdown-item>
-                    <b-dropdown-item :to="switchLocalePath('kh')">
+                    <b-dropdown-item :to="switchLocalePath('km')">
                       <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
                     </b-dropdown-item>
                   </b-nav-item-dropdown>
@@ -148,6 +147,9 @@ export default{
   //     ]
   //   }
   // },
+  head () {
+    return this.$nuxtI18nHead()
+  },
     data(){
         return {
           address: '',
@@ -196,6 +198,11 @@ export default{
         getImage(image) {
           return 'https://etec-api.loveounnas.xyz/image_etec/' + image
         },
+        switchLang(locale){
+          if (this.$i18n.locale !== locale) {
+              this.$i18n.locale = locale;
+          }
+        }
     }
    
 }

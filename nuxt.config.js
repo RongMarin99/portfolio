@@ -116,31 +116,43 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     'nuxt-material-design-icons-iconfont',
-    	[
 			'nuxt-i18n',
-			{
-				locales: [
-					{
-						code: 'en',
-						name: 'English',
-						file: 'en.js',
-						iso: 'en'
-					},
-					{
-						code: 'kh',
-						name: 'khmer',
-						file: 'kh.js',
-						iso: 'kh'
-					}
-				],
-				//lazy: true,
-				defaultLocale: 'kh',
-				langDir: 'lang/'
-				// vueI18nLoader: true
-			}
-		],
   ],
-
+  i18n: {
+    detectBrowserLanguage: false,
+    locales: [
+      {
+        code: "en",
+        iso: "en-US",
+        file: "en-US.js",
+        dir: "ltr",
+        moment: "en",
+      },
+      {
+        code: "km",
+        iso: "kh-KH",
+        file: "kh-KH.js",
+        dir: "ltr",
+        moment: "km",
+      },
+    ],
+    defaultLocale: "km",
+    fallbackLocale: "km",
+    // rootRedirect: "kh",
+    // strategy: "prefix",
+    noPrefixDefaultLocale: true,
+    lazy: true,
+    loadLanguagesAsync: true,
+    langDir: "locales/",
+    vueI18n: {
+      fallbackLocale: "km",
+      messages: {
+        "en-US": require("./locales/en-US"),
+        "kh-KH": require("./locales/kh-KH"),
+      },
+    },
+  },
+  
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308

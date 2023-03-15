@@ -1,4 +1,4 @@
-export default{
+const messages = {
     english: 'អង់គ្លេស',
     khmer: 'ខ្មែរ',
     home: 'ទំព័រដើម',
@@ -15,3 +15,4 @@ export default{
     about_us: 'អំពីយើង',
     read_more: 'បន្តការអាន'
 }
+export default messages
