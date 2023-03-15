@@ -151,19 +151,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    analyze: true,
-    // Add exception
-    transpile: ["vee-validate/dist/rules"],
-    html: {
-      minify: {
-        collapseWhitespace: true, // as @dario30186 mentioned
-        removeComments: true, // 👈 add this line
-      },
-    },
-    postcss: {
-      plugins: {
-      },
-    },
+    extend (config) {
+      config.module.rules.push({
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto"
+      })
+    }
   },
   loading: {
     color: '#FD7237',
