@@ -1,18 +1,5 @@
 
 export default {
-  
-  // generate: {
-  //   // routes: [
-  //   //   dynamicRoutes
-  //   // ]
-  //   routes() {
-  //     return axios.get('https://etec-api.loveounnas.xyz/api/generate/route').then(res => {
-  //       return res.data.map(user => {
-  //         return '/Detail/' + user.id + '/'+user.type
-  //       })
-  //     })
-  //   }
-  // },
   // Global page headers: https://go.nuxtjs.dev/config-head
   mode: "universal", 
   target: "server",
@@ -121,12 +108,19 @@ export default {
     baseURL: 'https://etec-api.loveounnas.xyz/api/',
    // baseURL: 'http://localhost:8000/api/',
   },
-
+  manifest: {
+    name: 'Etec Center',
+    lang: 'kh',
+    short_name: 'Etec Center',
+    display: 'standalone',
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      name: 'Etec Center',
+      lang: 'kh',
+      useWebmanifestExtension: false,
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
