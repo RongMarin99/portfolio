@@ -1,9 +1,29 @@
 {
-  "builds": [
+   "version": 2,
+   "builds": [
      {
-      "src": "nuxt.config.js",
-       "use": "@nuxtjs/vercel-builder@0.23.0",
-       "config": {}
-      }
-   ]
-}
+       "src": "package.json",
+       "use": "@vercel/node"
+     },
+     {
+       "src": "nuxt.config.js",
+       "use": "@nuxtjs/vercel-builder",
+       "config": {
+         "serverFiles": [
+           "plugins/**",
+           "utils/**",
+           "locales/**",
+           "static/**",
+           "content/**",
+           ".nuxt/content/**",
+           "api/**"
+         ]
+       }
+     }
+ 
+   ],
+   "buildCommand": "yarn build",
+   "outputDirectory": "dist",
+   "framework": "nuxtjs"
+ }
+ 
