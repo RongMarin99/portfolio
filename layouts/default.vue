@@ -1,83 +1,85 @@
 <template>
     <div>
       <!-- Start Header -->
-      <b-container fluid 
-        :class="$colorMode.value=='dark'?'bg-dark' : 'bg-white' " 
-        class="position-fixed header"
-        style="border-bottom:0.1px solid #ededed">
-          <b-navbar toggleable="lg">
-            <b-container class="p-2">
-              <b-navbar-brand to="/">
-                <img height="50" :src="getImage(header.image)" alt="">
-              </b-navbar-brand>
-  
-              <b-navbar-toggle 
-                target="nav-collapse" 
-                class="ml-auto"
-              >
-              <span class="material-icons" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">menu</span>
-            </b-navbar-toggle>
-  
-              <b-collapse id="nav-collapse" is-nav>
-                <b-navbar-nav class="m-auto" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
-                  <b-nav-item class="pl-4" to="/" >
-                    {{ $t('home') }}
-                  </b-nav-item>
-                  <b-nav-item class="pl-4" to="/Course">
-                    {{ $t('course') }}
-                  </b-nav-item>
-                  <b-nav-item class="pl-4" to="/Article">
-                    {{ $t('article') }}
-                  </b-nav-item>
-                  <b-nav-item class="pl-4" to="/Video">
-                    {{ $t('video') }}
-                  </b-nav-item>
-                  <b-nav-item class="pl-4" to="/Job">
-                    {{ $t('job') }}
-                  </b-nav-item>
-                </b-navbar-nav>
-                <!-- Right aligned nav items -->
-                <b-navbar-nav class="m-right">
-                  <b-nav-form>
-                    <b-form-input size="sm" class="mr-sm-2" :placeholder="$t('search')+'...'"></b-form-input>
-                    <b-button size="sm" class="my-2 my-sm-0 orange-bg" type="submit">{{ $t('search') }}</b-button>
-                  </b-nav-form>
-  
-                  <b-nav-item-dropdown class="ml-2 mr-1" right>
-                    <template #text>
-                      <span v-if="$i18n.locale == 'en'" style="padding:0px">
-                        <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt="">
-                      </span>
-                      <span v-else>
-                        <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt="">
-                      </span>
-                    </template>
-                    <b-dropdown-item :to="switchLocalePath('en')" >
-                      <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
-                    </b-dropdown-item>
-                    <b-dropdown-item :to="switchLocalePath('kh')">
-                      <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
-                    </b-dropdown-item>
-                  </b-nav-item-dropdown>
-  
-                  <b-nav-item>
-                    <span v-if="$colorMode.value=='dark'"
-                       @click="$colorMode.value='light'"
-                       class="material-icons"
-                       :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
-                    >brightness_4</span>
-                    <span v-if="$colorMode.value!='dark'"
-                      @click="$colorMode.value='dark'"
-                      class="material-icons"
-                      :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
-                    >nights_stay</span>
-                  </b-nav-item>
-                </b-navbar-nav>
-  
-              </b-collapse> 
-          </b-container>
-          </b-navbar>
-      </b-container>
+      <client-only>
+        <b-container fluid 
+          :class="$colorMode.value=='dark'?'bg-dark' : 'bg-white' " 
+          class="position-fixed header"
+          style="border-bottom:0.1px solid #ededed">
+            <b-navbar toggleable="lg">
+              <b-container class="p-2">
+                <b-navbar-brand to="/">
+                  <img height="50" :src="getImage(header.image)" alt="">
+                </b-navbar-brand>
+    
+                <b-navbar-toggle 
+                  target="nav-collapse" 
+                  class="ml-auto"
+                >
+                <span class="material-icons" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">menu</span>
+              </b-navbar-toggle>
+    
+                <b-collapse id="nav-collapse" is-nav>
+                  <b-navbar-nav class="m-auto" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
+                    <b-nav-item class="pl-4" to="/" >
+                      {{ $t('home') }}
+                    </b-nav-item>
+                    <b-nav-item class="pl-4" to="/Course">
+                      {{ $t('course') }}
+                    </b-nav-item>
+                    <b-nav-item class="pl-4" to="/Article">
+                      {{ $t('article') }}
+                    </b-nav-item>
+                    <b-nav-item class="pl-4" to="/Video">
+                      {{ $t('video') }}
+                    </b-nav-item>
+                    <b-nav-item class="pl-4" to="/Job">
+                      {{ $t('job') }}
+                    </b-nav-item>
+                  </b-navbar-nav>
+                  <!-- Right aligned nav items -->
+                  <b-navbar-nav class="m-right">
+                    <b-nav-form>
+                      <b-form-input size="sm" class="mr-sm-2" :placeholder="$t('search')+'...'"></b-form-input>
+                      <b-button size="sm" class="my-2 my-sm-0 orange-bg" type="submit">{{ $t('search') }}</b-button>
+                    </b-nav-form>
+    
+                    <b-nav-item-dropdown class="ml-2 mr-1" right>
+                      <template #text>
+                        <span v-if="$i18n.locale == 'en'" style="padding:0px">
+                          <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt="">
+                        </span>
+                        <span v-else>
+                          <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt="">
+                        </span>
+                      </template>
+                      <b-dropdown-item @click.prevent.stop="$i18n.setLocale('en')" >
+                        <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
+                      </b-dropdown-item>
+                      <b-dropdown-item @click.prevent.stop="$i18n.setLocale('kh')">
+                        <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
+                      </b-dropdown-item>
+                    </b-nav-item-dropdown>
+    
+                    <b-nav-item>
+                      <span v-if="$colorMode.value=='dark'"
+                        @click="$colorMode.value='light'"
+                        class="material-icons"
+                        :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
+                      >brightness_4</span>
+                      <span v-if="$colorMode.value!='dark'"
+                        @click="$colorMode.value='dark'"
+                        class="material-icons"
+                        :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
+                      >nights_stay</span>
+                    </b-nav-item>
+                  </b-navbar-nav>
+    
+                </b-collapse> 
+            </b-container>
+            </b-navbar>
+        </b-container>
+      </client-only>
       <!-- End Header -->
 
       <Nuxt />
@@ -138,6 +140,7 @@
     </div>
 </template>
 <script>
+import cookie from 'js-cookie'
 export default{
     colorMode: 'light',
   //   head () {
@@ -201,6 +204,7 @@ export default{
         switchLang(locale){
           if (this.$i18n.locale !== locale) {
               this.$i18n.locale = locale;
+              //cookie.set('lang',locale)
           }
         }
     }

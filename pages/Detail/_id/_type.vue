@@ -3,7 +3,6 @@
         <a target="_blank" :href="`https://www.facebook.com/sharer.php?u=https://etec-center.vercel.app/${url}`">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
-                {{ $i18n.locale }}
                <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
@@ -25,7 +24,7 @@
                 អត្ថបទទាក់ទង
                 </h5>
                 <div v-for="item in relate_content" :key="item" :class="$colorMode.value=='dark'?'text-white' : 'text-light-mode'">
-                     <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`" style="color:white" >
+                     <nuxt-link :to="`/Detail/${item.id}/${item.type}`" style="color:white" >
                         <b-row >
                               <b-col cols="3" xl="4" lg="2" md="3" xs="3">
                                   <figure>
@@ -47,24 +46,14 @@
 </template>
 <script>
 import moment from 'moment'
+import cookie from 'js-cookie'
 import { mapGetters } from 'vuex'
 export default{
     colorMode: 'light',
     name: "Detail",
-    // asyncData({ params, error, $axios }) {
-    //     return $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
-    //     .then((res) => {
-    //         return { meta: res }
-    //     })
-    //     .catch((e) => {
-    //         error({ statusCode: 404, message: 'Post not found' })
-    //     })
-    // },
     async fetch ({ store, $axios, params }) {
         var meta = await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
         await store.dispatch('articles/setArticle',meta);
-    },
-    computed: {
     },
     head(){
         return {
@@ -107,9 +96,11 @@ export default{
            image: ''
         }
     },
-    created() {
+    mounted() {
+       // var lang = cookie.get('lang')
+        //this.$i18n.locale = lang
        // this.findById()
-       // this.get()
+        this.get()
     },
     computed: {
         ...mapGetters({
@@ -134,8 +125,8 @@ export default{
         },
         get(){
             var input = {
-                id: this.id,
-                type: this.type
+                id: this.$route.params.id,
+                type: this.$route.params.type
             }
             this.$axios.$post('relate/content',input).then(response => {
                 this.relate_content = response

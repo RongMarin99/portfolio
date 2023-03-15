@@ -109,10 +109,10 @@ export default {
         iso: 'kh'
       }
     ],
-    lazy: true,
+    //lazy: true,
     defaultLocale: 'kh',
-    langDir: 'lang/'
-    // vueI18nLoader: true
+    langDir: 'lang/',
+    skipSettingLocaleOnNavigate: true,
   },
   
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
