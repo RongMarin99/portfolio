@@ -366,7 +366,8 @@ export default {
       },
       slide: [],
       url: 'getAllCourse',
-      founder: ''
+      founder: '',
+      api_url: process.env.API_URL
     }
   },
   created() {

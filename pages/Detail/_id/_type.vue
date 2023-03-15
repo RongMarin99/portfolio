@@ -1,10 +1,6 @@
 <template>
     <b-container class="main-slide" >
-        <div class="fb-share-button" 
-            :data-href="`https://etec-center1.netlify.app${url}`" 
-            data-layout="button_count">
-        </div>
-        <a :href="`https://www.facebook.com/sharer.php?u=https://etec-center1.netlify.app${url}`">Facebook</a>
+        <a target="_blank" :href="`https://www.facebook.com/sharer.php?u=${web_url}${url}`">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
@@ -100,6 +96,7 @@ export default{
     },
     data(){
         return {
+           web_url: process.env.WEB_URL,
            detail: {},
            url: this.$route.fullPath,
            image_share: this.$route.query.image,
@@ -118,16 +115,6 @@ export default{
             meta: 'articles/article'
         })
     },
-    // mounted(){
-    //     (function(d, s, id) {
-    //         var js, fjs = d.getElementsByTagName(s)[0];
-    //         if (d.getElementById(id)) return;
-    //         js = d.createElement(s); js.id = id;
-    //         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-    //         fjs.parentNode.insertBefore(js, fjs);
-    //         }
-    //     (document, 'script', 'facebook-jssdk'))
-    // },
     methods: {
         findById(){
             this.id = this.$route.query.id
