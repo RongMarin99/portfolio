@@ -41,9 +41,9 @@ export default {
   mode: "universal", 
   target: "server",
   ssr: true,
-  // generate: {
-  //   fallback: true
-  // },
+  generate: {
+    fallback: true
+  },
   head: {
     title: 'Etec Center',
     meta: [
