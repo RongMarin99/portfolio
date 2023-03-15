@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/Detail/8/3", (function(a,b){return {data:[{meta:a}],fetch:{"Detail:0":{detail:{},url:"\u002FDetail\u002F8\u002F3",image_share:void 0,id:b,type:b,relate_content:[],image:a,meta:a}},mutations:[]}}("",null)));

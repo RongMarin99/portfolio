@@ -25,21 +25,21 @@ const dynamicRoutes = async () => {
 }
 export default {
   
-  generate: {
-    // routes: [
-    //   dynamicRoutes
-    // ]
-    routes() {
-      return axios.get('https://etec-api.loveounnas.xyz/api/generate/route').then(res => {
-        return res.data.map(user => {
-          return '/Detail/' + user.id + '/'+user.type
-        })
-      })
-    }
-  },
+  // generate: {
+  //   // routes: [
+  //   //   dynamicRoutes
+  //   // ]
+  //   routes() {
+  //     return axios.get('https://etec-api.loveounnas.xyz/api/generate/route').then(res => {
+  //       return res.data.map(user => {
+  //         return '/Detail/' + user.id + '/'+user.type
+  //       })
+  //     })
+  //   }
+  // },
   // Global page headers: https://go.nuxtjs.dev/config-head
   mode: "universal", 
-  target: "static",
+  target: "server",
   ssr: true,
   // generate: {
   //   fallback: true
@@ -151,6 +151,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config) {
+      config.module.rules.push({
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto"
+      })
+    }
   },
   loading: {
     color: '#FD7237',
