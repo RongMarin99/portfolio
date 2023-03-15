@@ -1,16 +1,20 @@
 <template>
     <b-container class="main-slide" >
-        <a target="_blank" :href="`https://www.facebook.com/sharer.php?u=https://etec-center.vercel.app/${url}`">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
                <b-row>
-                 <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
+                 <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3 d-flex justify-content-between">
                     <span>
                         {{ convertDateEnToKh(meta['created_at']).day }}, {{ convertDateEnToKh(meta['created_at']).month }} {{ convertDateEnToKh(meta['created_at']).year }}
                     </span>
                  </b-col>
-          
+                 <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
+                    <a target="_blank" class="float-right fb-share d-flex align-items-center"
+                       :href="`https://www.facebook.com/sharer.php?u=https://etec-center.vercel.app/${url}`">
+                       <i class="material-icons">share</i> Facebook 
+                       </a>
+                 </b-col>
                </b-row>
                <hr>
                <b-row>
