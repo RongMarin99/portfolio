@@ -21,7 +21,7 @@
             </b-col>
             <b-col cols="12" xl="4" lg="12" md="12" xs="12" class="mt-3">
                <h5 class="pb-1" style="border-bottom: 3px solid #FD7237;width:fit-content;">
-                អត្ថបទទាក់ទង
+                 អត្ថបទទាក់ទង
                 </h5>
                 <div v-for="item in relate_content" :key="item" :class="$colorMode.value=='dark'?'text-white' : 'text-light-mode'">
                      <nuxt-link :to="`/Detail/${item.id}/${item.type}`" style="color:white" >
