@@ -11,7 +11,7 @@
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
-                        {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }}
+                        <!-- {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }} -->
                     </span>
                  </b-col>
           
@@ -19,14 +19,7 @@
                <hr>
                <b-row>
                 <b-col cols="12" class="content-detail">
-                    <div v-html="meta.text"></div>
-                    
-                    <!-- <p>ក្នុងប្រវត្តិសាស្រ្តពិភពលោក​រាប់ពាន់​ឆ្នាំមកនេះ មាន​ការលេចឡើង​ចក្រភពជាច្រើន។ ខាងក្រោមនេះ​គឺ​ជាចក្រភពធំៗទាំង១០០ ដោយ​ក្នុងនោះ​នៅតំបន់អាស៊ីអាគ្នេយ៍​ក៏មាន ៤ចក្រភពផងដែរ រួមមាន​ចក្រភពខ្មែរ (Khmer Empire), ភូមា (Taungoo Empire), Srivijaya Empire និង Majaphit Empire ដែល​ចក្រភពទាំងពីរជាផ្នែកមួយ​នៃឥណ្ឌូណេស៊ី និងម៉ាឡេស៊ី​​បច្ចុប្បន្ន។ អតីតចក្រភព​ធំជាងគេ គឺអង់គ្លេស បន្ទាប់មក ម៉ុងហ្គោល និង​រុស្ស៊ី។</p>
-                    <figure>
-                        <img src="https://via.placeholder.com/1000x400" alt="">
-                    </figure>
-                    <p>ក្នុងប្រវត្តិសាស្រ្តពិភពលោក​រាប់ពាន់​ឆ្នាំមកនេះ មាន​ការលេចឡើង​ចក្រភពជាច្រើន។ ខាងក្រោមនេះ​គឺ​ជាចក្រភពធំៗទាំង១០០ ដោយ​ក្នុងនោះ​នៅតំបន់អាស៊ីអាគ្នេយ៍​ក៏មាន ៤ចក្រភពផងដែរ រួមមាន​ចក្រភពខ្មែរ (Khmer Empire), ភូមា (Taungoo Empire), Srivijaya Empire និង Majaphit Empire ដែល​ចក្រភពទាំងពីរជាផ្នែកមួយ​នៃឥណ្ឌូណេស៊ី និងម៉ាឡេស៊ី​​បច្ចុប្បន្ន។ អតីតចក្រភព​ធំជាងគេ គឺអង់គ្លេស បន្ទាប់មក ម៉ុងហ្គោល និង​រុស្ស៊ី។</p>
-                     -->
+                    <!-- <div v-html="meta.text"></div> -->
                 </b-col>
                </b-row>
             </b-col>
@@ -57,23 +50,25 @@
 </template>
 <script>
 import moment from 'moment'
+import { mapGetters } from 'vuex'
 export default{
     colorMode: 'light',
     name: "Detail",
-    async asyncData({ params, error, $axios }) {
-        return await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
-        .then((res) => {
-            return { meta: res }
-        })
-        .catch((e) => {
-            error({ statusCode: 404, message: 'Post not found' })
-        })
-    },
-    fetch(){
-
+    // asyncData({ params, error, $axios }) {
+    //     return $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
+    //     .then((res) => {
+    //         return { meta: res }
+    //     })
+    //     .catch((e) => {
+    //         error({ statusCode: 404, message: 'Post not found' })
+    //     })
+    // },
+    async fetch ({ store, $axios, params }) {
+        var meta = await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
+        await store.dispatch('articles/setArticle',meta);
     },
     computed: {
-  },
+    },
     head(){
         return {
         meta:[
@@ -115,25 +110,24 @@ export default{
         }
     },
     created() {
-      //  this.findById()
-        this.get()
-        //this.getApp()
+       // this.findById()
+       // this.get()
     },
     computed: {
-        description: function(){
-            return this.detail.text
-        }
+        ...mapGetters({
+            meta: 'articles/article'
+        })
     },
-    mounted(){
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-            fjs.parentNode.insertBefore(js, fjs);
-            }
-        (document, 'script', 'facebook-jssdk'))
-    },
+    // mounted(){
+    //     (function(d, s, id) {
+    //         var js, fjs = d.getElementsByTagName(s)[0];
+    //         if (d.getElementById(id)) return;
+    //         js = d.createElement(s); js.id = id;
+    //         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    //         fjs.parentNode.insertBefore(js, fjs);
+    //         }
+    //     (document, 'script', 'facebook-jssdk'))
+    // },
     methods: {
         findById(){
             this.id = this.$route.query.id
