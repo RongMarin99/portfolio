@@ -1,13 +1,13 @@
 <template>
     <b-container class="main-slide" >
-        <a target="_blank" :href="`https://www.facebook.com/sharer.php?u=${web_url}${url}`">Facebook</a>
+        <a target="_blank" :href="`https://www.facebook.com/sharer.php?u=https://nuxt-ssr-ten.vercel.app/Detail${url}`">Facebook</a>
         <b-row>
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
                <b-row>
                  <b-col cols="12" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <span>
-                        <!-- {{ convertDateEnToKh(detail['created_at']).day }}, {{ convertDateEnToKh(detail['created_at']).month }} {{ convertDateEnToKh(detail['created_at']).year }} -->
+                        {{ convertDateEnToKh(meta['created_at']).day }}, {{ convertDateEnToKh(meta['created_at']).month }} {{ convertDateEnToKh(meta['created_at']).year }}
                     </span>
                  </b-col>
           
@@ -15,7 +15,7 @@
                <hr>
                <b-row>
                 <b-col cols="12" class="content-detail">
-                    <!-- <div v-html="meta.text"></div> -->
+                    <div v-html="meta.text"></div>
                 </b-col>
                </b-row>
             </b-col>
