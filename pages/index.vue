@@ -138,13 +138,13 @@
                             <p class="text-white">
                               {{ dateFormat(default_article['created_at']) }}
                             </p>
-                            <nuxt-link :to="`/Detail?id=${default_article['id']}&type=${default_article['type']}&default=1`">
+                            <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
                               <h3 class="text-white bg-image-default" >
                                     {{ getNameByLocalByLang(default_article['title']) }}
                               </h3> 
                             </nuxt-link>
                             <div class="button">
-                              <nuxt-link :to="`/Detail?id=${default_article['id']}&type=${default_article['type']}&default=1`">
+                              <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
                                 {{ $t('read_more') }}
                               </nuxt-link>
                             </div>
@@ -207,13 +207,13 @@
                             <p class="text-white">
                               {{ dateFormat(default_job['created_at']) }}
                             </p>
-                            <nuxt-link :to="`/Detail?id=${default_job['id']}&type=${default_job['type']}&default=1`">
+                            <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
                               <h3 class="text-white bg-image-default" >
                                     {{ getNameByLocalByLang(default_job['title']) }}
                               </h3> 
                             </nuxt-link>
                             <div class="button">
-                              <nuxt-link :to="`/Detail?id=${default_job['id']}&type=${default_job['type']}&default=1`">
+                              <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
                                 {{ $t('read_more') }}
                               </nuxt-link>
                             </div>

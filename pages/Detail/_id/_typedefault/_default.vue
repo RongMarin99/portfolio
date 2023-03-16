@@ -56,7 +56,7 @@ export default{
     colorMode: 'light',
     name: "Detail",
     async fetch ({ store, $axios, params }) {
-        var meta = await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}/${params.default}`)
+        var meta = await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.typedefault}/${params.default}`)
         await store.dispatch('articles/setArticle',meta);
     },
     head(){
@@ -130,7 +130,7 @@ export default{
         get(){
             var input = {
                 id: this.$route.params.id,
-                type: this.$route.params.type
+                type: this.$route.params.typedefault
             }
             this.$axios.$post('relate/content',input).then(response => {
                 this.relate_content = response
