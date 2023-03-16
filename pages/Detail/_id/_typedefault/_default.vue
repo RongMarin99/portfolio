@@ -32,7 +32,7 @@
                         <b-row >
                               <b-col cols="3" xl="4" lg="2" md="3" xs="3">
                                   <figure>
-                                      <img :src="getImage(item.image)" alt="">
+                                      <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                                   </figure>
                               </b-col>
                               <b-col cols="9" xl="8" lg="10" md="9" xs="9" class="pl-0">
@@ -78,7 +78,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image+'?'+this.meta.image
+            content: this.api_key+"/image_etec/"+this.meta.image+'?'+this.meta.image
           },
           { hid: 'og-url', property: 'og:url', 
             content: this.url
@@ -90,6 +90,7 @@ export default{
     },
     data(){
         return {
+           api_key: process.env.BASE_URL,
            web_url: process.env.WEB_URL,
            detail: {},
            url: this.$route.fullPath,

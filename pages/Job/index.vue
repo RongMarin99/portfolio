@@ -30,7 +30,7 @@
                     <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                       {{ $t('about_job') }}
                     </b-badge>
-                    <img :src="getImage(item['image'])" alt="">
+                    <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                   </figure>
                   <b-card-text>
                     <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
@@ -52,6 +52,7 @@ import moment from 'moment';
     colorMode: 'light',
     data() {
         return {
+           api_key: process.env.BASE_URL,
            jobs: [],
            job_loading: true,
         }

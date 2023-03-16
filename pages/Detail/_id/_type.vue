@@ -32,7 +32,7 @@
                         <b-row >
                               <b-col cols="3" xl="4" lg="2" md="3" xs="3">
                                   <figure>
-                                      <img :src="getImage(item.image)" alt="">
+                                      <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                                   </figure>
                               </b-col>
                               <b-col cols="9" xl="8" lg="10" md="9" xs="9" class="pl-0">
@@ -78,10 +78,11 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: 'https://etec-api.loveounnas.xyz/image_etec/'+this.meta.image+'?'+this.meta.image
+            content: this.api_key+"/image_etec/"+this.meta.image+'?'+this.meta.image
           },
-          { hid: 'og-url', property: 'og:url', 
-            content: this.url
+          { 
+            hid: 'og-url', property: 'og:url', 
+            content: this.web_url+this.url
           },
           { property: "og:image:width", content: "740" },
           { property: "og:image:height", content: "300" },
@@ -90,6 +91,8 @@ export default{
     },
     data(){
         return {
+           api_url: process.env.API_URL,
+           api_key: process.env.BASE_URL,
            web_url: process.env.WEB_URL,
            detail: {},
            url: this.$route.fullPath,
@@ -121,7 +124,7 @@ export default{
                 type: this.type,
                 default: this.default
             }
-            this.$axios.$post('https://etec-api.loveounnas.xyz/api/detail',input).then(response => {
+            this.$axios.$post('detail',input).then(response => {
                 this.detail = response
                 this.detail.date = moment(this.detail.created_at, "YYYYMMDD").fromNow();
                 this.image = this.detail.image

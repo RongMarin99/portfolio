@@ -34,7 +34,7 @@
           align="center" 
           :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
         >
-          <b>Explore New</b>
+          <b>{{ $t('article_popular') }}</b>
         </h2>
         <div class="mt-5">
           <b-tabs pills content-class="mt-3" align="center">

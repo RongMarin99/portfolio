@@ -16,5 +16,6 @@ export default{
     read_more: 'បន្តការអាន',
     founder: 'ស្ថាបនិក',
     search_not_found: 'ស្វែងរកមិនឃើញ...!',
-    developed_by: 'បាន​បង្កើត​ឡើង​ដោយ'
+    developed_by: 'បាន​បង្កើត​ឡើង​ដោយ',
+    article_popular: 'អត្ថបទពេញនិយម'
 }

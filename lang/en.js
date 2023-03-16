@@ -16,5 +16,6 @@ export default {
     read_more: 'Read More',
     founder: 'Founder',
     search_not_found: 'Search not found...!',
-    developed_by: 'Developed by'
+    developed_by: 'Developed by',
+    article_popular: 'Popular Articles'
 }
