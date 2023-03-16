@@ -11,7 +11,7 @@
                  </b-col>
                  <b-col cols="6" xl="6" lg="6" md="6" xs="6" class="mt-3">
                     <a target="_blank" class="float-right fb-share d-flex align-items-center"
-                       :href="`https://www.facebook.com/sharer.php?u=https://etec-center.vercel.app/${url}`">
+                       :href="`https://www.facebook.com/sharer.php?u=${web_url}${url}`">
                        <i class="material-icons">share</i> Facebook 
                        </a>
                  </b-col>

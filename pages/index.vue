@@ -18,7 +18,7 @@
           >
             <!-- Slide with blank fluid image to maintain slide aspect ratio -->
             <b-carousel-slide v-for="item in slide" :key="item.index"
-                :img-src="getImage(item['image'])" img-alt="Blank image">
+                :img-src="`${api_key}/image_etec/${item['image']}`" img-alt="Blank image">
               <p>
                 <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
                 a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum. -->
@@ -61,7 +61,7 @@
                     <div
                     class="defualt-show w-100 card-content-dg "
                      style="height:500px"
-                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${getImage(default_course['image'])}');`">
+                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_course['image']}');`">
                         <div class="main-content-title">
                             <p class="text-white">
                               {{ dateFormat(default_course['created_at']) }}
@@ -95,7 +95,7 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
                         </b-badge>
-                        <img :src="getImage(item['image'])" alt="">
+                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
@@ -133,7 +133,7 @@
                     <div
                      style="height:500px"
                      class="defualt-show w-100"
-                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${getImage(default_article['image'])}');`">
+                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_article['image']}');`">
                         <div class="main-content-title">
                             <p class="text-white">
                               {{ dateFormat(default_article['created_at']) }}
@@ -165,7 +165,7 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('article') }}
                         </b-badge>
-                        <img :src="getImage(item['image'])" alt="">
+                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
@@ -202,7 +202,7 @@
                     <div
                      style="height:500px"
                      class="defualt-show w-100"
-                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${getImage(default_job['image'])}');`">
+                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_job['image']}');`">
                         <div class="main-content-title">
                             <p class="text-white">
                               {{ dateFormat(default_job['created_at']) }}
@@ -236,7 +236,7 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('about_job') }}
                         </b-badge>
-                        <img :src="getImage(item['image'])" alt="">
+                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
@@ -269,7 +269,7 @@
             <b-col cols="12" xl="4" lg="4" md="4" sm="4">
               <figure>
                 <!-- width 200 -->
-                  <img :src="getImage(founder.image)" alt="">
+                  <img :src="`${api_key}/image_etec/${founder.image}`" alt="">
               </figure>
             </b-col>
             <b-col cols="12" xl="8" lg="8" md="8" sm="8">
@@ -325,7 +325,7 @@ export default {
       course_loading: true,
       article_loading: true,
       job_loading: true,
-      api_key: '',
+      api_key: process.env.BASE_URL,
       allVideos: [],
       news: [],
       courses: [],
@@ -341,7 +341,6 @@ export default {
       slide: [],
       url: 'getAllCourse',
       founder: '',
-      api_url: process.env.API_URL
     }
   },
   mounted() {

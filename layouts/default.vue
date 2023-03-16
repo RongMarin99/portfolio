@@ -9,7 +9,7 @@
             <b-navbar toggleable="lg">
               <b-container class="p-2">
                 <b-navbar-brand to="/">
-                  <img height="50" :src="getImage(header.image)" alt="">
+                  <img height="50" :src="`${api_key}/image_etec/${header.image}`" alt="">
                 </b-navbar-brand>
     
                 <b-navbar-toggle 
@@ -94,7 +94,7 @@
         <b-container class="p-4">
           <b-row>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-                <img width="100" :src="getImage(footer.image)" alt="">
+                <img width="100" :src="`${api_key}/image_etec/${footer.image}`" alt="">
                 <h6 class="mt-3 " :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
                   {{ footer.title }}
                 </h6>
@@ -127,7 +127,7 @@
                 <b-row>
                   <b-col cols='2' v-for="item in social" :key="item.index">
                     <a :href="item.url" target="_blank" rel="noopener noreferrer">
-                      <img height="30" class="rounded-circle" :src="getImage(item.image)" alt="">
+                      <img height="30" class="rounded-circle" :src="`${api_key}/image_etec/${item.image}`" alt="">
                     </a>
                   </b-col>
                 </b-row>
@@ -159,6 +159,7 @@ export default{
   },
     data(){
         return {
+          api_key: process.env.BASE_URL,
           address: '',
           about: '',
           footer: '',
