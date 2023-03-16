@@ -13,5 +13,6 @@ export default{
     contact: 'ទំនាក់ទំនងយើង',
     address: 'អាសយដ្ឋាន',
     about_us: 'អំពីយើង',
-    read_more: 'បន្តការអាន'
+    read_more: 'បន្តការអាន',
+    founder: 'ស្ថាបនិក'
 }

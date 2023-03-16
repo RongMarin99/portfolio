@@ -2,23 +2,23 @@
     <b-container class="main-slide" >
         <b-row v-if="video_loading" class="mt-5" >
             <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
-              <b-card no-body class="bg-white p-2">
+            <div class="card-content-dg p-2">
                 <b-skeleton-img height="200px"></b-skeleton-img>
                 <b-skeleton animation="wave" class="mt-1" width="100%"></b-skeleton>
                 <b-skeleton animation="wave" width="95%"></b-skeleton>
                 <b-skeleton animation="wave" width="100%"></b-skeleton>
-              </b-card>
+            </div>
             </b-col>
         </b-row>
 
         <b-row v-else>
             <b-col class=" mt-5" cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in videos" :key="item" >
-             <b-card no-body class="p-2" >
+                <div class="card-content-dg p-2">
                 <iframe width="100%" style="height:15rem" :src="item['url']" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                  <p :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'" class="pt-2">
+                <p :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'" class="pt-2">
                    {{ item['title'] }}
                 </p>
-             </b-card>
+            </div>
             </b-col>
         </b-row>
     </b-container>

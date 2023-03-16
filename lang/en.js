@@ -13,5 +13,6 @@ export default {
     contact: 'Contact',
     address: 'Address',
     about_us: 'About Us',
-    read_more: 'Read More'
+    read_more: 'Read More',
+    founder: 'Founder'
 }

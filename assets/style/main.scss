@@ -175,6 +175,15 @@ body {
             line-clamp: 3; 
     -webkit-box-orient: vertical;
   }
+  .four-line{
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+  }
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
     li.form-inline form{
@@ -360,5 +369,34 @@ body {
   i{
     font-size: 12px;
     margin-right: 3px;
+  }
+ }
+ .card-content-dg{
+  border-radius: 5px;
+  background-color: white;
+   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+   .badge {
+    z-index: 99;
+  }
+  img{
+    transition: all 0.5s;
+  }
+  figure{
+    overflow: hidden;
+  }
+  border-radius: 0px !important;
+  h6{
+    color: rgb(83, 94, 112);
+  }
+  .title{
+    height: 4.28rem;
+    line-height: 23px;
+    font-size: 1.13rem;
+  }
+  &:hover img{
+   transform:rotate(1deg) scale(1.05) ;
+  }
+  .description{
+    height: 6.3rem;
   }
  }
