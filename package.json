@@ -1,5 +1,5 @@
 {
-  "name": "Etec Center",
+  "name": "Etec-Center",
   "version": "1.0.0",
   "scripts": {
     "dev": "nuxt",
