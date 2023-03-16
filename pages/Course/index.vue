@@ -15,7 +15,7 @@
 
         <b-row v-else>
             <b-col class="mb-1 mt-5" cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in Category" :key="item">
-              <nuxt-link :to="`/Detail?id=${item.id}&type=${item.type}`">
+              <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
                 <div class="card-content-dg p-2">
                   <span class="mb-0 mt-0" style="font-size:13px">
                         {{ dateFormat(item['created_at']) }}

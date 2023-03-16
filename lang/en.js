@@ -14,5 +14,7 @@ export default {
     address: 'Address',
     about_us: 'About Us',
     read_more: 'Read More',
-    founder: 'Founder'
+    founder: 'Founder',
+    search_not_found: 'Search not found...!',
+    developed_by: 'Developed by'
 }

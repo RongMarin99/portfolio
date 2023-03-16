@@ -14,5 +14,7 @@ export default{
     address: 'អាសយដ្ឋាន',
     about_us: 'អំពីយើង',
     read_more: 'បន្តការអាន',
-    founder: 'ស្ថាបនិក'
+    founder: 'ស្ថាបនិក',
+    search_not_found: 'ស្វែងរកមិនឃើញ...!',
+    developed_by: 'បាន​បង្កើត​ឡើង​ដោយ'
 }

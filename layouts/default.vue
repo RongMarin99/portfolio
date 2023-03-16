@@ -40,8 +40,12 @@
                   <!-- Right aligned nav items -->
                   <b-navbar-nav class="m-right">
                     <b-nav-form>
-                      <b-form-input size="sm" class="mr-sm-2" :placeholder="$t('search')+'...'"></b-form-input>
-                      <b-button size="sm" class="my-2 my-sm-0 orange-bg" type="submit">{{ $t('search') }}</b-button>
+                      <b-form-input v-model="search" size="sm" class="mr-sm-2" :placeholder="$t('search')+'...'"></b-form-input>
+                      <b-button size="sm" 
+                                class="my-2 my-sm-0 orange-bg" 
+                                type="button"
+                                @click.prevent.stop="onSearch"
+                      >{{ $t('search') }}</b-button>
                     </b-nav-form>
     
                     <b-nav-item-dropdown class="ml-2 mr-1" right>
@@ -132,7 +136,7 @@
           </b-row>
         </b-container>
         <h6 align="right" class="mb-0 pb-2" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
-          Developed by: <a :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'" href="https://www.facebook.com/marin.rong" target="_blank" rel="noopener noreferrer">Rong Marin</a>
+          {{ $t('developed_by') }}: <a :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'" href="https://www.facebook.com/marin.rong" target="_blank" rel="noopener noreferrer">Rong Marin</a>
         </h6>
       </b-container>
       <!-- End Footer -->
@@ -159,7 +163,8 @@ export default{
           about: '',
           footer: '',
           header: '',
-          social: ''
+          social: '',
+          search: ''
         }
     },
     mounted(){
@@ -206,6 +211,9 @@ export default{
               this.$i18n.locale = locale;
               //cookie.set('lang',locale)
           }
+        },
+        onSearch(){
+          this.$router.push({path: `/Search/${this.search}`});
         }
     }
    
