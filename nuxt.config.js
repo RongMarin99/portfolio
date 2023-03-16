@@ -39,7 +39,7 @@ export default {
       {
 				rel: 'icon',
 				type: 'image/x-icon',
-				href: '/etec-logo.png'
+				href: '/icon.png'
 			}
       
     ],
@@ -126,8 +126,8 @@ export default {
       useWebmanifestExtension: false,
     },
     icon: {
-      source: '~/static/etec-logo.png' 
-   }
+      source: '~/static/icon.png' 
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
