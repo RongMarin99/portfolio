@@ -109,7 +109,7 @@
                 </b-col>
               </b-row>
 
-              <b-row>
+              <b-row v-if="course_per_page<course_total">
                 <b-col cols="12" class="d-flex justify-content-center">
                   <section class="">
                       <button class="load_more btn-5" @click="load_more(6,key.course)">
@@ -338,6 +338,8 @@ export default {
   },
   data() {
     return {
+      course_per_page: '',
+      course_total: '',
       course_table_size: 6,
       course_loading: true,
       course_new_action: true,
@@ -378,6 +380,8 @@ export default {
           })
           await this.$axios.$post('getAllCourse',{table_size: this.course_table_size}).then(response => {
             this.courses = response.data.data
+            this.course_total = response.data.total
+            this.course_per_page = response.data.per_page
             this.course_loading = false
             this.course_new_action = false
             this.course_load_more_loading = true
