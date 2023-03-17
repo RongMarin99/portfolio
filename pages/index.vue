@@ -99,13 +99,29 @@
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <h6 class="four-line description">
+                          <p class="four-line description">
                             {{ getNameByLocalByLang(item['description']) }}
-                          </h6>
+                          </p>
                         </div>
                       </b-card-text>
                     </div>
                   </nuxt-link>
+                </b-col>
+              </b-row>
+
+              <b-row>
+                <b-col cols="12" class="d-flex justify-content-center">
+                  <section class="">
+                      <button class="load_more btn-5" @click="load_more(6,key.course)">
+                        <div v-if="course_load_more_loading">
+                            {{ $t('view_more') }}
+                        </div>
+                        <div v-else>
+                            <b-spinner small></b-spinner>
+                            {{ $t('loading') }}
+                        </div>
+                      </button> 
+                  </section>
                 </b-col>
               </b-row>
 
@@ -169,9 +185,9 @@
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <h6 class="four-line description">
+                          <p class="four-line description">
                             {{ getNameByLocalByLang(item['description']) }}
-                          </h6>
+                          </p>
                         </div>
                       </b-card-text>
                     </div>
@@ -240,9 +256,9 @@
                       </figure>
                       <b-card-text>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <h6 class="four-line description">
+                          <p class="four-line description">
                             {{ getNameByLocalByLang(item['description']) }}
-                          </h6>
+                          </p>
                         </div>
                       </b-card-text>
                     </div>
@@ -322,7 +338,10 @@ export default {
   },
   data() {
     return {
+      course_table_size: 6,
       course_loading: true,
+      course_new_action: true,
+      course_load_more_loading: true,
       article_loading: true,
       job_loading: true,
       api_key: process.env.BASE_URL,
@@ -353,13 +372,15 @@ export default {
   methods: {
     async get(key='course'){
       if(key==this.key.course){
-        if(this.course_loading){
+        if(this.course_new_action){
           await this.$axios.$get('setting/course').then(response => {
             this.default_course = response
           })
-          await this.$axios.$get('getAllCourse').then(response => {
-            this.courses = response.data
+          await this.$axios.$post('getAllCourse',{table_size: this.course_table_size}).then(response => {
+            this.courses = response.data.data
             this.course_loading = false
+            this.course_new_action = false
+            this.course_load_more_loading = true
           })
         }
         
@@ -394,6 +415,14 @@ export default {
       await this.$axios.$get('founder/get').then(response => {
         this.founder = response
       })
+    },
+    load_more(table_size,key){
+      this.course_new_action = true
+      this.course_table_size+=table_size
+      if(key==this.key.course){
+        this.course_load_more_loading = false
+      }
+      this.get(key)
     },
     getImage(image) {
         return 'https://etec-api.loveounnas.xyz/image_etec/' + image

@@ -17,5 +17,7 @@ export default {
     founder: 'Founder',
     search_not_found: 'Search not found...!',
     developed_by: 'Developed by',
-    article_popular: 'Popular Articles'
+    article_popular: 'Popular Articles',
+    view_more: 'View More',
+    loading: 'Loading...'
 }

@@ -17,5 +17,7 @@ export default{
     founder: 'ស្ថាបនិក',
     search_not_found: 'ស្វែងរកមិនឃើញ...!',
     developed_by: 'បាន​បង្កើត​ឡើង​ដោយ',
-    article_popular: 'អត្ថបទពេញនិយម'
+    article_popular: 'អត្ថបទពេញនិយម',
+    view_more: '  មើលបន្ថែម',
+    loading: 'សូមរងចាំបន្តិច...'
 }

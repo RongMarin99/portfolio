@@ -39,7 +39,7 @@
                 </div>
                 </nuxt-link>
             </b-col>
-
+            
             <b-col cols="12" class="d-flex justify-content-center" v-if="!result.length>0">
                 <h1>{{ $route.params.search }} {{ $t('search_not_found') }}</h1>
             </b-col>
