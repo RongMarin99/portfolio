@@ -109,7 +109,7 @@
                 </b-col>
               </b-row>
 
-              <b-row v-if="course_per_page<course_total">
+              <b-row>
                 <b-col cols="12" class="d-flex justify-content-center">
                   <section class="">
                       <button class="load_more btn-5" @click="load_more(6,key.course)">
@@ -194,6 +194,23 @@
                   </nuxt-link>
                 </b-col>
               </b-row>
+
+              <b-row>
+                <b-col cols="12" class="d-flex justify-content-center">
+                  <section class="">
+                      <button class="load_more btn-5" @click="load_more(6,key.article)">
+                        <div v-if="article_load_more_loading">
+                            {{ $t('view_more') }}
+                        </div>
+                        <div v-else>
+                            <b-spinner small></b-spinner>
+                            {{ $t('loading') }}
+                        </div>
+                      </button> 
+                  </section>
+                </b-col>
+              </b-row>
+
             </b-tab>
             <b-tab :title="$t('job')" @click="get(key.job)">
               <b-row v-if="job_loading" class="mt-5" >
@@ -265,6 +282,23 @@
                   </nuxt-link>
                 </b-col>
               </b-row>
+
+              <b-row>
+                <b-col cols="12" class="d-flex justify-content-center">
+                  <section class="">
+                      <button class="load_more btn-5" @click="load_more(6,key.job)">
+                        <div v-if="job_load_more_loading">
+                            {{ $t('view_more') }}
+                        </div>
+                        <div v-else>
+                            <b-spinner small></b-spinner>
+                            {{ $t('loading') }}
+                        </div>
+                      </button> 
+                  </section>
+                </b-col>
+              </b-row>
+
             </b-tab>
           </b-tabs>
         </div>
@@ -340,12 +374,18 @@ export default {
     return {
       course_per_page: '',
       course_total: '',
-      course_table_size: 6,
+      course_table_size: 0,
       course_loading: true,
       course_new_action: true,
       course_load_more_loading: true,
       article_loading: true,
+      article_load_more_loading: true,
+      article_table_size: 0,
+      article_new_action: true,
       job_loading: true,
+      job_load_more_loading: true,
+      job_table_size: 0,
+      job_new_action: true,
       api_key: process.env.BASE_URL,
       allVideos: [],
       news: [],
@@ -378,10 +418,8 @@ export default {
           await this.$axios.$get('setting/course').then(response => {
             this.default_course = response
           })
-          await this.$axios.$post('getAllCourse',{table_size: this.course_table_size}).then(response => {
-            this.courses = response.data.data
-            this.course_total = response.data.total
-            this.course_per_page = response.data.per_page
+          await this.$axios.$post('getAllCourse',{skip: this.course_table_size}).then(response => {
+            this.courses = this.courses.concat(response.data)
             this.course_loading = false
             this.course_new_action = false
             this.course_load_more_loading = true
@@ -389,42 +427,57 @@ export default {
         }
         
       }else if(key==this.key.article){
-        if(this.article_loading){
+        if(this.article_new_action){
             await this.$axios.$get('setting/article').then(response => {
               this.default_article = response
             })
-           await this.$axios.$get('getAllNews').then(response => {
-            this.news = response.data
-            this.article_loading = false
+           await this.$axios.$post('getAllNews',{skip: this.article_table_size}).then(response => {
+              this.news = this.news.concat(response.data)
+              this.article_loading = false
+              this.article_new_action = false
+              this.article_load_more_loading = true
           })
         }
       }else if(key==this.key.job){
-        if(this.job_loading){
+        if(this.job_new_action){
           await this.$axios.$get('setting/job').then(response => {
               this.default_job = response
           })
-          await this.$axios.$post('job/lists').then(response => {
-            this.job = response.data.data
+          await this.$axios.$post('job/lists',{skip: this.job_table_size}).then(response => {
+            this.job = this.job.concat(response.data)
             this.job_loading = false
+            this.job_new_action = false
+            this.job_load_more_loading = true
           })
         }
       }
     },
-    async getSlide(){
-      await this.$axios.$post('slide/lists').then(response => {
+    getSlide(){
+      this.$axios.$post('slide/lists').then(response => {
         this.slide = response.data.data
       })
     },
-    async getFounder(){
-      await this.$axios.$get('founder/get').then(response => {
+    getFounder(){
+      this.$axios.$get('founder/get').then(response => {
         this.founder = response
       })
+      // this.$axios.$get('course/count').then(response => {
+      //   this.course_total = response
+      // })
     },
     load_more(table_size,key){
-      this.course_new_action = true
-      this.course_table_size+=table_size
       if(key==this.key.course){
+        this.course_new_action = true
+        this.course_table_size+=table_size
         this.course_load_more_loading = false
+      }else if(key == this.key.article){
+        this.article_new_action = true
+        this.article_table_size+=table_size
+        this.article_load_more_loading = false
+      }else if(key == this.key.job){
+        this.job_new_action = true
+        this.job_table_size+=table_size
+        this.job_load_more_loading = false
       }
       this.get(key)
     },
