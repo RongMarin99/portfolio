@@ -40,6 +40,22 @@
               </nuxt-link>
             </b-col>
         </b-row>
+
+        <b-row class="mt-5">
+          <b-col cols="12" class="d-flex justify-content-center">
+            <section class="">
+                <button class="load_more btn-5" @click="load_more(6)">
+                  <div v-if="article_load_more_loading">
+                      {{ $t('view_more') }}
+                  </div>
+                  <div v-else>
+                      <b-spinner small></b-spinner>
+                      {{ $t('loading') }}
+                  </div>
+                </button> 
+            </section>
+          </b-col>
+        </b-row>
     </b-container>
 </template>
 <script>
@@ -56,6 +72,8 @@ export default{
             Category:[],
             type: null,
             article_loading: true,
+            article_load_more_loading: true,
+            article_table_size: 0,
         }
     },
     created(){
@@ -63,9 +81,10 @@ export default{
     },
     methods:{
         get(){
-            this.$axios.$post('article').then(response => {
-                this.Category = response
+            this.$axios.$post('getAllNews',{skip: this.article_table_size}).then(response => {
+                this.Category = this.Category.concat(response.data)
                 this.article_loading = false
+                this.article_load_more_loading = true
             })
         },
         getImage(image) {
@@ -90,6 +109,11 @@ export default{
 					return null
 				}
 		    },
+      load_more(table_size){
+          this.article_table_size+=table_size
+          this.article_load_more_loading = false
+        this.get()
+      },
     }
 }
 </script>

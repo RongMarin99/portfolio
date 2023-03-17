@@ -13,7 +13,6 @@
           </b-col>
         </b-row>
 
-
         <b-row v-else>
             <b-col class="mb-1 mt-5"  cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in jobs" :key="item.index">
               <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
@@ -43,6 +42,22 @@
               </nuxt-link>
             </b-col>
         </b-row>
+
+        <b-row class="mt-5">
+          <b-col cols="12" class="d-flex justify-content-center">
+            <section class="">
+                <button class="load_more btn-5" @click="load_more(6)">
+                  <div v-if="job_load_more_loading">
+                      {{ $t('view_more') }}
+                  </div>
+                  <div v-else>
+                      <b-spinner small></b-spinner>
+                      {{ $t('loading') }}
+                  </div>
+                </button> 
+            </section>
+          </b-col>
+        </b-row>
     </b-container>
 </template>
 
@@ -55,6 +70,8 @@ import moment from 'moment';
            api_key: process.env.BASE_URL,
            jobs: [],
            job_loading: true,
+           job_load_more_loading: true,
+           job_table_size: 0,
         }
     },
     created(){
@@ -62,9 +79,10 @@ import moment from 'moment';
     },
     methods:{
         get(){
-            this.$axios.$post('job/lists').then(response => {
-                this.jobs = response.data.data
+            this.$axios.$post('job/lists',{skip: this.job_table_size}).then(response => {
+                this.jobs = this.jobs.concat(response.data)
                 this.job_loading = false
+                this.job_load_more_loading = true
             })
         },
         dateFormat(date){
@@ -89,6 +107,11 @@ import moment from 'moment';
 					return null
 				}
 		},
+    load_more(table_size){
+          this.job_table_size+=table_size
+          this.job_load_more_loading = false
+        this.get()
+      },
     }
  }
 </script>
