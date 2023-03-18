@@ -25,7 +25,7 @@
                   </h6>
                   <figure class="position-relative">
                     <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                      {{ $t('article') }}
+                      {{ $t('course') }}
                     </b-badge>
                     <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                   </figure>
