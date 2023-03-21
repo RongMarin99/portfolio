@@ -56,7 +56,7 @@ export default{
     colorMode: 'light',
     name: "Detail",
     async fetch ({ store, $axios, params }) {
-        var meta = await $axios.$get(`https://etec-api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
+        var meta = await $axios.$get(`https://api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
         await store.dispatch('articles/setArticle',meta);
     },
     head(){
