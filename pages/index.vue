@@ -30,7 +30,93 @@
         </h2>
         <div class="mt-5">
           <b-tabs pills content-class="mt-3" align="center">
-            <b-tab :title="$t('course')" active @click="get(key.course)">
+            <b-tab active :title="$t('article')" @click="get(key.article)">
+              <b-row v-if="article_loading" class="mt-5" >
+                <b-col cols="12" style="margin-bottom:-3rem">
+                  <b-skeleton-img height="550px"></b-skeleton-img>
+                </b-col>
+                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
+                  <div class="card-content-dg p-2">
+                    <b-skeleton animation="wave" width="90%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
+                    <b-skeleton-img height="200px"></b-skeleton-img>
+                    <b-skeleton animation="wave" class="mt-1" width="100%"></b-skeleton>
+                    <b-skeleton animation="wave" width="95%"></b-skeleton>
+                    <b-skeleton animation="wave" width="100%"></b-skeleton>
+                  </div>
+                </b-col>
+              </b-row>
+             
+              <b-row v-else class="mt-5">
+                <b-col cols="12" class="position-relative " >
+                  <figure >
+                    <div
+                     style="height:500px"
+                     class="defualt-show w-100"
+                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_article['image']}');`">
+                        <div class="main-content-title">
+                            <p class="text-white">
+                              {{ dateFormat(default_article['created_at']) }}
+                            </p>
+                            <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
+                              <h3 class="text-white bg-image-default" >
+                                    {{ getNameByLocalByLang(default_article['title']) }}
+                              </h3> 
+                            </nuxt-link>
+                            <div class="button">
+                              <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
+                                {{ $t('read_more') }}
+                              </nuxt-link>
+                            </div>
+                        </div>
+                  </div>
+                  </figure>
+                </b-col>
+                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
+                  <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
+                    <div class="card-content-dg p-2">
+                      <span class="mb-0 mt-0" style="font-size:13px">
+                            {{ dateFormat(item['created_at']) }}
+                      </span>
+                      <h6 class="three-line title">
+                          {{ getNameByLocalByLang(item['title']) }}
+                      </h6>
+                      <figure class="position-relative">
+                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
+                          {{ $t('article') }}
+                        </b-badge>
+                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
+                      </figure>
+                      <b-card-text>
+                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
+                          <p class="four-line description">
+                            {{ getNameByLocalByLang(item['description']) }}
+                          </p>
+                        </div>
+                      </b-card-text>
+                    </div>
+                  </nuxt-link>
+                </b-col>
+              </b-row>
+
+              <b-row>
+                <b-col cols="12" class="d-flex justify-content-center">
+                  <section class="">
+                      <button class="load_more btn-5" @click="load_more(6,key.article)">
+                        <div v-if="article_load_more_loading">
+                            {{ $t('view_more') }}
+                        </div>
+                        <div v-else>
+                            <b-spinner small></b-spinner>
+                            {{ $t('loading') }}
+                        </div>
+                      </button> 
+                  </section>
+                </b-col>
+              </b-row>
+
+            </b-tab>
+            <b-tab :title="$t('course')"  @click="get(key.course)">
               <b-row v-if="course_loading" class="mt-5" >
                 <b-col cols="12" style="margin-bottom:-3rem">
                   <b-skeleton-img height="550px"></b-skeleton-img>
@@ -106,92 +192,6 @@
                   <section class="">
                       <button class="load_more btn-5" @click="load_more(6,key.course)">
                         <div v-if="course_load_more_loading">
-                            {{ $t('view_more') }}
-                        </div>
-                        <div v-else>
-                            <b-spinner small></b-spinner>
-                            {{ $t('loading') }}
-                        </div>
-                      </button> 
-                  </section>
-                </b-col>
-              </b-row>
-
-            </b-tab>
-            <b-tab :title="$t('article')" @click="get(key.article)">
-              <b-row v-if="article_loading" class="mt-5" >
-                <b-col cols="12" style="margin-bottom:-3rem">
-                  <b-skeleton-img height="550px"></b-skeleton-img>
-                </b-col>
-                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
-                  <div class="card-content-dg p-2">
-                    <b-skeleton animation="wave" width="90%"></b-skeleton>
-                    <b-skeleton animation="wave" width="100%"></b-skeleton>
-                    <b-skeleton-img height="200px"></b-skeleton-img>
-                    <b-skeleton animation="wave" class="mt-1" width="100%"></b-skeleton>
-                    <b-skeleton animation="wave" width="95%"></b-skeleton>
-                    <b-skeleton animation="wave" width="100%"></b-skeleton>
-                  </div>
-                </b-col>
-              </b-row>
-             
-              <b-row v-else class="mt-5">
-                <b-col cols="12" class="position-relative " >
-                  <figure >
-                    <div
-                     style="height:500px"
-                     class="defualt-show w-100"
-                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_article['image']}');`">
-                        <div class="main-content-title">
-                            <p class="text-white">
-                              {{ dateFormat(default_article['created_at']) }}
-                            </p>
-                            <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
-                              <h3 class="text-white bg-image-default" >
-                                    {{ getNameByLocalByLang(default_article['title']) }}
-                              </h3> 
-                            </nuxt-link>
-                            <div class="button">
-                              <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
-                                {{ $t('read_more') }}
-                              </nuxt-link>
-                            </div>
-                        </div>
-                  </div>
-                  </figure>
-                </b-col>
-                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
-                  <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
-                    <div class="card-content-dg p-2">
-                      <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ dateFormat(item['created_at']) }}
-                      </span>
-                      <h6 class="three-line title">
-                          {{ getNameByLocalByLang(item['title']) }}
-                      </h6>
-                      <figure class="position-relative">
-                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ $t('article') }}
-                        </b-badge>
-                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
-                      </figure>
-                      <b-card-text>
-                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <p class="four-line description">
-                            {{ getNameByLocalByLang(item['description']) }}
-                          </p>
-                        </div>
-                      </b-card-text>
-                    </div>
-                  </nuxt-link>
-                </b-col>
-              </b-row>
-
-              <b-row>
-                <b-col cols="12" class="d-flex justify-content-center">
-                  <section class="">
-                      <button class="load_more btn-5" @click="load_more(6,key.article)">
-                        <div v-if="article_load_more_loading">
                             {{ $t('view_more') }}
                         </div>
                         <div v-else>
@@ -404,7 +404,7 @@ export default {
   watch: {
   },
   methods: {
-    async get(key='course'){
+    async get(key='article'){
       if(key==this.key.course){
         if(this.course_new_action){
           await this.$axios.$get('setting/course').then(response => {

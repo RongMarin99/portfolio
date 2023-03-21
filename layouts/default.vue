@@ -24,11 +24,11 @@
                     <b-nav-item class="pl-4" to="/" >
                       {{ $t('home') }}
                     </b-nav-item>
-                    <b-nav-item class="pl-4" to="/Course">
-                      {{ $t('course') }}
-                    </b-nav-item>
                     <b-nav-item class="pl-4" to="/Article">
                       {{ $t('article') }}
+                    </b-nav-item>
+                    <b-nav-item class="pl-4" to="/Course">
+                      {{ $t('course') }}
                     </b-nav-item>
                     <b-nav-item class="pl-4" to="/Video">
                       {{ $t('video') }}
@@ -102,8 +102,8 @@
             </b-col>
             <b-col cols="12" xl="3" lg="3" md="6" sm="6">
               <b-nav vertical class="footer-nav" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
-                <b-nav-item to="/Course">{{ $t('course') }}</b-nav-item>
                 <b-nav-item to="/Article">{{ $t('article') }}</b-nav-item>
+                <b-nav-item to="/Course">{{ $t('course') }}</b-nav-item>
                 <b-nav-item>{{ $t('video') }}</b-nav-item>
                 <b-nav-item>{{ $t('job') }}</b-nav-item>
               </b-nav>
