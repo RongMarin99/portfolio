@@ -353,6 +353,9 @@
 import moment from 'moment';
 export default {
   colorMode: 'light',
+  htmlAttrs: {
+        lang: this.$i18n.locale,
+  },
   head () {
     return {
       title: "KroIT | Etec Center",
