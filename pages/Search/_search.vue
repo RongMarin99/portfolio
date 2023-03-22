@@ -117,9 +117,9 @@ export default{
 					return null
 				}
 		},
-        onSearch(){
-          this.$router.push({path: `/Search/${this.search}`});
-        }
+    onSearch(){
+      this.$router.push({path: `/Search/${this.search}`}); 
+    }
     }
 }
 </script>
