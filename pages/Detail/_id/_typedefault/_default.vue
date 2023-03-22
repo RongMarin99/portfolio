@@ -56,7 +56,7 @@ export default{
     colorMode: 'light',
     name: "Detail",
     async fetch ({ store, $axios, params }) {
-        var meta = await $axios.$get(`https://api.kroit.info/api/detail/${params.id}/${params.typedefault}/${params.default}`)
+        var meta = await $axios.$get(`https://api.kroit.xyz/api/detail/${params.id}/${params.typedefault}/${params.default}`)
         await store.dispatch('articles/setArticle',meta);
     },
     head(){
