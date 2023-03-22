@@ -65,6 +65,9 @@ export default{
           { hid: 'og-type', property: 'og:type', 
             content: this.getNameByLocalByLang(this.meta.title,'local_name') 
           },
+          { hid: 'og-type', property: 'og:type', 
+            content: this.getNameByLocalByLang(this.meta.title,'local_name') 
+          },
           {
                 hid: "og:title",
                 property: "og:title",
@@ -82,7 +85,7 @@ export default{
           },
           { 
             hid: 'og-url', property: 'og:url', 
-            content: this.web_url+"/Detail/"+this.$route.params.id+"/"+this.$route.params.type
+            content: this.web_url+"/Detail/"+this.$route.params.id+"/"+this.$route.params.typedefault+"/"+this.$route.params.default
           },
           { property: "og:image:width", content: "740" },
           { property: "og:image:height", content: "300" },
