@@ -78,7 +78,7 @@ export default{
             },
           { 
             hid: 'og-image', property: 'og:image',
-            content: this.api_key+"/image_etec/"+this.meta.image+'?'+this.meta.image
+            content: this.api_key+"/image_etec/"+this.meta.image
           },
           { 
             hid: 'og-url', property: 'og:url', 
