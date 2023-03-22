@@ -61,6 +61,7 @@ export default{
     },
     head(){
         return {
+        title: this.getNameByLocalByLang(this.meta.title,'local_name') ,
         meta:[
           { hid: 'og-type', property: 'og:type', 
             content: this.getNameByLocalByLang(this.meta.title,'local_name') 
@@ -79,6 +80,10 @@ export default{
           { 
             hid: 'og-image', property: 'og:image',
             content: this.api_key+"/image_etec/"+this.meta.image
+          },
+          { 
+            property: 'og:image:type',
+            content: "image/png"
           },
           { 
             hid: 'og-url', property: 'og:url', 
