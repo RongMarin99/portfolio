@@ -56,7 +56,7 @@ export default{
     colorMode: 'light',
     name: "Detail",
     async fetch ({ store, $axios, params }) {
-        var meta = await $axios.$get(`https://api.loveounnas.xyz/api/detail/${params.id}/${params.type}`)
+        var meta = await $axios.$get(`http://api.kroit.info/api/detail/${params.id}/${params.type}`)
         await store.dispatch('articles/setArticle',meta);
     },
     head(){
@@ -65,7 +65,7 @@ export default{
           { hid: 'og-type', property: 'og:type', 
             content: this.getNameByLocalByLang(this.meta.title) 
           },
-          {
+            {
                 hid: "og:title",
                 property: "og:title",
                 content: this.getNameByLocalByLang(this.meta.title),

@@ -27,10 +27,36 @@
 <script>
  export default{
     colorMode: 'light',
+    head () {
+    return {
+      title: "KroIT | Videos | វីដេអូ",
+      meta: [
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "KroIT | Video Motivation | Etec Center",
+        },
+        { 
+          hid: 'og:image', property: 'og:image', content: require('@/assets/image/logo.jpg')
+        },
+        {
+          hid: "og:description",
+          name: 'og:description',
+          property: "og:description",
+          content: "ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under  school category.It has received 1 reviews with an average rating of 3 stars.",
+        },
+        { 
+          hid: 'og-url', property: 'og:url', 
+          content: this.web_url
+        },
+      ]
+    }
+    },
     data() {
         return {
            videos: [],
-           video_loading: true
+           video_loading: true,
+           web_url: process.env.WEB_URL+"/Video"
         }
     },
     created(){

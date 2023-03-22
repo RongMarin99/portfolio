@@ -62,10 +62,31 @@
 import moment from 'moment';
 export default{
   colorMode: 'light',
-  // async asyncData(context) {
-  //   const data = await context.$axios.$post('https://etec-api.loveounnas.xyz/api/article')
-  //   context.store.dispatch('articles/setArticle', data[0])
-  // },
+  head () {
+    return {
+      title: "KroIT | Article | អត្ថបទ",
+      meta: [
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "KroIT | Article Motivation | Etec Center",
+        },
+        { 
+          hid: 'og:image', property: 'og:image', content: require('@/assets/image/logo.jpg')
+        },
+        {
+          hid: "og:description",
+          name: 'og:description',
+          property: "og:description",
+          content: "ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under  school category.It has received 1 reviews with an average rating of 3 stars.",
+        },
+        { 
+          hid: 'og-url', property: 'og:url', 
+          content: this.web_url
+        },
+      ]
+    }
+    },
     data(){
         return {
             api_key: process.env.BASE_URL,
@@ -74,6 +95,7 @@ export default{
             article_loading: true,
             article_load_more_loading: true,
             article_table_size: 0,
+            web_url: process.env.WEB_URL+"/Article"
         }
     },
     created(){
