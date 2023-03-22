@@ -89,7 +89,7 @@ export default{
             content: "image/png"
           },
           { 
-            hid: 'og-url', 
+            hid: 'og:url', 
             property: 'og:url', 
             content: this.web_url+"/Detail/"+this.$route.params.id+"/"+this.$route.params.typedefault+"/"+this.$route.params.default
           },
