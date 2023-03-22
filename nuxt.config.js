@@ -87,16 +87,16 @@ export default {
   i18n:{
     locales: [
       {
-        code: 'en',
-        name: 'English',
-        file: 'en.js',
-        iso: 'en'
-      },
-      {
         code: 'kh',
         name: 'khmer',
         file: 'kh.js',
         iso: 'kh'
+      },
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.js',
+        iso: 'en'
       }
     ],
     lazy: true,

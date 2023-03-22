@@ -63,18 +63,18 @@ export default{
         return {
         meta:[
           { hid: 'og-type', property: 'og:type', 
-            content: this.getNameByLocalByLang(this.meta.title) 
+            content: this.getNameByLocalByLang(this.meta.title,'local_name') 
           },
           {
                 hid: "og:title",
                 property: "og:title",
-                content: this.getNameByLocalByLang(this.meta.title),
+                content: this.getNameByLocalByLang(this.meta.title,'local_name'),
             },
             {
                 hid: "og:description",
                 name: 'og:description',
                 property: "og:description",
-                content: this.getNameByLocalByLang(this.meta.description),
+                content: this.getNameByLocalByLang(this.meta.description,'local_name'),
             },
           { 
             hid: 'og-image', property: 'og:image',
