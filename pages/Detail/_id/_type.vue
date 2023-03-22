@@ -63,33 +63,54 @@ export default{
         return {
         title: this.getNameByLocalByLang(this.meta.title,'local_name') ,
         meta:[
-          { 
-            property: 'og:type', 
-            content: this.getNameByLocalByLang(this.meta.title,'local_name') 
-          },
+            { 
+                hid: 'og:type', 
+                name: 'og:type',
+                property: 'og:type', 
+                content: this.getNameByLocalByLang(this.meta.title,'local_name') 
+            },
             {
+                hid: "og:title",
+                name: 'og:title',
                 property: "og:title",
                 content: this.getNameByLocalByLang(this.meta.title,'local_name'),
             },
             {
+                hid: "og:description",
                 name: 'og:description',
                 property: "og:description",
                 content: this.getNameByLocalByLang(this.meta.description,'local_name'),
             },
           { 
+            hid: 'og:image', 
+            name: 'og:image',
             property: 'og:image',
             content: this.api_key+"/image_etec/"+this.meta.image
           },
           { 
+            hid: 'og:image:type',
+            name: 'og:image:type',
             property: 'og:image:type',
             content: "image/png"
           },
           { 
-             property: 'og:url', 
+            hid: 'og:url',
+            name: 'pg:url',
+            property: 'og:url', 
             content: this.web_url+"/Detail/"+this.$route.params.id+"/"+this.$route.params.type
           },
-          { property: "og:image:width", content: "740" },
-          { property: "og:image:height", content: "300" },
+          { 
+            hid: 'og:image:width',
+            name: 'og:image:width',
+            property: "og:image:width", 
+            content: "740" 
+          },
+          { 
+            hid: 'og:image:height',
+            name: 'og:image:height',
+            property: "og:image:height", 
+            content: "300" 
+          },
         ]
       }
     },
