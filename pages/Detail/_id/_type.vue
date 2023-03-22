@@ -63,22 +63,21 @@ export default{
         return {
         title: this.getNameByLocalByLang(this.meta.title,'local_name') ,
         meta:[
-          { hid: 'og-type', property: 'og:type', 
+          { 
+            property: 'og:type', 
             content: this.getNameByLocalByLang(this.meta.title,'local_name') 
           },
             {
-                hid: "og:title",
                 property: "og:title",
                 content: this.getNameByLocalByLang(this.meta.title,'local_name'),
             },
             {
-                hid: "og:description",
                 name: 'og:description',
                 property: "og:description",
                 content: this.getNameByLocalByLang(this.meta.description,'local_name'),
             },
           { 
-            hid: 'og-image', property: 'og:image',
+            property: 'og:image',
             content: this.api_key+"/image_etec/"+this.meta.image
           },
           { 
@@ -86,7 +85,7 @@ export default{
             content: "image/png"
           },
           { 
-            hid: 'og-url', property: 'og:url', 
+             property: 'og:url', 
             content: this.web_url+"/Detail/"+this.$route.params.id+"/"+this.$route.params.type
           },
           { property: "og:image:width", content: "740" },
