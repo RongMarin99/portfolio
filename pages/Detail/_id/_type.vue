@@ -85,7 +85,7 @@ export default{
             hid: 'og:image', 
             name: 'og:image',
             property: 'og:image',
-            content: "http://api.kroit.info/image_etec/"+this.meta.image
+            content: this.api_key+"/image_etec/"+this.meta.image
           },
           { 
             hid: 'og:image:type',
@@ -94,7 +94,7 @@ export default{
             content: "image/png"
           },
           { 
-            hid: 'og:url',
+            hid: 'og-url',
             name: 'pg:url',
             property: 'og:url', 
             content: this.web_url+"/Detail/"+this.$route.params.id+"/"+this.$route.params.type
