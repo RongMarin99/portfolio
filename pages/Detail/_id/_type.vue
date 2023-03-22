@@ -85,7 +85,7 @@ export default{
             hid: 'og:image', 
             name: 'og:image',
             property: 'og:image',
-            content: this.api_key+"/image_etec/"+this.meta.image
+            content: "http://api.kroit.info/image_etec/"+this.meta.image
           },
           { 
             hid: 'og:image:type',
