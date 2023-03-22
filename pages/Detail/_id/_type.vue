@@ -80,10 +80,6 @@ export default{
             hid: 'og-image', property: 'og:image',
             content: this.api_key+"/image_etec/"+this.meta.image
           },
-          { 
-            hid: 'og-url', property: 'og:url', 
-            content: this.web_url+this.url
-          },
           { property: "og:image:width", content: "740" },
           { property: "og:image:height", content: "300" },
         ]
