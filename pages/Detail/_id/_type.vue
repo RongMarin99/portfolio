@@ -94,16 +94,16 @@ export default{
             property: 'og:url', 
             content: this.web_url+"/Detail/"+this.$route.params.id+"/"+this.$route.params.type
           },
-        //   { 
-        //     hid: 'og:image:width',
-        //     property: "og:image:width", 
-        //     content: "740" 
-        //   },
-        //   { 
-        //     hid: 'og:image:height',
-        //     property: "og:image:height", 
-        //     content: "300" 
-        //   },
+          { 
+            hid: 'og:image:width',
+            property: "og:image:width", 
+            content: "740" 
+          },
+          { 
+            hid: 'og:image:height',
+            property: "og:image:height", 
+            content: "300" 
+          },
         ]
       }
     },
