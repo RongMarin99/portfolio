@@ -117,7 +117,6 @@ export default {
    // baseURL: 'http://localhost:8000/api/',
   },
   proxy: {
-    baseURL: 'https://etec-api.loveounnas.xyz/api/',
     changeOrigin: true,
   },
   manifest: {
