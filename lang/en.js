@@ -19,5 +19,6 @@ export default {
     developed_by: 'Developed by',
     article_popular: 'Popular Articles',
     view_more: 'View More',
-    loading: 'Loading...'
+    loading: 'Loading...',
+    viewer: 'Viewer'
 }

@@ -19,5 +19,6 @@ export default{
     developed_by: 'បាន​បង្កើត​ឡើង​ដោយ',
     article_popular: 'អត្ថបទពេញនិយម',
     view_more: '  មើលបន្ថែម',
-    loading: 'សូមរងចាំបន្តិច...'
+    loading: 'សូមរងចាំបន្តិច...',
+    viewer: 'នាក់មើល'
 }

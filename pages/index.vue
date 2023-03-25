@@ -60,7 +60,7 @@
                       <b-skeleton animation="wave" width="95%"></b-skeleton>
                       <b-skeleton animation="wave" width="85%"></b-skeleton>
                       <b-skeleton-img height="200px"></b-skeleton-img>
-                      <b-skeleton animation="wave" class="mt-1" width="90%"></b-skeleton>
+                      <b-skeleton animation="wave" class="mt-1" width="25%"></b-skeleton>
                       <b-skeleton animation="wave" width="85%"></b-skeleton>
                       <b-skeleton animation="wave" width="95%"></b-skeleton>
                     </b-overlay>
@@ -109,6 +109,9 @@
                         <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                       </figure>
                       <b-card-text>
+                        <div class="viewer px-1">
+                          <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                        </div>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <p class="four-line description">
                             {{ getNameByLocalByLang(item['description']) }}
@@ -166,7 +169,7 @@
                       <b-skeleton animation="wave" width="95%"></b-skeleton>
                       <b-skeleton animation="wave" width="85%"></b-skeleton>
                       <b-skeleton-img height="200px"></b-skeleton-img>
-                      <b-skeleton animation="wave" class="mt-1" width="90%"></b-skeleton>
+                      <b-skeleton animation="wave" class="mt-1" width="25%"></b-skeleton>
                       <b-skeleton animation="wave" width="85%"></b-skeleton>
                       <b-skeleton animation="wave" width="95%"></b-skeleton>
                     </b-overlay>
@@ -217,6 +220,9 @@
                         <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                       </figure>
                       <b-card-text>
+                        <div class="viewer px-1">
+                          <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                        </div>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <p class="four-line description">
                             {{ getNameByLocalByLang(item['description']) }}
@@ -274,7 +280,7 @@
                       <b-skeleton animation="wave" width="95%"></b-skeleton>
                       <b-skeleton animation="wave" width="85%"></b-skeleton>
                       <b-skeleton-img height="200px"></b-skeleton-img>
-                      <b-skeleton animation="wave" class="mt-1" width="90%"></b-skeleton>
+                      <b-skeleton animation="wave" class="mt-1" width="25%"></b-skeleton>
                       <b-skeleton animation="wave" width="85%"></b-skeleton>
                       <b-skeleton animation="wave" width="95%"></b-skeleton>
                     </b-overlay>
@@ -325,6 +331,9 @@
                         <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                       </figure>
                       <b-card-text>
+                        <div class="viewer px-1">
+                          <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                        </div>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <p class="four-line description">
                             {{ getNameByLocalByLang(item['description']) }}

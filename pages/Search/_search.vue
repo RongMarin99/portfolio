@@ -3,12 +3,22 @@
         <b-row v-if="search_loeading" class="mt-5">
             <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
                 <div class="card-content-dg p-2">
-                  <b-skeleton animation="wave" width="90%"></b-skeleton>
-                  <b-skeleton animation="wave" width="100%"></b-skeleton>
-                  <b-skeleton-img height="200px"></b-skeleton-img>
-                  <b-skeleton animation="wave" class="mt-1" width="100%"></b-skeleton>
-                  <b-skeleton animation="wave" width="95%"></b-skeleton>
-                  <b-skeleton animation="wave" width="100%"></b-skeleton>
+                   <b-overlay
+                        id="overlay-background"
+                        show
+                        spinner-variant="orange"
+                        variant="transparent"
+                        opacity=0.85
+                        blur="0px"
+                        rounded="sm"
+                      >
+                      <b-skeleton animation="wave" width="95%"></b-skeleton>
+                      <b-skeleton animation="wave" width="85%"></b-skeleton>
+                      <b-skeleton-img height="200px"></b-skeleton-img>
+                      <b-skeleton animation="wave" class="mt-1" width="25%"></b-skeleton>
+                      <b-skeleton animation="wave" width="85%"></b-skeleton>
+                      <b-skeleton animation="wave" width="95%"></b-skeleton>
+                    </b-overlay>
                 </div>
               </b-col>
         </b-row>
@@ -29,7 +39,10 @@
                     </b-badge>
                     <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
                     </figure>
-                    <b-card-text>
+                    <b-card-text> 
+                    <div class="viewer px-1">
+                      <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                    </div>
                     <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                         <h6 class="four-line description">
                         {{ getNameByLocalByLang(item['description']) }}
