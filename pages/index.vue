@@ -76,8 +76,10 @@
                      class="defualt-show w-100"
                     :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_article['image']}');`">
                         <div class="main-content-title">
-                            <p class="text-white">
+                            <p class="text-white d-flex align-items-center">
                               {{ dateFormat(default_article['created_at']) }}
+                              &nbsp;
+                              {{ default_article['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
                               <h3 class="text-white bg-image-default" >
@@ -185,8 +187,10 @@
                      style="height:500px"
                     :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_course['image']}');`">
                         <div class="main-content-title">
-                            <p class="text-white">
+                            <p class="text-white d-flex align-items-center">
                               {{ dateFormat(default_course['created_at']) }}
+                              &nbsp;
+                              {{ default_course['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_course.id}/${default_course.type}/${default_course.id}`">
                               <h3 class="text-white bg-image-default" >
@@ -296,8 +300,10 @@
                      class="defualt-show w-100"
                     :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_job['image']}');`">
                         <div class="main-content-title">
-                            <p class="text-white">
+                            <p class="text-white d-flex align-items-center">
                               {{ dateFormat(default_job['created_at']) }}
+                              &nbsp;
+                              {{ default_job['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
                               <h3 class="text-white bg-image-default" >

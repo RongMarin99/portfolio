@@ -4,12 +4,15 @@
             <b-col cols="12" xl="8" lg="12" md="12" xs="12" class="mt-3">
                <h3>{{ getNameByLocalByLang(meta.title) }}​</h3>
                <b-row>
-                 <b-col cols="6" xl="6" lg="6" md="6" xs="6" class="mt-3 d-flex justify-content-between">
+                 <b-col cols="8" xl="8" lg="8" md="8" xs="8" class="mt-3 d-flex">
                     <span>
                         {{ convertDateEnToKh(meta['created_at']).day }}, {{ convertDateEnToKh(meta['created_at']).month }} {{ convertDateEnToKh(meta['created_at']).year }}
                     </span>
+                    <div class="viewer px-1 ml-2">
+                          <i class="material-icons">visibility</i> {{ meta['viewer'] }} {{ $t('viewer') }}
+                    </div>
                  </b-col>
-                 <b-col cols="6" xl="6" lg="6" md="6" xs="6" class="mt-3">
+                 <b-col cols="4" xl="4" lg="4" md="4" xs="4" class="mt-3">
                     <a target="_blank" class="float-right fb-share d-flex align-items-center"
                        :href="`https://www.facebook.com/sharer.php?u=${web_url}${url}`">
                        <i class="material-icons">share</i> Facebook 
@@ -126,6 +129,9 @@ export default{
         //this.$i18n.locale = lang
        // this.findById()
         this.get()
+        setTimeout(() => {
+            this.updateViewer()
+        }, 5000);
     },
     computed: {
         ...mapGetters({
@@ -155,6 +161,15 @@ export default{
             }
             this.$axios.$post('relate/content',input).then(response => {
                 this.relate_content = response
+            })
+        },
+        updateViewer(){
+            var input = {
+                id: this.$route.params.id,
+                type: this.$route.params.type
+            }
+            this.$axios.$post('updateViewer',input).then(res => {
+
             })
         },
         getApp(){
