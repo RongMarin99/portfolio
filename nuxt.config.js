@@ -67,8 +67,17 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: '359938223'
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: '359938223'
+    }
+  },
   publicRuntimeConfig: {
     WEB_URL: process.env.WEB_URL,
   },
@@ -86,6 +95,7 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-material-design-icons-iconfont',
 			'nuxt-i18n',
+      '@nuxtjs/sitemap'
   ],
   i18n:{
     locales: [
