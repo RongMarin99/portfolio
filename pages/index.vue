@@ -430,7 +430,7 @@ export default {
   colorMode: 'light',
   head () {
     return {
-      title: "KroIT | Etec Center | គ្រូអាយធីចិត្តល្អ | Etec | គ្រូអាយធី | IT | Code",
+      title: "គ្រូអាយធីចិត្តល្អ | Etec Center",
       htmlAttrs: {
         lang: this.$i18n.locale
       },
