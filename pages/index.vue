@@ -431,6 +431,9 @@ export default {
   head () {
     return {
       title: "KroIT | Etec Center",
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      },
       meta: [
         {
           hid: "og:title",
