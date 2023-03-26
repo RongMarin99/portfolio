@@ -156,8 +156,7 @@ export default{
   // },
     head () {
       return {
-        title: "KroIT | Etec Center",
-        description: "Korit | korit.net | ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under  school category.It has received 1 reviews with an average rating of 3 stars.",
+        title: "KroIT | Etec Center | គ្រូអាយធីចិត្តល្អ | Etec | គ្រូអាយធី | IT | Code",
         htmlAttrs: {
           lang: this.$i18n.locale
         },
@@ -174,7 +173,7 @@ export default{
             hid: "description",
             name: 'description',
             property: "description",
-            content: "Korit | korit.net | ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under  school category.It has received 1 reviews with an average rating of 3 stars.",
+            content: "គ្រូអាយធីចិត្តល្អ |Etec Center | Kroit | korit.net | ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under school category.",
           },
           { 
             hid: 'og-url', property: 'og:url', 
