@@ -447,7 +447,7 @@ export default {
           hid: "og:description",
           name: 'og:description',
           property: "og:description",
-          content: "ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under  school category.It has received 1 reviews with an average rating of 3 stars.",
+          content: "Korit | korit.net | ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under  school category.It has received 1 reviews with an average rating of 3 stars.",
         },
         { 
           hid: 'og-url', property: 'og:url', 
