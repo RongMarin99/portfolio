@@ -82,9 +82,9 @@
                               {{ default_article['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
-                              <h3 class="text-white bg-image-default" >
+                              <h1 class="text-white bg-image-default " >
                                     {{ getNameByLocalByLang(default_article['title']) }}
-                              </h3> 
+                              </h1> 
                             </nuxt-link>
                             <div class="button">
                               <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
@@ -101,9 +101,9 @@
                       <span class="mb-0 mt-0" style="font-size:13px">
                             {{ dateFormat(item['created_at']) }}
                       </span>
-                      <h6 class="three-line title">
+                      <h1 class="three-line title">
                           {{ getNameByLocalByLang(item['title']) }}
-                      </h6>
+                      </h1>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('article') }}
@@ -193,9 +193,9 @@
                               {{ default_course['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_course.id}/${default_course.type}/${default_course.id}`">
-                              <h3 class="text-white bg-image-default" >
+                              <h1 class="text-white bg-image-default" >
                                     {{ getNameByLocalByLang(default_course['title']) }}
-                              </h3> 
+                              </h1> 
                             </nuxt-link>
                             <div class="button">
                               <nuxt-link 
@@ -214,9 +214,9 @@
                       <span class="mb-0 mt-0" style="font-size:13px">
                             {{ dateFormat(item['created_at']) }}
                       </span>
-                      <h6 class="three-line title">
+                      <h1 class="three-line title">
                           {{ getNameByLocalByLang(item['title']) }}
-                      </h6>
+                      </h1>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
@@ -306,9 +306,9 @@
                               {{ default_job['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
-                              <h3 class="text-white bg-image-default" >
+                              <h1 class="text-white bg-image-default" >
                                     {{ getNameByLocalByLang(default_job['title']) }}
-                              </h3> 
+                              </h1> 
                             </nuxt-link>
                             <div class="button">
                               <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
@@ -326,9 +326,9 @@
                         <span class="mb-0 mt-0" style="font-size:13px">
                               {{ dateFormat(item['created_at']) }}
                         </span>
-                        <h6 class="three-line title">
+                        <h1 class="three-line title">
                             {{ getNameByLocalByLang(item['title']) }}
-                        </h6>
+                        </h1>
                       </b-card-text>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
