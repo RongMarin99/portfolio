@@ -14,7 +14,7 @@
          
         >
           <b-carousel-slide
-            v-for="item in slide" :key="item.index"
+            v-for="item in slide" :key="item"
             :img-src="`${api_key}/image_etec/${item['image']}`"
           ></b-carousel-slide>
         </b-carousel>
@@ -428,6 +428,18 @@
 import moment from 'moment';
 export default {
   colorMode: 'light',
+  async asyncData({$axios}) {
+    const slide = await $axios.post('slide/lists')
+    const default_article = await $axios.$get('setting/article')
+    const news = await $axios.post('getAllNews',{skip:0})
+    return {
+      slide: slide.data.data.data,
+      article_loading: false,
+      article_new_action: false,
+      default_article: default_article,
+      news: news.data.data
+    }
+  },
   head () {
     return {
       title: "គ្រូអាយធីចិត្តល្អ | Etec Center",
@@ -495,8 +507,8 @@ export default {
     }
   },
   mounted() {
-    this.getSlide()
-    this.get()
+   // this.getSlide()
+   // this.get()
     this.getFounder()
   },
   watch: {
