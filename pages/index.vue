@@ -76,13 +76,15 @@
                      class="defualt-show w-100"
                     :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_article['image']}');`">
                         <div class="main-content-title">
-                            <p class="text-white">
+                            <p class="text-white d-flex align-items-center">
                               {{ dateFormat(default_article['created_at']) }}
+                              &nbsp;
+                              {{ default_article['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
-                              <h3 class="text-white bg-image-default" >
+                              <h1 class="text-white bg-image-default " >
                                     {{ getNameByLocalByLang(default_article['title']) }}
-                              </h3> 
+                              </h1> 
                             </nuxt-link>
                             <div class="button">
                               <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
@@ -99,9 +101,9 @@
                       <span class="mb-0 mt-0" style="font-size:13px">
                             {{ dateFormat(item['created_at']) }}
                       </span>
-                      <h6 class="three-line title">
+                      <h1 class="three-line title">
                           {{ getNameByLocalByLang(item['title']) }}
-                      </h6>
+                      </h1>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('article') }}
@@ -110,7 +112,7 @@
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
-                          <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                          <i class="material-icons">visibility</i> {{ item['viewer'] }} {{ $t('viewer') }}
                         </div>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <p class="four-line description">
@@ -185,13 +187,15 @@
                      style="height:500px"
                     :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_course['image']}');`">
                         <div class="main-content-title">
-                            <p class="text-white">
+                            <p class="text-white d-flex align-items-center">
                               {{ dateFormat(default_course['created_at']) }}
+                              &nbsp;
+                              {{ default_course['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_course.id}/${default_course.type}/${default_course.id}`">
-                              <h3 class="text-white bg-image-default" >
+                              <h1 class="text-white bg-image-default" >
                                     {{ getNameByLocalByLang(default_course['title']) }}
-                              </h3> 
+                              </h1> 
                             </nuxt-link>
                             <div class="button">
                               <nuxt-link 
@@ -210,9 +214,9 @@
                       <span class="mb-0 mt-0" style="font-size:13px">
                             {{ dateFormat(item['created_at']) }}
                       </span>
-                      <h6 class="three-line title">
+                      <h1 class="three-line title">
                           {{ getNameByLocalByLang(item['title']) }}
-                      </h6>
+                      </h1>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
@@ -221,7 +225,7 @@
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
-                          <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                          <i class="material-icons">visibility</i> {{ item['viewer'] }} {{ $t('viewer') }}
                         </div>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <p class="four-line description">
@@ -296,13 +300,15 @@
                      class="defualt-show w-100"
                     :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_job['image']}');`">
                         <div class="main-content-title">
-                            <p class="text-white">
+                            <p class="text-white d-flex align-items-center">
                               {{ dateFormat(default_job['created_at']) }}
+                              &nbsp;
+                              {{ default_job['viewer'] }} {{ $t('viewer') }}
                             </p>
                             <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
-                              <h3 class="text-white bg-image-default" >
+                              <h1 class="text-white bg-image-default" >
                                     {{ getNameByLocalByLang(default_job['title']) }}
-                              </h3> 
+                              </h1> 
                             </nuxt-link>
                             <div class="button">
                               <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
@@ -320,9 +326,9 @@
                         <span class="mb-0 mt-0" style="font-size:13px">
                               {{ dateFormat(item['created_at']) }}
                         </span>
-                        <h6 class="three-line title">
+                        <h1 class="three-line title">
                             {{ getNameByLocalByLang(item['title']) }}
-                        </h6>
+                        </h1>
                       </b-card-text>
                       <figure class="position-relative">
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
@@ -332,7 +338,7 @@
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
-                          <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                          <i class="material-icons">visibility</i> {{ item['viewer'] }} {{ $t('viewer') }}
                         </div>
                         <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                           <p class="four-line description">
@@ -424,7 +430,10 @@ export default {
   colorMode: 'light',
   head () {
     return {
-      title: "KroIT | Etec Center",
+      title: "គ្រូអាយធីចិត្តល្អ | Etec Center",
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      },
       meta: [
         {
           hid: "og:title",
@@ -435,10 +444,10 @@ export default {
           hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg')
         },
         {
-          hid: "og:description",
-          name: 'og:description',
-          property: "og:description",
-          content: "ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under  school category.It has received 1 reviews with an average rating of 3 stars.",
+          hid: "description",
+          name: 'description',
+          property: "description",
+          content: "គ្រូអាយធីចិត្តល្អ |Etec Center | Kroit | korit.net | ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under school category.",
         },
         { 
           hid: 'og-url', property: 'og:url', 

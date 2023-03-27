@@ -41,7 +41,7 @@
                     </figure>
                     <b-card-text> 
                     <div class="viewer px-1">
-                      <i class="material-icons">visibility</i> 9 {{ $t('viewer') }}
+                      <i class="material-icons">visibility</i> {{ item['viewer'] }} {{ $t('viewer') }}
                     </div>
                     <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
                         <h6 class="four-line description">
