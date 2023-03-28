@@ -108,7 +108,7 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('article') }}
                         </b-badge>
-                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
+                        <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])">
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
@@ -221,7 +221,7 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
                         </b-badge>
-                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
+                        <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])">
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
@@ -334,7 +334,7 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('about_job') }}
                         </b-badge>
-                        <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
+                        <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])">
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
@@ -387,7 +387,7 @@
             <b-col cols="12" xl="4" lg="4" md="4" sm="4">
               <figure>
                 <!-- width 200 -->
-                  <img :src="`${api_key}/image_etec/${founder.image}`" alt="">
+                  <img :src="`${api_key}/image_etec/${founder.image}`" :alt="founder.name">
               </figure>
             </b-col>
             <b-col cols="12" xl="8" lg="8" md="8" sm="8">
