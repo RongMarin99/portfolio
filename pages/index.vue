@@ -432,12 +432,14 @@ export default {
     const slide = await $axios.post('slide/lists')
     const default_article = await $axios.$get('setting/article')
     const news = await $axios.post('getAllNews',{skip:0})
+    const founder = await $axios.$get('founder/get')
     return {
       slide: slide.data.data.data,
       article_loading: false,
       article_new_action: false,
       default_article: default_article,
-      news: news.data.data
+      news: news.data.data,
+      founder: founder
     }
   },
   head () {
@@ -509,7 +511,7 @@ export default {
   mounted() {
    // this.getSlide()
    // this.get()
-    this.getFounder()
+   // this.getFounder()
   },
   watch: {
   },

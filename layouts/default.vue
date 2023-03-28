@@ -1,7 +1,7 @@
 <template>
     <div>
       <!-- Start Header -->
-      <client-only>
+      
         <b-container fluid 
           :class="$colorMode.value=='dark'?'bg-dark' : 'bg-white' " 
           class="position-fixed header"
@@ -47,24 +47,26 @@
                                 @click.prevent.stop="onSearch"
                       >{{ $t('search') }}</b-button>
                     </b-nav-form>
-    
-                    <b-nav-item-dropdown class="ml-2 mr-1" right>
-                      <template #text>
-                        <span v-if="$i18n.locale == 'en'" style="padding:0px">
-                          <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt="">
-                        </span>
-                        <span v-else>
-                          <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt="">
-                        </span>
-                      </template>
-                      <b-dropdown-item @click.prevent.stop="$i18n.setLocale('en')" >
-                        <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
-                      </b-dropdown-item>
-                      <b-dropdown-item @click.prevent.stop="$i18n.setLocale('kh')">
-                        <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
-                      </b-dropdown-item>
-                    </b-nav-item-dropdown>
-    
+
+                    <client-only>
+                      <b-nav-item-dropdown class="ml-2 mr-1" right>
+                        <template #text>
+                          <span v-if="$i18n.locale == 'en'" style="padding:0px">
+                            <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt="">
+                          </span>
+                          <span v-else>
+                            <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt="">
+                          </span>
+                        </template>
+                        <b-dropdown-item @click.prevent.stop="$i18n.setLocale('en')" >
+                          <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
+                        </b-dropdown-item>
+                        <b-dropdown-item @click.prevent.stop="$i18n.setLocale('kh')">
+                          <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
+                        </b-dropdown-item>
+                      </b-nav-item-dropdown>
+                    </client-only>
+
                     <b-nav-item>
                       <span v-if="$colorMode.value=='dark'"
                         @click="$colorMode.value='light'"
@@ -83,7 +85,7 @@
             </b-container>
             </b-navbar>
         </b-container>
-      </client-only>
+      
       <!-- End Header -->
 
       <Nuxt />
