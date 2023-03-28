@@ -555,8 +555,8 @@ export default {
         }
       }
     },
-    async getSlide(){
-      await this.$axios.$post('slide/lists').then(response => {
+    getSlide(){
+      this.$axios.$post('slide/lists').then(response => {
         this.slide = response.data.data
       })
     },
