@@ -429,16 +429,16 @@ import moment from 'moment';
 export default {
   colorMode: 'light',
   async asyncData({$axios}) {
-    //const slide = await $axios.post('slide/lists')
-    const default_article = await $axios.$get('setting/article')
-    const news = await $axios.post('getAllNews',{skip:0})
+    const slide = await $axios.post('slide/lists')
+    // const default_article = await $axios.$get('setting/article')
+    // const news = await $axios.post('getAllNews',{skip:0})
     // const founder = await $axios.$get('founder/get')
     return {
-     // slide: slide.data.data.data,
-      article_loading: false,
-      article_new_action: false,
-      default_article: default_article,
-      news: news.data.data,
+      slide: slide.data.data.data,
+      // article_loading: false,
+      // article_new_action: false,
+      // default_article: default_article,
+      // news: news.data.data,
     }
   },
   head () {
@@ -508,8 +508,8 @@ export default {
     }
   },
   mounted() {
-    this.getSlide()
-   // this.get()
+   // this.getSlide()
+    this.get()
     this.getFounder()
   },
   watch: {
