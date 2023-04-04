@@ -443,7 +443,7 @@ export default {
   },
   head () {
     return {
-      title: "គ្រូអាយធីចិត្តល្អ | Etec Center",
+      title: "គ្រូអាយធីចិត្តល្អ | Etec Center | KroIT",
       htmlAttrs: {
         lang: this.$i18n.locale
       },
