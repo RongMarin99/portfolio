@@ -109,12 +109,6 @@ export default {
   sitemap: {
     hostname: 'https://kroit.net',
     gzip: true,
-    exclude: [
-      '/Course',
-      '/Article',
-      '/Job',
-      '/Video'
-    ],
     i18n: true,
     i18n: {
       locales: ['en', 'kh'],
