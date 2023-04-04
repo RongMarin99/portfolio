@@ -108,11 +108,17 @@ export default {
   ],
   sitemap: {
     hostname: 'https://kroit.net',
+    path: '/sitemap',
     gzip: true,
     i18n: true,
     i18n: {
       locales: ['en', 'kh'],
       routesNameSeparator: '___'
+    },
+    defaults: {
+      lastmod: new Date(),
+      changefreq: 'weekly',
+      priority: 0.8
     }
   },
   i18n:{
