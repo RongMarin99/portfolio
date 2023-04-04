@@ -104,7 +104,8 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-material-design-icons-iconfont',
 			'nuxt-i18n',
-      '@nuxtjs/sitemap'
+      '@nuxtjs/sitemap',
+      '@nuxt/image',
   ],
   sitemap: {
     hostname: 'https://kroit.net',
