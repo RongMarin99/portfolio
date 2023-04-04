@@ -15,6 +15,10 @@ export default {
       page.html = page.html.replace(/ defer>/g, ' defer async>')
     }
   },
+  render: {
+    // Set all scripts to defer
+    asyncScripts: true,
+  },
   head: {
     title: pkg.name,
     htmlAttrs: {
