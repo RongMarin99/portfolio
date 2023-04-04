@@ -23,6 +23,9 @@ export default {
       {
         name: 'google-site-verification', content: 'sInHVGgRTPS1ffJgFE5X-4VNbMCzdGoxh7Vi9NPTt8o'
       },
+      {
+        name: 'sitecheckerpro-site-verification', content: '623d47057af45d75e78cd0287a53430c'
+      },
       // { 
       //   hid: 'description', name: 'description', 
       //   content: "Looking for the latest information and resources on information technology? Our website offers the latest news, tips, and insights to help you stay ahead in the fast-paced world of IT.Explore the world of information technology with our comprehensive website. From hardware to software, we cover everything you need to know to stay up-to-date in this ever-changing industry.Looking for expert guidance on information technology? Look no further than our website, where you'll find in-depth articles and tutorials on the latest trends and best practices.Discover the power of information technology with our website. We offer a wealth of resources, including news, analysis, and tutorials, to help you master the latest tools and techniques.Whether you're a seasoned IT professional or just getting started, our website has everything you need to stay ahead of the curve. Explore our comprehensive collection of resources today." 
