@@ -7,6 +7,14 @@ export default {
   generate: {
     fallback: true
   },
+  hooks: {
+    'render:route': function (url, result, context) {
+      result.html = result.html.replace(/ defer>/g, ' defer async>')
+    },
+    'generate:page': (page) => {
+      page.html = page.html.replace(/ defer>/g, ' defer async>')
+    }
+  },
   head: {
     title: pkg.name,
     htmlAttrs: {
@@ -55,9 +63,6 @@ export default {
 			}
       
     ],
-    script: [
-     
-    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
