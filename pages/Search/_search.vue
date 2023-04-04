@@ -37,7 +37,13 @@
                     <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                         {{ $t('article') }}
                     </b-badge>
-                    <img :src="`${api_key}/image_etec/${item['image']}`" alt="">
+                    <nuxt-img 
+                      loading="lazy"
+                      format="webp"
+                      quality="80"
+                      :src="`${api_key}/image_etec/${item['image']}`"
+                      :alt="getNameByLocalByLang(item['title'])"
+                    />
                     </figure>
                     <b-card-text> 
                     <div class="viewer px-1">

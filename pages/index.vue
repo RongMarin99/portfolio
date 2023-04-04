@@ -15,8 +15,20 @@
         >
           <b-carousel-slide
             v-for="item in slide" :key="item"
-            :img-src="`${api_key}/image_etec/${item['image']}`"
-          ></b-carousel-slide>
+            
+          >
+          <template #img>
+            <figure>
+              <nuxt-img 
+                loading="lazy"
+                format="webp"
+                quality="80"
+                :src="`${api_key}/image_etec/${item['image']}`"
+                :alt="getNameByLocalByLang(item['title'])"
+              />
+            </figure>
+          </template>
+          </b-carousel-slide>
         </b-carousel>
       </b-container>
       <!-- End Slide -->
@@ -228,7 +240,14 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('course') }}
                         </b-badge>
-                        <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])">
+                        <nuxt-img 
+                          loading="lazy"
+                          format="webp"
+                          quality="80"
+                          :src="`${api_key}/image_etec/${item['image']}`" 
+                          :alt="getNameByLocalByLang(item['title'])"
+                        />
+                        <!-- <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])"> -->
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
@@ -341,7 +360,14 @@
                         <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
                           {{ $t('about_job') }}
                         </b-badge>
-                        <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])">
+                        <nuxt-img 
+                          loading="lazy"
+                          format="webp"
+                          quality="80"
+                          :src="`${api_key}/image_etec/${item['image']}`" 
+                          :alt="getNameByLocalByLang(item['title'])"
+                        />
+                        <!-- <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])"> -->
                       </figure>
                       <b-card-text>
                         <div class="viewer px-1">
@@ -394,7 +420,15 @@
             <b-col cols="12" xl="4" lg="4" md="4" sm="4">
               <figure>
                 <!-- width 200 -->
-                  <img :src="`${api_key}/image_etec/${founder.image}`" :alt="founder.name">
+                <client-only>
+                  <nuxt-img 
+                    loading="lazy"
+                    format="webp"
+                    quality="80"
+                    :src="`${api_key}/image_etec/${founder.image}`"
+                    :alt="founder.name"
+                  />
+                </client-only>
               </figure>
             </b-col>
             <b-col cols="12" xl="8" lg="8" md="8" sm="8">
@@ -426,7 +460,6 @@
         </div>
       </b-container>
       <!-- End Founder -->
-
     
   </div>
 </template>
