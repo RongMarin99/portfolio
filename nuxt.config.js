@@ -30,7 +30,7 @@ export default {
         name: 'viewport', content: 'width=device-width, initial-scale=1' 
       },
       { 
-        hid: 'og-title', property: 'og:title', content: 'Etec Center' 
+        hid: 'og-title', property: 'og:title', content: 'Rin Developer' 
       },
       { 
         property: 'fb:app_id', content: '154708477464232' 
@@ -63,7 +63,7 @@ export default {
       {
 				rel: 'icon',
 				type: 'image/x-icon',
-				href: '/icon.png'
+				href: '/icon_old.png'
 			}
       
     ],
@@ -71,13 +71,15 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/style/main.scss'
+    '@/assets/style/main.scss',
+    '~/assets/css/animate.css',
+    '~/assets/css/super-classes.css',
+    '~/assets/css/style.css',
+    '~/assets/css/mobile.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src: '~/plugins/flag.js',mode:'client'},
-    {src: '~/plugins/share.js',mode:'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -85,7 +87,6 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics'
   ],
   googleAnalytics: {

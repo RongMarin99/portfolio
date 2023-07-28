@@ -1,489 +1,640 @@
 <template>
   <div>
-
-      <!-- Start Slide -->
-      <b-container class="main-slide">
-        <b-carousel
-          id="carousel-fade"
-          style="text-shadow: 0px 0px 2px #000"
-          fade
-          interval=10000
-          indicators
-          img-width="1024"
-          img-height="480"
-         
-        >
-          <b-carousel-slide
-            v-for="item in slide" :key="item"
-            
-          >
-          <template #img>
-            <figure>
-              <nuxt-img 
-                loading="lazy"
-                format="webp"
-                quality="80"
-                :src="`${api_key}/image_etec/${item['image']}`"
-                :alt="getNameByLocalByLang(item['title'])"
-              />
-            </figure>
-          </template>
-          </b-carousel-slide>
-        </b-carousel>
-      </b-container>
-      <!-- End Slide -->
-
-      <!-- Start Article -->
-      <b-container class="mt-5">
-        <h2 
-          align="center" 
-          :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
-        >
-          <b>{{ $t('article_popular') }}</b>
-        </h2>
-        <div class="mt-5">
-          <b-tabs pills content-class="mt-3" align="center">
-            <b-tab active :title="$t('article')" @click="get(key.article)">
-              <b-row v-if="article_loading" class="mt-5" >
-                <b-col cols="12" style="margin-bottom:-3rem">
-                  <b-overlay
-                        id="overlay-background"
-                        show
-                        spinner-variant="orange"
-                        variant="transparent"
-                        opacity=0.85
-                        blur="0px"
-                        rounded="sm"
-                      >
-                     <b-skeleton-img height="550px"></b-skeleton-img>
-                  </b-overlay>
-                </b-col>
-                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
-                  <div class="card-content-dg p-2">
-                    <b-overlay
-                        id="overlay-background"
-                        show
-                        spinner-variant="orange"
-                        variant="transparent"
-                        opacity=0.85
-                        blur="0px"
-                        rounded="sm"
-                      >
-                      <b-skeleton animation="wave" width="95%"></b-skeleton>
-                      <b-skeleton animation="wave" width="85%"></b-skeleton>
-                      <b-skeleton-img height="200px"></b-skeleton-img>
-                      <b-skeleton animation="wave" class="mt-1" width="25%"></b-skeleton>
-                      <b-skeleton animation="wave" width="85%"></b-skeleton>
-                      <b-skeleton animation="wave" width="95%"></b-skeleton>
-                    </b-overlay>
+      <!-- service section -->
+      <section class="w-100 float-left service-con padding-top padding-bottom position-relative" id="service-con" >
+         <div class="container">
+            <div class="service-inner-con position-relative">
+               <div class="generic-title text-center">
+                  <h6>My Expertise</h6>
+                  <h2 class="mb-0">Provide Wide Range of<br>
+                     Digital Services
+                  </h2>
+               </div>
+               <div class="service-box wow fadeInUp">
+                  <div class="row">
+                     <div class="col-lg-6 col-md-6">
+                        <div class="service-box-item">
+                           <figure class="mb-0">
+                              <img src="@/assets/image/service-icon1.png" alt="service-icon" class="img-fluid">
+                           </figure>
+                           <div class="service-box-item-content">
+                              <h4>Ui/Ux Design</h4>
+                              <p>
+                                 creating user and customer experiences designed to
+                                  have engaging user interfaces (UI) and deliver 
+                                  tangible business results
+                              </p>
+                              <a href="#" data-toggle="modal" data-target="#Ui-Design">Read More</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="service-box-item">
+                           <figure class="mb-0">
+                              <img src="@/assets/image/service-icon2.png" alt="service-icon" class="img-fluid">
+                           </figure>
+                           <div class="service-box-item-content">
+                              <h4>Web Design</h4>
+                              <p>
+                                 We Create Beautiful Designs and Interesting Concepts. 
+                                 Get in Touch and Request a Quote! It's like Choosing an 
+                                 Interior Designing for Your Home. 
+                                 It's the Same for Your Website.
+                              </p>
+                              <a href="#" data-toggle="modal" data-target="#web-design">Read More</a>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                </b-col>
-              </b-row>
-             
-              <b-row v-else class="mt-5">
-                <b-col cols="12" class="position-relative " >
-                  <figure >
-                    <div
-                     style="height:500px"
-                     class="defualt-show w-100"
-                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_article['image']}');`">
-                        <div class="main-content-title">
-                            <p class="text-white d-flex align-items-center">
-                              {{ dateFormat(default_article['created_at']) }}
-                              &nbsp;
-                              {{ default_article['viewer'] }} {{ $t('viewer') }}
-                            </p>
-                            <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
-                              <h1 class="text-white bg-image-default " >
-                                    {{ getNameByLocalByLang(default_article['title']) }}
-                              </h1> 
-                            </nuxt-link>
-                            <div class="button">
-                              <nuxt-link :to="`/Detail/${default_article.id}/${default_article.type}/${default_article.id}`">
-                                {{ $t('read_more') }}
-                              </nuxt-link>
-                            </div>
+                  <div class="row mb-0">
+                     <div class="col-lg-6 col-md-6">
+                        <div class="service-box-item">
+                           <figure class="mb-0">
+                              <img src="@/assets/image/service-icon3.png" alt="service-icon" class="img-fluid">
+                           </figure>
+                           <div class="service-box-item-content">
+                              <h4>Web Development</h4>
+                              <p>
+                                 Our professional web development services follow proven and tested
+                                  processes that ensure the best possible results. 
+                                 You are assured of the desired quality outcome within the
+                                  predefined time frame with us.
+                              </p>
+                              <a href="#" data-toggle="modal" data-target="#web-development">Read More</a>
+                           </div>
                         </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="service-box-item mb-0">
+                           <figure class="mb-0">
+                              <img src="@/assets/image/service-icon4.png" alt="service-icon" class="img-fluid">
+                           </figure>
+                           <div class="service-box-item-content">
+                              <h4>App Development</h4>
+                              <p>
+                                 provide end-to-end organization, conceptualization,
+                                 design, optimization, and maintenance of your mobile app project.
+                              </p>
+                              <a href="#" data-toggle="modal" data-target="#app-development">Read More</a>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                  </figure>
-                </b-col>
-                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in news" :key="item.index" class="mb-4">
-                  <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
-                    <div class="card-content-dg p-2">
-                      <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ dateFormat(item['created_at']) }}
-                      </span>
-                      <h1 class="three-line title">
-                          {{ getNameByLocalByLang(item['title']) }}
-                      </h1>
-                      <figure class="position-relative">
-                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ $t('article') }}
-                        </b-badge>
-                        <nuxt-img 
-                          loading="lazy"
-                          format="webp"
-                          quality="80"
-                          :src="`${api_key}/image_etec/${item['image']}`" 
-                          :alt="getNameByLocalByLang(item['title'])"
-                        />
-                        <!-- <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])"> -->
-                      </figure>
-                      <b-card-text>
-                        <div class="viewer px-1">
-                          <i class="material-icons">visibility</i> {{ item['viewer'] }} {{ $t('viewer') }}
-                        </div>
-                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <p class="four-line description">
-                            {{ getNameByLocalByLang(item['description']) }}
-                          </p>
-                        </div>
-                      </b-card-text>
-                    </div>
-                  </nuxt-link>
-                </b-col>
-              </b-row>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- service section -->
 
-              <b-row>
-                <b-col cols="12" class="d-flex justify-content-center">
-                  <section class="">
-                      <button class="load_more btn-5" @click="load_more(6,key.article)">
-                        <div v-if="article_load_more_loading">
-                            {{ $t('view_more') }}
+      <!-- skill section -->
+      <section class="w-100 float-left skill-con padding-top padding-bottom position-relative" id="about-con">
+         <div class="container">
+            <div class="skill-inner-con position-relative">
+               <div class="row">
+                  <div class="col-lg-6 order-lg-0 order-2">
+                     <div class="skill-left-con text-center wow slideInLeft" >
+                        <div class="row service-skill-sttaf-con">
+                           <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                              <div class="skill-left-item-con">
+                                 <div class="circle-wrap firstPercentage">
+                                    <div class="circle">
+                                       <div class="mask full">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="mask half">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="inside-circle">
+                                          <div class="service-skill-sttaf-item-con">
+                                             <div class="service-skill-sttaf-item-title 
+                                                   service-skill-sttaf-item1-con d-flex 
+                                                   align-items-center justify-content-center"
+                                             >
+                                                <h4 class="d-table-cell align-middle 
+                                                    mb-0 text-center count">
+                                                    55
+                                                </h4>
+                                                <span class="static-txt2">%</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="service-skill-sttaf-item-heading">
+                                    <p class="mb-0">Graphic Design</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                              <div class="skill-left-item-con">
+                                 <div class="circle-wrap secondPercentage">
+                                    <div class="circle">
+                                       <div class="mask full">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="mask half">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="inside-circle">
+                                          <div class="service-skill-sttaf-item-con">
+                                             <div class="service-skill-sttaf-item-title 
+                                                  service-skill-sttaf-item2-con 
+                                                  text-center d-flex align-items-center 
+                                                  justify-content-center">
+                                                <h4 class=" mb-0 text-center count">95</h4>
+                                                <span class=" static-txt2">%</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="service-skill-sttaf-item-heading">
+                                    <p class="mb-0">Web Designing</p>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                        <div v-else>
-                            <b-spinner small></b-spinner>
-                            {{ $t('loading') }}
+                        <div class="row service-skill-sttaf-con">
+                           <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                              <div class="skill-left-item-con">
+                                 <div class="circle-wrap thirdPercentage">
+                                    <div class="circle">
+                                       <div class="mask full">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="mask half">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="inside-circle">
+                                          <div class="service-skill-sttaf-item-con">
+                                             <div class="service-skill-sttaf-item-title service-skill-sttaf-item1-con d-flex align-items-center justify-content-center">
+                                                <h4 class="d-table-cell align-middle mb-0 text-center count">85</h4>
+                                                <span class="static-txt2">%</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="service-skill-sttaf-item-heading">
+                                    <p class="mb-0">Branding Design</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
+                              <div class="skill-left-item-con">
+                                 <div class="circle-wrap fourPercentage">
+                                    <div class="circle">
+                                       <div class="mask full">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="mask half">
+                                          <div class="fill"></div>
+                                       </div>
+                                       <div class="inside-circle">
+                                          <div class="service-skill-sttaf-item-con">
+                                             <div class="service-skill-sttaf-item-title service-skill-sttaf-item2-con text-center d-flex align-items-center justify-content-center">
+                                                <h4 class=" mb-0 text-center count">80</h4>
+                                                <span class=" static-txt2">%</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="service-skill-sttaf-item-heading">
+                                    <p class="mb-0">Web Development</p>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                      </button> 
-                  </section>
-                </b-col>
-              </b-row>
-
-            </b-tab>
-            <b-tab :title="$t('course')"  @click="get(key.course)">
-              <b-row v-if="course_loading" class="mt-5" >
-                <b-col cols="12" style="margin-bottom:-3rem">
-                      <b-overlay
-                      id="overlay-background"
-                      show
-                      spinner-variant="orange"
-                      variant="transparent"
-                      opacity=0.85
-                      blur="0px"
-                      rounded="sm"
-                    >
-                  <b-skeleton-img height="550px"></b-skeleton-img>
-                </b-overlay>
-                </b-col>
-                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
-                  <div class="card-content-dg p-2">
-                    <b-overlay
-                        id="overlay-background"
-                        show
-                        spinner-variant="orange"
-                        variant="transparent"
-                        opacity=0.85
-                        blur="0px"
-                        rounded="sm"
-                      >
-                      <b-skeleton animation="wave" width="95%"></b-skeleton>
-                      <b-skeleton animation="wave" width="85%"></b-skeleton>
-                      <b-skeleton-img height="200px"></b-skeleton-img>
-                      <b-skeleton animation="wave" class="mt-1" width="25%"></b-skeleton>
-                      <b-skeleton animation="wave" width="85%"></b-skeleton>
-                      <b-skeleton animation="wave" width="95%"></b-skeleton>
-                    </b-overlay>
+                     </div>
                   </div>
-                </b-col>
-              </b-row>
-
-              <b-row v-else class="mt-5">
-                <b-col cols="12" class="position-relative " >
-                  <figure class="card-content-dg ">
-                    <div
-                    class="defualt-show w-100 card-content-dg "
-                     style="height:500px"
-                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_course['image']}');`">
-                        <div class="main-content-title">
-                            <p class="text-white d-flex align-items-center">
-                              {{ dateFormat(default_course['created_at']) }}
-                              &nbsp;
-                              {{ default_course['viewer'] }} {{ $t('viewer') }}
-                            </p>
-                            <nuxt-link :to="`/Detail/${default_course.id}/${default_course.type}/${default_course.id}`">
-                              <h1 class="text-white bg-image-default" >
-                                    {{ getNameByLocalByLang(default_course['title']) }}
-                              </h1> 
-                            </nuxt-link>
-                            <div class="button">
-                              <nuxt-link 
-                              :to="`/Detail/${default_course.id}/${default_course.type}/${default_course.id}`"
-                              >
-                                {{ $t('read_more') }}
-                              </nuxt-link>
-                            </div>
+                  <div class="col-lg-6 d-flex align-items-center">
+                     <div class="skill-right-con wow slideInRight" >
+                        <!-- <h6>My Skills</h6> -->
+                        <h2>
+                           Why nice girls hate me?
+                        </h2>
+                        <p>
+                           The only knowledge I can share at that time (2014) was English. 
+                           It wasn't perfect. Why did I have such a stomach to leave my comfort zone? 
+                           I think it has something to do with motivation. 
+                           I always have curiosity about how things work around me. 
+                           I started a small blog with Google blogger when I was in grade 10. 
+                           It wasn't a success, but it was fun. 
+                           I learned about html and how to style my element. 
+                           By keep doing this over and over, I gained knowledge and perfection along the way.
+                           I wasn't even aware of that. 
+                           I hope this blog can inspire the younger generation to seek 
+                           positive development in life.
+                        </p>
+                        <div class="generic-btn download-bnt">
+                           <a href="#" id="downloadImg" onclick="downloadImage()">Download CV</a>                  
                         </div>
+                     </div>
                   </div>
-                  </figure>
-                </b-col>
-                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in courses" :key="item.index" class="mb-4">
-                  <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
-                    <div class="card-content-dg p-2">
-                      <span class="mb-0 mt-0" style="font-size:13px">
-                            {{ dateFormat(item['created_at']) }}
-                      </span>
-                      <h1 class="three-line title">
-                          {{ getNameByLocalByLang(item['title']) }}
-                      </h1>
-                      <figure class="position-relative">
-                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ $t('course') }}
-                        </b-badge>
-                        <nuxt-img 
-                          loading="lazy"
-                          format="webp"
-                          quality="80"
-                          :src="`${api_key}/image_etec/${item['image']}`" 
-                          :alt="getNameByLocalByLang(item['title'])"
-                        />
-                        <!-- <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])"> -->
-                      </figure>
-                      <b-card-text>
-                        <div class="viewer px-1">
-                          <i class="material-icons">visibility</i> {{ item['viewer'] }} {{ $t('viewer') }}
-                        </div>
-                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <p class="four-line description">
-                            {{ getNameByLocalByLang(item['description']) }}
-                          </p>
-                        </div>
-                      </b-card-text>
-                    </div>
-                  </nuxt-link>
-                </b-col>
-              </b-row>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- skill section -->
 
-              <b-row>
-                <b-col cols="12" class="d-flex justify-content-center">
-                  <section class="">
-                      <button class="load_more btn-5" @click="load_more(6,key.course)">
-                        <div v-if="course_load_more_loading">
-                            {{ $t('view_more') }}
-                        </div>
-                        <div v-else>
-                            <b-spinner small></b-spinner>
-                            {{ $t('loading') }}
-                        </div>
-                      </button> 
-                  </section>
-                </b-col>
-              </b-row>
+      <!-- portfolio section -->
+      <section class="w-100 float-left portfolio-con padding-top" id="Portfolio">
+         <div class="container">
+            <div class="generic-title text-center">
+               <h6 class="text-white">Creative Works</h6>
+               <h2 class="mb-0 text-white">Check My Portfolio</h2>
+            </div>
+            <div id="myBtnContainer" class="text-center">
+               <button class=" active active_button" @click="filterSelection('all')"> All </button>
+               <button class="" @click="filterSelection('cars')">Products </button>
+               <button class="" @click="filterSelection('animals')">Web App</button>
+               <button class="" @click="filterSelection('fruits')"> Inetraction </button>
+               <button class="" @click="filterSelection('colors')">Brand Identity</button>
+            </div>
+         </div>
+      </section>
+      <!-- portfolio section -->
 
-            </b-tab>
-            <b-tab :title="$t('job')" @click="get(key.job)">
-              <b-row v-if="job_loading" class="mt-5" >
-                <b-col cols="12" style="margin-bottom:-3rem">
-                  <b-overlay
-                        id="overlay-background"
-                        show
-                        spinner-variant="orange"
-                        variant="transparent"
-                        opacity=0.85
-                        blur="0px"
-                        rounded="sm"
-                      >
-                     <b-skeleton-img height="550px"></b-skeleton-img>
-                  </b-overlay>
-                </b-col>
-                <b-col class="mb-4" cols="12" xl="4" lg="4" md="6" sm="6" v-for="i in 6" :key="i">
-                  <div class="card-content-dg p-2">
-                    <b-overlay
-                        id="overlay-background"
-                        show
-                        spinner-variant="orange"
-                        variant="transparent"
-                        opacity=0.85
-                        blur="0px"
-                        rounded="sm"
-                      >
-                      <b-skeleton animation="wave" width="95%"></b-skeleton>
-                      <b-skeleton animation="wave" width="85%"></b-skeleton>
-                      <b-skeleton-img height="200px"></b-skeleton-img>
-                      <b-skeleton animation="wave" class="mt-1" width="25%"></b-skeleton>
-                      <b-skeleton animation="wave" width="85%"></b-skeleton>
-                      <b-skeleton animation="wave" width="95%"></b-skeleton>
-                    </b-overlay>
-                  </div>
-                </b-col>
-              </b-row>
-             
-              <b-row v-else class="mt-5">
-                <b-col cols="12" class="position-relative " >
-                  <figure >
-                    <div
-                     style="height:500px"
-                     class="defualt-show w-100"
-                    :style="`background-image: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 91%)), url('${api_key}/image_etec/${default_job['image']}');`">
-                        <div class="main-content-title">
-                            <p class="text-white d-flex align-items-center">
-                              {{ dateFormat(default_job['created_at']) }}
-                              &nbsp;
-                              {{ default_job['viewer'] }} {{ $t('viewer') }}
-                            </p>
-                            <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
-                              <h1 class="text-white bg-image-default" >
-                                    {{ getNameByLocalByLang(default_job['title']) }}
-                              </h1> 
-                            </nuxt-link>
-                            <div class="button">
-                              <nuxt-link :to="`/Detail/${default_job.id}/${default_job.type}/${default_job.id}`">
-                                {{ $t('read_more') }}
-                              </nuxt-link>
-                            </div>
-                        </div>
-                  </div>
-                  </figure>
-                </b-col>
-                <b-col cols="12" xl="4" lg="4" md="6" sm="6" v-for="item in job" :key="item.index" class="mb-4">
-                  <nuxt-link :to="`/Detail/${item.id}/${item.type}`">
-                    <div class="card-content-dg p-2">
-                      <b-card-text>
-                        <span class="mb-0 mt-0" style="font-size:13px">
-                              {{ dateFormat(item['created_at']) }}
-                        </span>
-                        <h1 class="three-line title">
-                            {{ getNameByLocalByLang(item['title']) }}
-                        </h1>
-                      </b-card-text>
-                      <figure class="position-relative">
-                        <b-badge class="position-absolute orange-bg" style="top:10px;left:10px">
-                          {{ $t('about_job') }}
-                        </b-badge>
-                        <nuxt-img 
-                          loading="lazy"
-                          format="webp"
-                          quality="80"
-                          :src="`${api_key}/image_etec/${item['image']}`" 
-                          :alt="getNameByLocalByLang(item['title'])"
-                        />
-                        <!-- <img :src="`${api_key}/image_etec/${item['image']}`" :alt="getNameByLocalByLang(item['title'])"> -->
-                      </figure>
-                      <b-card-text>
-                        <div class="viewer px-1">
-                          <i class="material-icons">visibility</i> {{ item['viewer'] }} {{ $t('viewer') }}
-                        </div>
-                        <div :class="$colorMode.value=='dark'?'text-light-mode' : 'text-light-mode'">
-                          <p class="four-line description">
-                            {{ getNameByLocalByLang(item['description']) }}
-                          </p>
-                        </div>
-                      </b-card-text>
-                    </div>
-                  </nuxt-link>
-                </b-col>
-              </b-row>
-
-              <b-row>
-                <b-col cols="12" class="d-flex justify-content-center">
-                  <section class="">
-                      <button class="load_more btn-5" @click="load_more(6,key.job)">
-                        <div v-if="job_load_more_loading">
-                            {{ $t('view_more') }}
-                        </div>
-                        <div v-else>
-                            <b-spinner small></b-spinner>
-                            {{ $t('loading') }}
-                        </div>
-                      </button> 
-                  </section>
-                </b-col>
-              </b-row>
-
-            </b-tab>
-          </b-tabs>
-        </div>
-        
-      </b-container>
-      <!-- End Article -->
-
-      <!-- Start Founder -->
-      <b-container class="mt-5">
-        <h2 
-          align="center" 
-          :class="$colorMode.value=='dark'?'text-orange' : 'text-black'"
-        >
-          <b>{{ $t('founder') }}</b>
-        </h2>
-        <div class="mt-5">
-          <b-row>
-            <b-col cols="12" xl="4" lg="4" md="4" sm="4">
-              <figure>
-                <!-- width 200 -->
-                <client-only>
-                  <nuxt-img 
-                    loading="lazy"
-                    format="webp"
-                    quality="80"
-                    :src="`${api_key}/image_etec/${founder.image}`"
-                    :alt="founder.name"
-                  />
-                </client-only>
-              </figure>
-            </b-col>
-            <b-col cols="12" xl="8" lg="8" md="8" sm="8">
-              <h5>
-                {{ founder.name }}
-              </h5>
-              <p>
-                {{ founder.description }}
-              </p>
-              <hr class="mt-5">
-              <b-row>
-                <b-col cols="6">
-                  <a target="_blank" class="text-white" :href="founder.social_media_url">
-                    <b-button block class="orange-bg p-2 ml-3 float-left" pill>
-                      {{ $t('follow') }}
-                    </b-button>
+      <!-- portfolio section -->
+      <section class="w-100 float-left portfolio-body-con">
+         <div class="container">
+            <div class="portfolio-img-con position-relative w-100 float-left wow fadeInUp" >
+               <div class="filterDiv cars position-relative">
+                  <a href="#" data-toggle="modal" data-target="#modalWPWAF">
+                     <div class="portfolio-img position-relative">
+                        <figure>
+                           <img src="@/assets/image/portfolio-img1.png" alt="portfolio-img1" class="img-fluid"> 
+                        </figure>
+                     </div>
                   </a>
-                </b-col>
-                <b-col cols="6">
-                  <a target="_blank" :href="founder.contact_url">
-                    <b-button block pill class="p-2" >
-                      {{ $t('contact') }}
-                    </b-button>
+                     <div class="portfolio-img-content text-left">
+                        <div class="portfolio-img-title d-inline-block">
+                           <h4>Application UI Design</h4>
+                           <p>Dolar repellendus temporibus...</p>
+                        </div>
+                     <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalWPWAF-icon">
+                      <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
+                  </a> 
+                  </div>
+                  
+               </div>
+               <div class="filterDiv colors fruits position-relative">
+                  <a href="#" data-toggle="modal" data-target="#modalporfolio2">
+                     <div class="portfolio-img position-relative">
+                        <figure>
+                           <img src="@/assets/image/portfolio-img2.png" alt="portfolio-img1" class="img-fluid"> 
+                        </figure>
+                     </div>
                   </a>
-                </b-col>
-              </b-row>
-            </b-col>
-          </b-row>
-        </div>
-      </b-container>
-      <!-- End Founder -->
-    
+                     <div class="portfolio-img-content text-left">
+                        <div class="portfolio-img-title d-inline-block">
+                           <h4 >Furni furniture UI Design</h4>
+                           <p >Dolar repellendus temporibus...</p>
+                        </div>
+                     <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio2-icon">
+                     <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
+                     </a>
+                  </div>
+                  
+               </div>
+               <div class="filterDiv cars position-relative">
+                  <a href="#" data-toggle="modal" data-target="#modalporfolio3">
+                     <div class="portfolio-img position-relative">
+                        <figure>
+                           <img src="@/assets/image/portfolio-img3.png" alt="portfolio-img1" class="img-fluid"> 
+                        </figure>
+                     </div>
+                  </a>
+                     <div class="portfolio-img-content text-left">
+                        <div class="portfolio-img-title d-inline-block">
+                           <h4 >Mobile UI Design</h4>
+                           <p >Dolar repellendus temporibus...</p>
+                        </div>
+                  <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio3-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                  </div>
+                 
+               </div>
+               <div class="filterDiv colors position-relative">
+                  <a href="#" data-toggle="modal" data-target="#modalporfolio4">
+                     <div class="portfolio-img position-relative">
+                        <figure>
+                           <img src="@/assets/image/portfolio-img4.png" alt="portfolio-img1" class="img-fluid"> 
+                        </figure>
+                     </div>
+                  </a>
+                     <div class="portfolio-img-content text-left">
+                        <div class="portfolio-img-title d-inline-block">
+                           <h4 >Businesscard UI Design</h4>
+                           <p >Dolar repellendus temporibus...</p>
+                        </div>
+                  <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio4-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                  </div>
+                  
+               </div>
+               <div class="filterDiv cars animals position-relative">
+                  <a href="#" data-toggle="modal" data-target="#modalporfolio5">
+                     <div class="portfolio-img position-relative">
+                        <figure>
+                           <img src="@/assets/image/portfolio-img5.png" alt="portfolio-img1" class="img-fluid"> 
+                        </figure>
+                     </div>
+                  </a>
+                     <div class="portfolio-img-content text-left">
+                        <div class="portfolio-img-title d-inline-block">
+                           <h4 >Real estate UI Design</h4>
+                           <p >Dolar repellendus temporibus...</p>
+                        </div>
+                  <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio5-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- portfolio section -->
+
+      <!-- tastimonials section -->
+      <section class="w-100 float-left padding-top padding-bottom tastimonials-con position-relative text-lg-left text-center" id="testimonials">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-5">
+                  <div class="tastimonials-left-con wow slideInLeft" >
+                     <figure class="mb-0">
+                        <img src="@/assets/image/tastimonials-img.png" alt="tastimonials-img" class="img-fluid">
+                     </figure>
+                  </div>
+               </div>
+               <div class="col-lg-7">
+                  <div id="carouselExampleControls" class="carousel slide wow slideInRight" data-ride="carousel" >
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="testimonials-content">
+                              <h6>Testimonials</h6>
+                              <h2>Happy Clients Feedback</h2>
+                              <figure class="mb-0">
+                                 <img src="@/assets/image/comma-icon.png" alt="comma-icon" class="img-fluid">
+                              </figure>
+                              <div class="testimonials-inner-content">
+                                 <p>
+                                    You're really good at focusing on what customers
+                                     need and require. You have a real instinct to 
+                                     understand our customers. Good work!
+                                 </p>
+                                 <span class="d-block auther-name">Kevin Andrew</span>
+                                 <span class="d-block">CEO  of the company</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="testimonials-content">
+                              <h6>Testimonials</h6>
+                              <h2>Happy Clients Feedback</h2>
+                              <figure class="mb-0">
+                                 <img src="@/assets/image/comma-icon.png" alt="comma-icon" class="img-fluid">
+                              </figure>
+                              <div class="testimonials-inner-content">
+                                 <p>
+                                    You’re really good at following up with the client so 
+                                    as to ensure that they are never left in the dark.
+                                     Keep it up!
+                                 </p>
+                                 <span class="d-block auther-name">Kevin Andrew</span>
+                                 <span class="d-block">CEO  of the company</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="testimonials-content">
+                              <h6>Testimonials</h6>
+                              <h2>Happy Clients Feedback</h2>
+                              <figure class="mb-0">
+                                 <img src="@/assets/image/comma-icon.png" alt="comma-icon" class="img-fluid">
+                              </figure>
+                              <div class="testimonials-inner-content">
+                                 <p>
+                                    You’re really good at obtaining first-hand customer 
+                                    information and using this information to 
+                                    improve our products and services. 
+                                    You should show the rest of us how you go about obtaining 
+                                    this information.
+                                 </p>
+                                 <span class="d-block auther-name">Kevin Andrew</span>
+                                 <span class="d-block">CEO  of the company</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                     <i class="fas fa-arrow-left d-flex align-items-center justify-content-center"></i>
+                     <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                     <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
+                     <span class="sr-only">Next</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- tastimonials section -->
+
+      <!-- blog section -->
+      <section class="w-100 float-left blog-con padding-top padding-bottom position-relative" id="blog">
+         <div class="container">
+            <div class="blog-inner-con position-relative">
+               <div class="generic-title text-center">
+                  <h6>Latest News</h6>
+                  <h2 class="mb-0">Blog & Articles</h2>
+               </div>
+               <div class="blog-box wow fadeInUp" >
+                  <div class="row">
+                     <div class="col-lg-4">
+                        <div class="blog-box-item">
+                           <div class="blog-img">
+                              <a href="#" data-toggle="modal" data-target="#blog-model-1">
+                                 <figure class="mb-0">
+                                    <img src="@/assets/image/blog-img-1.png" alt="blog-img" class="img-fluid">
+                                 </figure>
+                              </a>
+                           </div>
+                           <div class="blog-content">
+                              <div class="blog-auteher-title">
+                                 <span>By David William</span>
+                                 <span class="float-lg-right">Mar 8, 2022</span>
+                              </div>
+                              <a href="#" data-toggle="modal" data-target="#blog-model-1">
+                                 <h4>Quis autem vea eum 
+                                    iure reprehenderit
+                                 </h4>
+                              </a>
+                              <p>Dolor repellendus temporibus autem 
+                                 quibusdam officiis debitis rerum nece
+                                 aibus minima veniam.
+                              </p>
+                              <a href="#" data-toggle="modal" data-target="#blog-model-1">Read More</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4">
+                        <div class="blog-box-item">
+                           <div class="blog-img">
+                              <a href="#" data-toggle="modal" data-target="#blog-model-2">
+                                 <figure class="mb-0">
+                                    <img src="@/assets/image/blog-img-2.png" alt="blog-img" class="img-fluid">
+                                 </figure>
+                              </a>
+                           </div>
+                           <div class="blog-content">
+                              <div class="blog-auteher-title">
+                                 <span>By John Doe</span>
+                                 <span class="float-lg-right">Mar 9, 2022</span>
+                              </div>
+                              <a href="#" data-toggle="modal" data-target="#blog-model-2">
+                                 <h4>Reprehenderit in vouta
+                                    velit esse cillum
+                                 </h4>
+                              </a>
+                              <p>Dolor repellendus temporibus autem 
+                                 quibusdam officiis debitis rerum nece
+                                 aibus minima veniam.
+                              </p>
+                              <a href="#" data-toggle="modal" data-target="#blog-model-2">Read More</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4">
+                        <div class="blog-box-item mb-0">
+                           <div class="blog-img">
+                              <a href="#" data-toggle="modal" data-target="#blog-model-3">
+                                 <figure class="mb-0">
+                                    <img src="@/assets/image/blog-img-3.png" alt="blog-img" class="img-fluid">
+                                 </figure>
+                              </a>
+                           </div>
+                           <div class="blog-content">
+                              <div class="blog-auteher-title">
+                                 <span>By Elina Parker</span>
+                                 <span class="float-lg-right">Mar 10, 2022</span>
+                              </div>
+                              <a href="#" data-toggle="modal" data-target="#blog-model-3">
+                                 <h4>Soluta nobis ose aligen
+                                 optio cumue
+                              </h4>
+                              </a>
+                              <p>Dolor repellendus temporibus autem 
+                                 quibusdam officiis debitis rerum nece
+                                 aibus minima veniam.
+                              </p>
+                              <a href="#" data-toggle="modal" data-target="#blog-model-3">Read More</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- blog section -->
+
+      <!-- form section -->
+      <section class="w-100 float-left form-main-con padding-top padding-bottom" id="Contact">
+         <div class="container">
+            <div class="form-main-inner-con position-relative">
+               <div class="generic-title text-center">
+                  <h6>Get in Touch</h6>
+                  <h2 class="mb-0">Any Questions? Feel Free<br>
+                     to Contact
+                  </h2>
+               </div>
+               <div class="row">
+                  <div class="col-lg-4 order-lg-0 order-2">
+                     <div class="contact-information position-relative wow slideInLeft" >
+                        <ul class="list-unstyled">
+                           <li>
+                              <figure class="mb-0 d-flex align-items-center justify-content-center">
+                                 <img src="@/assets/image/location-icon.png" alt="location-icon" class="img-fluid">
+                              </figure>
+                              <div class="contact-information-content">
+                                 <h5>Address:</h5>
+                                 <p class="mb-0">
+                                   Prey Sla, Prey Pnov, Pea Reang, Prey Veng
+                                 </p>
+                              </div>
+                           </li>
+                           <li>
+                              <figure class="mb-0 d-flex align-items-center justify-content-center">
+                                 <img src="@/assets/image/message-icon.png" alt="message-icon" class="img-fluid">
+                              </figure>
+                              <div class="contact-information-content">
+                                 <h5>Email:</h5>
+                                 <p class="mb-0">rongmarin98@gmail.com</p>
+                                 <p class="mb-0">rindev2002@gmail.com</p>
+                              </div>
+                           </li>
+                           <li class="mb-0">
+                              <figure class="mb-0 d-flex align-items-center justify-content-center">
+                                 <img src="@/assets/image/phone-icon.png" alt="phone-icon" class="img-fluid">
+                              </figure>
+                              <div class="contact-information-content">
+                                 <h5>Phone:</h5>
+                                 <p class="mb-0">+855 18 421 0490</p>
+                                 <p class="mb-0">+855 90 717 057</p>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-8">
+                     <form class="contact-form wow slideInRight text-lg-left text-center" >
+                        <div class="row">
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group mb-0">    
+                                 <input type="text"  placeholder="Name" name="name" id="name"> 
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group mb-0">
+                                 <input type="email"  placeholder="Email">
+                                 <small id="emailHelp" class="form-text text-muted"></small>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group mb-0">    
+                                 <input type="tel"  placeholder="Phone"> 
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6">
+                              <div class="form-group mb-0">    
+                                 <input type="text"  placeholder="Subject"> 
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class=" form-group mb-0">    
+                                 <textarea  placeholder="Message" rows="3" name="comments" id="comments"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                        <button type="submit" class="appointment-btn">Submit</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- form section -->
   </div>
 </template>
 
 <script>
-import moment from 'moment';
 export default {
-  colorMode: 'light',
-  async asyncData({$axios}) {
-    const slide = await $axios.post('slide/lists')
-    // const default_article = await $axios.$get('setting/article')
-    // const news = await $axios.post('getAllNews',{skip:0})
-    // const founder = await $axios.$get('founder/get')
-    return {
-      slide: slide.data.data.data,
-      // article_loading: false,
-      // article_new_action: false,
-      // default_article: default_article,
-      // news: news.data.data,
-    }
-  },
+
   head () {
     return {
-      title: "គ្រូអាយធីចិត្តល្អ | Etec Center | KroIT",
+      title: "រ៉ុង ម៉ារីន | Rong Marin",
       htmlAttrs: {
         lang: this.$i18n.locale
       },
@@ -491,10 +642,10 @@ export default {
         {
           hid: "og:title",
           property: "og:title",
-          content: "KroIT | ETEC I.T Training Center",
+          content: "Rong Marin | Web Developer",
         },
         { 
-          hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg')
+        //  hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg')
         },
         {
           hid: "description",
@@ -504,7 +655,6 @@ export default {
         },
         { 
           hid: 'og-url', property: 'og:url', 
-          content: this.web_url
         },
       ]
     }
@@ -514,138 +664,41 @@ export default {
   },
   data() {
     return {
-      web_url: process.env.WEB_URL,
-      course_per_page: '',
-      course_total: '',
-      course_table_size: 0,
-      course_loading: true,
-      course_new_action: true,
-      course_load_more_loading: true,
-      article_loading: true,
-      article_load_more_loading: true,
-      article_table_size: 0,
-      article_new_action: true,
-      job_loading: true,
-      job_load_more_loading: true,
-      job_table_size: 0,
-      job_new_action: true,
-      api_key: process.env.BASE_URL,
-      allVideos: [],
-      news: [],
-      courses: [],
-      job: [],
-      default_course: '',
-      default_article: '',
-      default_job: '',
-      key: {
-        course: 'course',
-        article: 'article',
-        job: 'job'
-      },
-      slide: [],
-      url: 'getAllCourse',
-      founder: '',
+   
     }
   },
-  mounted() {
-   // this.getSlide()
-    this.get()
-    this.getFounder()
+  mounted(){
+   this.filterSelection('all')
   },
-  watch: {
-  },
-  methods: {
-    async get(key='article'){
-      if(key==this.key.course){
-        if(this.course_new_action){
-          await this.$axios.$get('setting/course').then(response => {
-            this.default_course = response
-          })
-          await this.$axios.$post('getAllCourse',{skip: this.course_table_size}).then(response => {
-            this.courses = this.courses.concat(response.data)
-            this.course_loading = false
-            this.course_new_action = false
-            this.course_load_more_loading = true
-          })
-        }
-        
-      }else if(key==this.key.article){
-        if(this.article_new_action){
-            await this.$axios.$get('setting/article').then(response => {
-              this.default_article = response
-            })
-           await this.$axios.$post('getAllNews',{skip: this.article_table_size}).then(response => {
-              this.news = this.news.concat(response.data)
-              this.article_loading = false
-              this.article_new_action = false
-              this.article_load_more_loading = true
-          })
-        }
-      }else if(key==this.key.job){
-        if(this.job_new_action){
-          await this.$axios.$get('setting/job').then(response => {
-              this.default_job = response
-          })
-          await this.$axios.$post('job/lists',{skip: this.job_table_size}).then(response => {
-            this.job = this.job.concat(response.data)
-            this.job_loading = false
-            this.job_new_action = false
-            this.job_load_more_loading = true
-          })
-        }
+  methods:{
+    w3RemoveClass(element, name) {
+         var i, arr1, arr2;
+         arr1 = element.className.split(" ");
+         arr2 = name.split(" ");
+         for (i = 0; i < arr2.length; i++) {
+         while (arr1.indexOf(arr2[i]) > -1) {
+         arr1.splice(arr1.indexOf(arr2[i]), 1);     
+         }
+         }
+         element.className = arr1.join(" ");
+    },
+    w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+    },
+    filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("filterDiv");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+      this.w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) this.w3AddClass(x[i], "show");
       }
-    },
-    getSlide(){
-      this.$axios.$post('slide/lists').then(response => {
-        this.slide = response.data.data
-      })
-    },
-    getFounder(){
-      this.$axios.$get('founder/get').then(response => {
-        this.founder = response
-      })
-      // this.$axios.$get('course/count').then(response => {
-      //   this.course_total = response
-      // })
-    },
-    load_more(table_size,key){
-      if(key==this.key.course){
-        this.course_new_action = true
-        this.course_table_size+=table_size
-        this.course_load_more_loading = false
-      }else if(key == this.key.article){
-        this.article_new_action = true
-        this.article_table_size+=table_size
-        this.article_load_more_loading = false
-      }else if(key == this.key.job){
-        this.job_new_action = true
-        this.job_table_size+=table_size
-        this.job_load_more_loading = false
-      }
-      this.get(key)
-    },
-    getImage(image) {
-        return 'https://etec-api.loveounnas.xyz/image_etec/' + image
-    },
-    dateFormat(date){
-      return moment(date).format('llll')
-    },
-    getNameByLocalByLang(name, local = 'latin_name') {
-				if (name != '') {
-					try {
-						name = JSON.parse(name)
-						if (this.$i18n.locale == 'en') {
-							return name.latin_name
-						} else {
-							return name.local_name
-						}
-					} catch (e) {
-						return name
-					}
-				} else {
-					return null
-				}
-		    },
+    }
   }
 }
 </script>

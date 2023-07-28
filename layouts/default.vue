@@ -1,161 +1,16 @@
 <template>
     <div>
-      <!-- Start Header -->
-      
-        <b-container fluid 
-          :class="$colorMode.value=='dark'?'bg-dark' : 'bg-white' " 
-          class="position-fixed header"
-          style="border-bottom:0.1px solid #ededed">
-            <b-navbar toggleable="lg">
-              <b-container class="p-2">
-                <b-navbar-brand to="/">
-                  <img height="50" :src="`${api_key}/image_etec/${header.image}`" alt="">
-                </b-navbar-brand>
-    
-                <b-navbar-toggle 
-                  target="nav-collapse" 
-                  class="ml-auto"
-                >
-                <span class="material-icons" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">menu</span>
-              </b-navbar-toggle>
-    
-                <b-collapse id="nav-collapse" is-nav>
-                  <b-navbar-nav class="m-auto" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
-                    <b-nav-item class="pl-4" to="/" >
-                      {{ $t('home') }}
-                    </b-nav-item>
-                    <b-nav-item class="pl-4" to="/Article">
-                      {{ $t('article') }}
-                    </b-nav-item>
-                    <b-nav-item class="pl-4" to="/Course">
-                      {{ $t('course') }}
-                    </b-nav-item>
-                    <b-nav-item class="pl-4" to="/Video">
-                      {{ $t('video') }}
-                    </b-nav-item>
-                    <b-nav-item class="pl-4" to="/Job">
-                      {{ $t('job') }}
-                    </b-nav-item>
-                  </b-navbar-nav>
-                  <!-- Right aligned nav items -->
-                  <b-navbar-nav class="m-right">
-                    <b-nav-form>
-                      <b-form-input v-model="search" size="sm" class="mr-sm-2" :placeholder="$t('search')+'...'"></b-form-input>
-                      <b-button size="sm" 
-                                class="my-2 my-sm-0 orange-bg" 
-                                type="button"
-                                @click.prevent.stop="onSearch"
-                      >{{ $t('search') }}</b-button>
-                    </b-nav-form>
-
-                    <client-only>
-                      <b-nav-item-dropdown class="ml-2 mr-1" right>
-                        <template #text>
-                          <span v-if="$i18n.locale == 'en'" style="padding:0px">
-                            <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt="">
-                          </span>
-                          <span v-else>
-                            <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt="">
-                          </span>
-                        </template>
-                        <b-dropdown-item @click.prevent.stop="$i18n.setLocale('en')" >
-                          <img style="padding:0px" height="18" width="20" src="@/assets/image/en.png" alt=""> {{ $t('english') }}
-                        </b-dropdown-item>
-                        <b-dropdown-item @click.prevent.stop="$i18n.setLocale('kh')">
-                          <img style="padding:0px" height="18" width="20" src="@/assets/image/kh.png" alt=""> {{ $t('khmer') }}
-                        </b-dropdown-item>
-                      </b-nav-item-dropdown>
-                    </client-only>
-
-                    <b-nav-item>
-                      <span v-if="$colorMode.value=='dark'"
-                        @click="$colorMode.value='light'"
-                        class="material-icons"
-                        :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
-                      >brightness_4</span>
-                      <span v-if="$colorMode.value!='dark'"
-                        @click="$colorMode.value='dark'"
-                        class="material-icons"
-                        :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'"
-                      >nights_stay</span>
-                    </b-nav-item>
-                  </b-navbar-nav>
-    
-                </b-collapse> 
-            </b-container>
-            </b-navbar>
-        </b-container>
-      
-      <!-- End Header -->
-
-      <Nuxt />
-
-      <!-- Start Footer -->
-      <b-container fluid class="mt-5 " style="border-top:0.1px solid #ededed" 
-             :class="$colorMode.value=='dark'?'bg-dark':''">
-        <b-container class="p-4">
-          <b-row>
-            <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-                <img width="100" :src="`${api_key}/image_etec/${footer.image}`" alt="">
-                <h6 class="mt-3 " :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
-                  {{ footer.title }}
-                </h6>
-                
-            </b-col>
-            <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-              <b-nav vertical class="footer-nav" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-light-mode'">
-                <b-nav-item to="/Article">{{ $t('article') }}</b-nav-item>
-                <b-nav-item to="/Course">{{ $t('course') }}</b-nav-item>
-                <b-nav-item>{{ $t('video') }}</b-nav-item>
-                <b-nav-item>{{ $t('job') }}</b-nav-item>
-              </b-nav>
-            </b-col>
-            <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-              <h6>
-                {{ $t('address') }}
-              </h6>
-              <p>
-                {{ address.description }}
-              </p>
-            </b-col>
-            <b-col cols="12" xl="3" lg="3" md="6" sm="6">
-              <h6>
-                {{ $t('about_us') }}
-              </h6>
-              <p>
-                {{ about.description }}
-              </p>
-              <div>
-                <b-row>
-                  <b-col cols='2' v-for="item in social" :key="item.index">
-                    <a :href="item.url" target="_blank" rel="noopener noreferrer">
-                      <img height="30" class="rounded-circle" :src="`${api_key}/image_etec/${item.image}`" alt="">
-                    </a>
-                  </b-col>
-                </b-row>
-              </div>
-            </b-col>
-          </b-row>
-        </b-container>
-        <h6 align="right" class="mb-0 pb-2" :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'">
-          {{ $t('developed_by') }}: <a :class="$colorMode.value=='dark'?'text-dark-mode' : 'text-secondary'" href="https://www.facebook.com/marin.rong" target="_blank" rel="noopener noreferrer">Rong Marin</a>
-        </h6>
-      </b-container>
-      <!-- End Footer -->
-  
+      <Header></Header>
+      <Nuxt></Nuxt>
+      <Footer></Footer>
     </div>
 </template>
 <script>
-import cookie from 'js-cookie'
 export default{
-    colorMode: 'light',
-  //   head () {
-  //   return {
-  //     meta: [
-  //       { hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg') }
-  //     ]
-  //   }
-  // },
+    components: {
+      Header: () => import('~/components/Header/index.vue'),
+      Footer: () => import('~/components/Footer/index.vue')
+    },
     head () {
       return {
         title: "KroIT | Etec Center | គ្រូអាយធីចិត្តល្អ | Etec | គ្រូអាយធី | IT | Code",
@@ -169,7 +24,7 @@ export default{
             content: "KroIT | ETEC I.T Training Center",
           },
           { 
-            hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg')
+            hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.png')
           },
           {
             hid: "description",
@@ -187,53 +42,9 @@ export default{
     data(){
         return {
           api_key: process.env.BASE_URL,
-          address: '',
-          about: '',
-          footer: '',
-          header: '',
-          social: '',
-          search: ''
         }
     },
-    mounted(){
-      this.getHeader()
-      this.getAddress()
-      this.getAbout()
-      this.getFooter()
-      this.getSocial()
-    },
     methods: {
-       category(type){
-          this.$router.push('Category?type='+type+'')
-        },
-        getAddress(){
-          this.$axios.$get('getAddress').then(response => {
-            this.address = response
-          })
-        },
-        getAbout(){
-          this.$axios.$get('getAbout').then(response => {
-            this.about = response
-          })
-        },
-        getFooter(){
-          this.$axios.$get('getAllLogoFooter').then(response => {
-            this.footer = response
-          })
-        },
-        getHeader(){
-          this.$axios.$get('getAllLogoHeader').then(response => {
-            this.header = response
-          })
-        },
-        getSocial(){
-          this.$axios.$get('getAllSocialMedia').then(response => {
-            this.social = response.data
-          })
-        },
-        getImage(image) {
-          return 'https://etec-api.loveounnas.xyz/image_etec/' + image
-        },
         switchLang(locale){
           if (this.$i18n.locale !== locale) {
               this.$i18n.locale = locale;
