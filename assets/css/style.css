@@ -1257,15 +1257,35 @@ background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 1
 .See-btn:hover:after{
     width: 100%;
 }
-@-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+/* @-webkit-keyframes mover {
+    0% { 
+        transform: translateY(0); 
+    }
+    100% { 
+        transform: translateY(-20px); 
+    }
+} */
+@keyframes mover {
+    0% { 
+        transform: translateY(0); 
+    }
+    100% { 
+        transform: translateY(-20px); 
+    }
 }
-@-webkit-keyframes left-mover{
+/* @-webkit-keyframes left-mover{
+    0% { transform: translatex(0); }
+    100% { transform: translatex(10px); }
+} */
+@keyframes left-mover{
     0% { transform: translatex(0); }
     100% { transform: translatex(10px); }
 }
-@-webkit-keyframes right-mover{
+/* @-webkit-keyframes right-mover{
+    0% { transform: translatex(0); }
+    100% { transform: translatex(-10px); }
+} */
+@keyframes right-mover{
     0% { transform: translatex(0); }
     100% { transform: translatex(-10px); }
 }

@@ -161,12 +161,6 @@ export default{
             header.classList.remove(toggleClass);
          }
       });
-
-
-
-   
-
-
    }
 }
 </script>

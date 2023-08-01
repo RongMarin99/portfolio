@@ -4,26 +4,11 @@ export default {
   mode: "universal", 
   target: "server",
   ssr: true,
-  generate: {
-    fallback: true
-  },
-  hooks: {
-    'render:route': function (url, result, context) {
-      result.html = result.html.replace(/ defer>/g, ' defer async>')
-    },
-    'generate:page': (page) => {
-      page.html = page.html.replace(/ defer>/g, ' defer async>')
-    }
-  },
-  render: {
-    // Set all scripts to defer
-    asyncScripts: true,
-  },
   head: {
     title: pkg.name,
-    htmlAttrs: {
-      lang: "kh",
-    },
+    // titleTemplate(title) {
+    //   return title ? `PCHBiz - ${title}` : 'PCHBiz';
+    // },
     meta: [
       { charset: 'utf-8' },
       { 
@@ -71,7 +56,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/style/main.scss',
+    '~/assets/style/main.scss',
     '~/assets/css/animate.css',
     '~/assets/css/super-classes.css',
     '~/assets/css/style.css',

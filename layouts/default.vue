@@ -1,13 +1,24 @@
 <template>
     <div>
-      <Header></Header>
-      <Nuxt></Nuxt>
-      <Footer></Footer>
+      <LazyHydrate when-visible>
+        <Header></Header>
+      </LazyHydrate>
+      
+      <LazyHydrate when-visible>
+        <Nuxt></Nuxt>
+      </LazyHydrate>
+
+      <LazyHydrate never>
+        <Footer></Footer>
+      </LazyHydrate>
+     
     </div>
 </template>
 <script>
+import LazyHydrate from 'vue-lazy-hydration';
 export default{
     components: {
+      LazyHydrate,
       Header: () => import('~/components/Header/index.vue'),
       Footer: () => import('~/components/Footer/index.vue')
     },
