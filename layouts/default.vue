@@ -35,7 +35,7 @@ export default{
             content: "KroIT | ETEC I.T Training Center",
           },
           { 
-            hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.png')
+            hid: 'og:image', property: 'og:image', content: require('@/static/image/logo.png')
           },
           {
             hid: "description",

@@ -16,48 +16,9 @@
   justify-content: space-between;
 }
 
-.page-header button {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 14px 20px;
-  border-radius: 10px;
-  color: white;
-  background: #08a6df;
-  transition: background 0.3s;
-}
-
-.page-header button svg {
-  flex-shrink: 0;
-  margin-left: 5px;
-  fill: currentColor;
-}
-
-.page-header button:hover {
-  background: #0ab8f6;
-}
 
 /* SECTION STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-section {
-  margin: 100px 0 20px;
-}
-
-section:last-of-type {
-  margin-bottom: 100px;
-}
-
-section .text {
-  max-width: 700px;
-  margin: 0 auto 50px;
-}
-
-section img {
-  border-radius: 15px;
-  background: whitesmoke;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
 
 /* STICKY STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -73,10 +34,6 @@ section img {
   max-width: 80%;
 }
 
-.page-header.is-sticky button {
-  font-size: 14px;
-  padding: 7px 10px;
-}
 
 // @-webkit-keyframes slideDown {
 //   from {
@@ -93,4 +50,8 @@ section img {
   to {
     transform: translateY(0);
   }
+}
+
+.nav-item.active .nav-link {
+  color: rgba(255,161,34,.99) !important;
 }

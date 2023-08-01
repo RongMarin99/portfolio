@@ -65,6 +65,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+   
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -73,7 +74,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/google-analytics',
-    'nuxt-compress'
+    'nuxt-compress',
   ],
   googleAnalytics: {
     id: '359938223'
@@ -170,13 +171,9 @@ export default {
     }
   },
   loading: {
-    color: '#FD7237',
+    color: '#6f34fe',
   },
-   loadingIndicator: {
-    name: 'folding-cube',
-    color: '#FD7237',
-    background: 'white'
-  },
+   loadingIndicator: '~/pages/loading.html',
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     WEB_URL: process.env.WEB_URL,

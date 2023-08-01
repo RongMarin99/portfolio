@@ -15,7 +15,14 @@
                      <div class="col-lg-6 col-md-6">
                         <div class="service-box-item">
                            <figure class="mb-0">
-                              <img src="@/assets/image/service-icon1.png" alt="service-icon" class="img-fluid">
+                              <nuxt-img 
+                                 format="webp" 
+                                 loading="lazy"
+                                 preload 
+                                 src="/image/service-icon1.png" 
+                                 class="img-fluid"
+                                 alt="service-icon"
+                              />
                            </figure>
                            <div class="service-box-item-content">
                               <h4>Ui/Ux Design</h4>
@@ -31,7 +38,14 @@
                      <div class="col-lg-6 col-md-6">
                         <div class="service-box-item">
                            <figure class="mb-0">
-                              <img src="@/assets/image/service-icon2.png" alt="service-icon" class="img-fluid">
+                              <nuxt-img 
+                                 format="webp" 
+                                 loading="lazy"
+                                 preload 
+                                 src="/image/service-icon2.png" 
+                                 class="img-fluid"
+                                 alt="service-icon"
+                              />
                            </figure>
                            <div class="service-box-item-content">
                               <h4>Web Design</h4>
@@ -50,8 +64,15 @@
                      <div class="col-lg-6 col-md-6">
                         <div class="service-box-item">
                            <figure class="mb-0">
-                              <img src="@/assets/image/service-icon3.png" alt="service-icon" class="img-fluid">
-                           </figure>
+                              <nuxt-img 
+                                 format="webp" 
+                                 loading="lazy"
+                                 preload 
+                                 src="/image/service-icon3.png" 
+                                 class="img-fluid"
+                                 alt="service-icon"
+                              />
+                            </figure>
                            <div class="service-box-item-content">
                               <h4>Web Development</h4>
                               <p>
@@ -67,7 +88,14 @@
                      <div class="col-lg-6 col-md-6">
                         <div class="service-box-item mb-0">
                            <figure class="mb-0">
-                              <img src="@/assets/image/service-icon4.png" alt="service-icon" class="img-fluid">
+                              <nuxt-img 
+                                 format="webp" 
+                                 loading="lazy"
+                                 preload 
+                                 src="/image/service-icon4.png" 
+                                 class="img-fluid"
+                                 alt="service-icon"
+                              />
                            </figure>
                            <div class="service-box-item-content">
                               <h4>App Development</h4>
@@ -264,7 +292,14 @@
                   <a href="#" data-toggle="modal" data-target="#modalWPWAF">
                      <div class="portfolio-img position-relative">
                         <figure>
-                           <img src="@/assets/image/portfolio-img1.png" alt="portfolio-img1" class="img-fluid"> 
+                           <nuxt-img 
+                              format="webp" 
+                              loading="lazy"
+                              preload 
+                              src="/image/portfolio-img1.png" 
+                              class="img-fluid"
+                              alt="portfolio-img1"
+                           />
                         </figure>
                      </div>
                   </a>
@@ -283,7 +318,14 @@
                   <a href="#" data-toggle="modal" data-target="#modalporfolio2">
                      <div class="portfolio-img position-relative">
                         <figure>
-                           <img src="@/assets/image/portfolio-img2.png" alt="portfolio-img1" class="img-fluid"> 
+                           <nuxt-img 
+                              format="webp" 
+                              loading="lazy"
+                              preload 
+                              src="/image/portfolio-img2.png" 
+                              class="img-fluid"
+                              alt="portfolio-img1"
+                           />
                         </figure>
                      </div>
                   </a>
@@ -302,7 +344,14 @@
                   <a href="#" data-toggle="modal" data-target="#modalporfolio3">
                      <div class="portfolio-img position-relative">
                         <figure>
-                           <img src="@/assets/image/portfolio-img3.png" alt="portfolio-img1" class="img-fluid"> 
+                           <nuxt-img 
+                              format="webp" 
+                              loading="lazy"
+                              preload 
+                              src="/image/portfolio-img3.png" 
+                              class="img-fluid"
+                              alt="portfolio-img1"
+                           />
                         </figure>
                      </div>
                   </a>
@@ -319,7 +368,14 @@
                   <a href="#" data-toggle="modal" data-target="#modalporfolio4">
                      <div class="portfolio-img position-relative">
                         <figure>
-                           <img src="@/assets/image/portfolio-img4.png" alt="portfolio-img1" class="img-fluid"> 
+                           <nuxt-img 
+                              format="webp" 
+                              loading="lazy"
+                              preload 
+                              src="/image/portfolio-img4.png" 
+                              class="img-fluid"
+                              alt="portfolio-img1"
+                           />
                         </figure>
                      </div>
                   </a>
@@ -336,7 +392,14 @@
                   <a href="#" data-toggle="modal" data-target="#modalporfolio5">
                      <div class="portfolio-img position-relative">
                         <figure>
-                           <img src="@/assets/image/portfolio-img5.png" alt="portfolio-img1" class="img-fluid"> 
+                           <nuxt-img 
+                              format="webp" 
+                              loading="lazy"
+                              preload 
+                              src="/image/portfolio-img5.png" 
+                              class="img-fluid"
+                              alt="portfolio-img1"
+                           />
                         </figure>
                      </div>
                   </a>
@@ -361,7 +424,14 @@
                <div class="col-lg-5">
                   <div class="tastimonials-left-con wow slideInLeft" >
                      <figure class="mb-0">
-                        <img src="@/assets/image/tastimonials-img.png" alt="tastimonials-img" class="img-fluid">
+                        <nuxt-img 
+                           format="webp" 
+                           loading="lazy"
+                           preload 
+                           src="/image/tastimonials-img.png" 
+                           class="img-fluid"
+                           alt="tastimonials-img"
+                        />
                      </figure>
                   </div>
                </div>
@@ -373,7 +443,14 @@
                               <h6>Testimonials</h6>
                               <h2>Happy Clients Feedback</h2>
                               <figure class="mb-0">
-                                 <img src="@/assets/image/comma-icon.png" alt="comma-icon" class="img-fluid">
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="/image/comma-icon.png" 
+                                    class="img-fluid"
+                                    alt="comma-icon"
+                                 />
                               </figure>
                               <div class="testimonials-inner-content">
                                  <p>
@@ -381,7 +458,7 @@
                                      need and require. You have a real instinct to 
                                      understand our customers. Good work!
                                  </p>
-                                 <span class="d-block auther-name">Kevin Andrew</span>
+                                 <span class="d-block auther-name">Rong Marin</span>
                                  <span class="d-block">CEO  of the company</span>
                               </div>
                            </div>
@@ -391,7 +468,14 @@
                               <h6>Testimonials</h6>
                               <h2>Happy Clients Feedback</h2>
                               <figure class="mb-0">
-                                 <img src="@/assets/image/comma-icon.png" alt="comma-icon" class="img-fluid">
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="/image/comma-icon.png" 
+                                    class="img-fluid"
+                                    alt="comma-icon"
+                                 />
                               </figure>
                               <div class="testimonials-inner-content">
                                  <p>
@@ -399,7 +483,7 @@
                                     as to ensure that they are never left in the dark.
                                      Keep it up!
                                  </p>
-                                 <span class="d-block auther-name">Kevin Andrew</span>
+                                 <span class="d-block auther-name">Rong Marin</span>
                                  <span class="d-block">CEO  of the company</span>
                               </div>
                            </div>
@@ -409,7 +493,14 @@
                               <h6>Testimonials</h6>
                               <h2>Happy Clients Feedback</h2>
                               <figure class="mb-0">
-                                 <img src="@/assets/image/comma-icon.png" alt="comma-icon" class="img-fluid">
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="/image/comma-icon.png" 
+                                    class="img-fluid"
+                                    alt="comma-icon"
+                                 />
                               </figure>
                               <div class="testimonials-inner-content">
                                  <p>
@@ -419,7 +510,7 @@
                                     You should show the rest of us how you go about obtaining 
                                     this information.
                                  </p>
-                                 <span class="d-block auther-name">Kevin Andrew</span>
+                                 <span class="d-block auther-name">Rong Marin</span>
                                  <span class="d-block">CEO  of the company</span>
                               </div>
                            </div>
@@ -455,7 +546,14 @@
                            <div class="blog-img">
                               <a href="#" data-toggle="modal" data-target="#blog-model-1">
                                  <figure class="mb-0">
-                                    <img src="@/assets/image/blog-img-1.png" alt="blog-img" class="img-fluid">
+                                    <nuxt-img 
+                                       format="webp" 
+                                       loading="lazy"
+                                       preload 
+                                       src="/image/blog-img-1.png" 
+                                       class="img-fluid"
+                                       alt="blog-img"
+                                    />
                                  </figure>
                               </a>
                            </div>
@@ -482,7 +580,14 @@
                            <div class="blog-img">
                               <a href="#" data-toggle="modal" data-target="#blog-model-2">
                                  <figure class="mb-0">
-                                    <img src="@/assets/image/blog-img-2.png" alt="blog-img" class="img-fluid">
+                                    <nuxt-img 
+                                       format="webp" 
+                                       loading="lazy"
+                                       preload 
+                                       src="/image/blog-img-2.png" 
+                                       class="img-fluid"
+                                       alt="blog-img"
+                                    />
                                  </figure>
                               </a>
                            </div>
@@ -509,7 +614,14 @@
                            <div class="blog-img">
                               <a href="#" data-toggle="modal" data-target="#blog-model-3">
                                  <figure class="mb-0">
-                                    <img src="@/assets/image/blog-img-3.png" alt="blog-img" class="img-fluid">
+                                    <nuxt-img 
+                                       format="webp" 
+                                       loading="lazy"
+                                       preload 
+                                       src="/image/blog-img-3.png" 
+                                       class="img-fluid"
+                                       alt="blog-img"
+                                    />
                                  </figure>
                               </a>
                            </div>
@@ -554,7 +666,14 @@
                         <ul class="list-unstyled">
                            <li>
                               <figure class="mb-0 d-flex align-items-center justify-content-center">
-                                 <img src="@/assets/image/location-icon.png" alt="location-icon" class="img-fluid">
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="/image/location-icon.png" 
+                                    class="img-fluid"
+                                    alt="location-img"
+                                 />
                               </figure>
                               <div class="contact-information-content">
                                  <h5>Address:</h5>
@@ -565,7 +684,14 @@
                            </li>
                            <li>
                               <figure class="mb-0 d-flex align-items-center justify-content-center">
-                                 <img src="@/assets/image/message-icon.png" alt="message-icon" class="img-fluid">
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="/image/message-icon.png" 
+                                    class="img-fluid"
+                                    alt="message-img"
+                                 />
                               </figure>
                               <div class="contact-information-content">
                                  <h5>Email:</h5>
@@ -575,7 +701,14 @@
                            </li>
                            <li class="mb-0">
                               <figure class="mb-0 d-flex align-items-center justify-content-center">
-                                 <img src="@/assets/image/phone-icon.png" alt="phone-icon" class="img-fluid">
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="/image/phone-icon.png" 
+                                    class="img-fluid"
+                                    alt="phone-img"
+                                 />
                               </figure>
                               <div class="contact-information-content">
                                  <h5>Phone:</h5>
