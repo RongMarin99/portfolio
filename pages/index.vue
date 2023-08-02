@@ -274,148 +274,296 @@
                <h2 class="mb-0 text-white">Check My Portfolio</h2>
             </div>
             <div id="myBtnContainer" class="text-center">
-               <button class=" active active_button" @click="filterSelection('all')"> All </button>
-               <button class="" @click="filterSelection('cars')">Products </button>
+               <b-tabs 
+                  content-class="m-3"
+                  pills 
+                  align="center"  
+                  nav-class="remove-bg"
+               >
+                  <b-tab 
+                  title="All" 
+                  active
+                  >
+                     <!-- portfolio section -->
+                        <div class="portfolio-img-con position-relative w-100 float-left wow row" >
+                           <b-col cols="8">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure>
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/vip.png" 
+                                             class="img-fluid"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
+                                    </div>
+                                    <div class="portfolio-img-content text-left">
+                                          <div class="portfolio-img-title d-inline-block">
+                                             <h4>
+                                                VIP Worker System
+                                             </h4>
+                                             <p>
+                                                
+                                             </p>
+                                          </div>
+                                       <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalWPWAF-icon">
+                                       <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
+                                    </a> 
+                                    </div>
+                                    
+                                 </div>
+                           </b-col>
+                           
+                           <b-col cols="4">
+                              <div class="colors fruits position-relative">
+                                 <a href="#" data-toggle="modal" data-target="#modalporfolio2">
+                                    <div class="portfolio-img position-relative">
+                                       <figure>
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/vip.png" 
+                                             class="img-fluid"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
+                                    </div>
+                                 </a>
+                                    <div class="portfolio-img-content text-left">
+                                       <div class="portfolio-img-title d-inline-block">
+                                          <h4 >Furni furniture UI Design</h4>
+                                          <p >Dolar repellendus temporibus...</p>
+                                       </div>
+                                    <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio2-icon">
+                                    <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
+                                    </a>
+                                 </div>
+                                 
+                              </div>                              
+                           </b-col>
+
+                           <div class="filterDiv cars position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalporfolio3">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img3.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4 >Mobile UI Design</h4>
+                                       <p >Dolar repellendus temporibus...</p>
+                                    </div>
+                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio3-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                              </div>
+                           
+                           </div>
+                           <div class="filterDiv colors position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalporfolio4">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img4.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4 >Businesscard UI Design</h4>
+                                       <p >Dolar repellendus temporibus...</p>
+                                    </div>
+                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio4-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                              </div>
+                              
+                           </div>
+                           <div class="filterDiv cars animals position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalporfolio5">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img5.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4 >Real estate UI Design</h4>
+                                       <p >Dolar repellendus temporibus...</p>
+                                    </div>
+                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio5-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                              </div>
+                              
+                           </div>
+                        </div>
+                     <!-- portfolio section -->
+                  </b-tab>
+
+                  <b-tab title="Products">
+                     <!-- portfolio section -->
+                     <div class="portfolio-img-con position-relative w-100 float-left wow fadeInUp" >
+                           <div class="filterDiv cars position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalWPWAF">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img1.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4>Application UI Design</h4>
+                                       <p>Dolar repellendus temporibus...</p>
+                                    </div>
+                                 <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalWPWAF-icon">
+                                 <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
+                              </a> 
+                              </div>
+                              
+                           </div>
+                           <div class="filterDiv colors fruits position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalporfolio2">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img2.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4 >Furni furniture UI Design</h4>
+                                       <p >Dolar repellendus temporibus...</p>
+                                    </div>
+                                 <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio2-icon">
+                                 <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
+                                 </a>
+                              </div>
+                              
+                           </div>
+                           <div class="filterDiv cars position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalporfolio3">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img3.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4 >Mobile UI Design</h4>
+                                       <p >Dolar repellendus temporibus...</p>
+                                    </div>
+                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio3-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                              </div>
+                           
+                           </div>
+                           <div class="filterDiv colors position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalporfolio4">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img4.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4 >Businesscard UI Design</h4>
+                                       <p >Dolar repellendus temporibus...</p>
+                                    </div>
+                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio4-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                              </div>
+                              
+                           </div>
+                           <div class="filterDiv cars animals position-relative">
+                              <a href="#" data-toggle="modal" data-target="#modalporfolio5">
+                                 <div class="portfolio-img position-relative">
+                                    <figure>
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="/image/portfolio-img5.png" 
+                                          class="img-fluid"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                              </a>
+                                 <div class="portfolio-img-content text-left">
+                                    <div class="portfolio-img-title d-inline-block">
+                                       <h4 >Real estate UI Design</h4>
+                                       <p >Dolar repellendus temporibus...</p>
+                                    </div>
+                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio5-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+                              </div>
+                              
+                           </div>
+                        </div>
+                     <!-- portfolio section -->
+                  </b-tab>
+               </b-tabs>
+               <!-- <button class=" active active_button" @click="filterSelection('all')"> All </button>
+               <button class="" @click="filterSelection('cars')"> </button>
                <button class="" @click="filterSelection('animals')">Web App</button>
                <button class="" @click="filterSelection('fruits')"> Inetraction </button>
-               <button class="" @click="filterSelection('colors')">Brand Identity</button>
+               <button class="" @click="filterSelection('colors')">Brand Identity</button> -->
             </div>
          </div>
       </section>
       <!-- portfolio section -->
 
-      <!-- portfolio section -->
-      <section class="w-100 float-left portfolio-body-con">
-         <div class="container">
-            <div class="portfolio-img-con position-relative w-100 float-left wow fadeInUp" >
-               <div class="filterDiv cars position-relative">
-                  <a href="#" data-toggle="modal" data-target="#modalWPWAF">
-                     <div class="portfolio-img position-relative">
-                        <figure>
-                           <nuxt-img 
-                              format="webp" 
-                              loading="lazy"
-                              preload 
-                              src="/image/portfolio-img1.png" 
-                              class="img-fluid"
-                              alt="portfolio-img1"
-                           />
-                        </figure>
-                     </div>
-                  </a>
-                     <div class="portfolio-img-content text-left">
-                        <div class="portfolio-img-title d-inline-block">
-                           <h4>Application UI Design</h4>
-                           <p>Dolar repellendus temporibus...</p>
-                        </div>
-                     <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalWPWAF-icon">
-                      <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                  </a> 
-                  </div>
-                  
-               </div>
-               <div class="filterDiv colors fruits position-relative">
-                  <a href="#" data-toggle="modal" data-target="#modalporfolio2">
-                     <div class="portfolio-img position-relative">
-                        <figure>
-                           <nuxt-img 
-                              format="webp" 
-                              loading="lazy"
-                              preload 
-                              src="/image/portfolio-img2.png" 
-                              class="img-fluid"
-                              alt="portfolio-img1"
-                           />
-                        </figure>
-                     </div>
-                  </a>
-                     <div class="portfolio-img-content text-left">
-                        <div class="portfolio-img-title d-inline-block">
-                           <h4 >Furni furniture UI Design</h4>
-                           <p >Dolar repellendus temporibus...</p>
-                        </div>
-                     <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio2-icon">
-                     <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                     </a>
-                  </div>
-                  
-               </div>
-               <div class="filterDiv cars position-relative">
-                  <a href="#" data-toggle="modal" data-target="#modalporfolio3">
-                     <div class="portfolio-img position-relative">
-                        <figure>
-                           <nuxt-img 
-                              format="webp" 
-                              loading="lazy"
-                              preload 
-                              src="/image/portfolio-img3.png" 
-                              class="img-fluid"
-                              alt="portfolio-img1"
-                           />
-                        </figure>
-                     </div>
-                  </a>
-                     <div class="portfolio-img-content text-left">
-                        <div class="portfolio-img-title d-inline-block">
-                           <h4 >Mobile UI Design</h4>
-                           <p >Dolar repellendus temporibus...</p>
-                        </div>
-                  <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio3-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                  </div>
-                 
-               </div>
-               <div class="filterDiv colors position-relative">
-                  <a href="#" data-toggle="modal" data-target="#modalporfolio4">
-                     <div class="portfolio-img position-relative">
-                        <figure>
-                           <nuxt-img 
-                              format="webp" 
-                              loading="lazy"
-                              preload 
-                              src="/image/portfolio-img4.png" 
-                              class="img-fluid"
-                              alt="portfolio-img1"
-                           />
-                        </figure>
-                     </div>
-                  </a>
-                     <div class="portfolio-img-content text-left">
-                        <div class="portfolio-img-title d-inline-block">
-                           <h4 >Businesscard UI Design</h4>
-                           <p >Dolar repellendus temporibus...</p>
-                        </div>
-                  <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio4-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                  </div>
-                  
-               </div>
-               <div class="filterDiv cars animals position-relative">
-                  <a href="#" data-toggle="modal" data-target="#modalporfolio5">
-                     <div class="portfolio-img position-relative">
-                        <figure>
-                           <nuxt-img 
-                              format="webp" 
-                              loading="lazy"
-                              preload 
-                              src="/image/portfolio-img5.png" 
-                              class="img-fluid"
-                              alt="portfolio-img1"
-                           />
-                        </figure>
-                     </div>
-                  </a>
-                     <div class="portfolio-img-content text-left">
-                        <div class="portfolio-img-title d-inline-block">
-                           <h4 >Real estate UI Design</h4>
-                           <p >Dolar repellendus temporibus...</p>
-                        </div>
-                  <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio5-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                  </div>
-                  
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- portfolio section -->
+
 
       <!-- tastimonials section -->
       <section class="w-100 float-left padding-top padding-bottom tastimonials-con position-relative text-lg-left text-center" id="testimonials">
@@ -543,15 +691,15 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="blog-box-item">
-                           <div class="blog-img">
-                              <a href="#" data-toggle="modal" data-target="#blog-model-1">
+                           <div class="blog-img w-100">
+                              <a href="#">
                                  <figure class="mb-0">
                                     <nuxt-img 
                                        format="webp" 
                                        loading="lazy"
+                                       width="350"
                                        preload 
-                                       src="/image/blog-img-1.png" 
-                                       class="img-fluid"
+                                       src="https://admin.pchbiz.com/image/upload/contents/623d85c0156de3.75780111.webp" 
                                        alt="blog-img"
                                     />
                                  </figure>
@@ -559,17 +707,16 @@
                            </div>
                            <div class="blog-content">
                               <div class="blog-auteher-title">
-                                 <span>By David William</span>
-                                 <span class="float-lg-right">Mar 8, 2022</span>
+                                 <span>By Rong Marin</span>
+                                 <span class="float-lg-right">Aug 2, 2023</span>
                               </div>
                               <a href="#" data-toggle="modal" data-target="#blog-model-1">
-                                 <h4>Quis autem vea eum 
-                                    iure reprehenderit
+                                 <h4 class="two-line">
+                                    NLP (Neuro-Linguistic Programming Therapy) ជាអ្វី?
                                  </h4>
                               </a>
-                              <p>Dolor repellendus temporibus autem 
-                                 quibusdam officiis debitis rerum nece
-                                 aibus minima veniam.
+                              <p class="three-line">
+                                 ធ្លាប់លឺថា NLP អាចផ្លាស់ប្តូរជីវិតមនុស្សបាន តែមិនដឹងថា NLP ជាអ្វី? គោលដៅរបស់ NLP គឺដើម្បីជួយអតិថិជនឱ្យយល់ថាវិធីដែលមនុស្សម្នាក់មើលពិភពលោកប៉ះពាល់ដល់របៀបដែលមនុស្សម្នាក់រស់នៅក្នុងពិភពលោក 
                               </p>
                               <a href="#" data-toggle="modal" data-target="#blog-model-1">Read More</a>
                            </div>
@@ -584,7 +731,8 @@
                                        format="webp" 
                                        loading="lazy"
                                        preload 
-                                       src="/image/blog-img-2.png" 
+                                       width="350"
+                                       src="https://admin.pchbiz.com/image/upload/contents/623d2d1b312a34.28581072.webp" 
                                        class="img-fluid"
                                        alt="blog-img"
                                     />
@@ -593,17 +741,16 @@
                            </div>
                            <div class="blog-content">
                               <div class="blog-auteher-title">
-                                 <span>By John Doe</span>
-                                 <span class="float-lg-right">Mar 9, 2022</span>
+                                 <span>By Rong Marin</span>
+                                 <span class="float-lg-right">Aug 2, 2023</span>
                               </div>
                               <a href="#" data-toggle="modal" data-target="#blog-model-2">
-                                 <h4>Reprehenderit in vouta
-                                    velit esse cillum
+                                 <h4 class="two-line">
+                                    ហេតុអ្វីបានជាការគិតធំគឺសំខាន់ជាងចំណេះដឹងបច្ចេកទេសនេះជាសម្តីរបស់លោក Jack Ma
                                  </h4>
                               </a>
-                              <p>Dolor repellendus temporibus autem 
-                                 quibusdam officiis debitis rerum nece
-                                 aibus minima veniam.
+                              <p class="three-line">
+                                 ការកសាងក្រុមហ៊ុនពាណិជ្ជកម្មអេឡិចត្រូនិកដ៏ធំបំផុតមួយរបស់ពិភពលោក មិនត្រូវការចំណេះដឹងឯកទេស ឬបច្ចេកទេស គណិតវិទ្យាកម្រិតទេពកោសល្យ ឬសូម្បីតែផែនការអាជីវកម្មនោះទេ។ ដូច្នេះតើវាយកអ្វី? នេះជារឿងរបស់លោក Jack Ma 
                               </p>
                               <a href="#" data-toggle="modal" data-target="#blog-model-2">Read More</a>
                            </div>
@@ -618,7 +765,8 @@
                                        format="webp" 
                                        loading="lazy"
                                        preload 
-                                       src="/image/blog-img-3.png" 
+                                       width="350"
+                                       src="https://admin.pchbiz.com/image/upload/contents/624410749418d3.30793925.webp" 
                                        class="img-fluid"
                                        alt="blog-img"
                                     />
@@ -627,17 +775,16 @@
                            </div>
                            <div class="blog-content">
                               <div class="blog-auteher-title">
-                                 <span>By Elina Parker</span>
-                                 <span class="float-lg-right">Mar 10, 2022</span>
+                                 <span>By Rong Marin</span>
+                                 <span class="float-lg-right">Aug 2, 2023</span>
                               </div>
                               <a href="#" data-toggle="modal" data-target="#blog-model-3">
-                                 <h4>Soluta nobis ose aligen
-                                 optio cumue
-                              </h4>
+                                 <h4 class="two-line">
+                                    រាំមួយចំនុចដែលធ្វើឲ្យក្រុមហ៊ុន Apple ទទួលបានជោគជ័យ
+                                 </h4>
                               </a>
-                              <p>Dolor repellendus temporibus autem 
-                                 quibusdam officiis debitis rerum nece
-                                 aibus minima veniam.
+                              <p class="three-line">
+                                 សំណួរដ៏គួរឱ្យចាប់អារម្មណ៍មួយបន្ថែមទៀតដែលត្រូវបានសួរអំពីអ្នកវិភាគឧស្សាហកម្មដែលបានតាមដាន Apple តាំងពីឆ្នាំ 1981 គឺជាមូលហេតុដែល Apple ជោគជ័យខ្លាំង។ វាជាសំណួរដ៏ស្មោះត្រង់មួយព្រោះចំពោះអ្នកដែលមិនស្គាល់ Apple
                               </p>
                               <a href="#" data-toggle="modal" data-target="#blog-model-3">Read More</a>
                            </div>
@@ -800,41 +947,22 @@ export default {
    
     }
   },
-  mounted(){
-   this.filterSelection('all')
-  },
   methods:{
-    w3RemoveClass(element, name) {
-         var i, arr1, arr2;
-         arr1 = element.className.split(" ");
-         arr2 = name.split(" ");
-         for (i = 0; i < arr2.length; i++) {
-         while (arr1.indexOf(arr2[i]) > -1) {
-         arr1.splice(arr1.indexOf(arr2[i]), 1);     
-         }
-         }
-         element.className = arr1.join(" ");
-    },
-    w3AddClass(element, name) {
-    var i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-    }
-    },
-    filterSelection(c) {
-      var x, i;
-      x = document.getElementsByClassName("filterDiv");
-      if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-      this.w3RemoveClass(x[i], "show");
-      if (x[i].className.indexOf(c) > -1) this.w3AddClass(x[i], "show");
-      }
-    }
+
   }
 }
 </script>
 <style>
-
+   .remove-bg a{
+      background-color: transparent !important;
+      color: white !important;
+      font-weight: bold;
+      border-radius: 0 !important;
+   }
+   .remove-bg a.active{
+      background-color: transparent !important;
+      color: orange !important;
+      font-weight: bold;
+      border-bottom:4px solid #fca61f;
+   }
 </style>

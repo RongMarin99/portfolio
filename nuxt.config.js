@@ -49,7 +49,11 @@ export default {
 				rel: 'icon',
 				type: 'image/x-icon',
 				href: '/icon_old.png'
-			}
+			},
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://fonts.googleapis.com/css2?family=Kantumruy+Pro" rel="stylesheet'
+      // }
       
     ],
   },
@@ -119,26 +123,26 @@ export default {
       priority: 0.8
     }
   },
-  i18n:{
-    locales: [
-      {
-        code: 'kh',
-        name: 'khmer',
-        file: 'kh.js',
-        iso: 'kh'
-      },
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.js',
-        iso: 'en'
-      }
-    ],
-    lazy: true,
-    defaultLocale: 'kh',
-    langDir: 'lang/',
-    skipSettingLocaleOnNavigate: true,
-  },
+  // i18n:{
+  //   locales: [
+  //     {
+  //       code: 'kh',
+  //       name: 'khmer',
+  //       file: 'kh.js',
+  //       iso: 'kh'
+  //     },
+  //     {
+  //       code: 'en',
+  //       name: 'English',
+  //       file: 'en.js',
+  //       iso: 'en'
+  //     }
+  //   ],
+  //   lazy: true,
+  //   defaultLocale: 'kh',
+  //   langDir: 'lang/',
+  //   skipSettingLocaleOnNavigate: true,
+  // },
   
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
