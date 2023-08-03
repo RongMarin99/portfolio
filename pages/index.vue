@@ -26,7 +26,7 @@
                            </figure>
                            <div class="service-box-item-content">
                               <h4>Ui/Ux Design</h4>
-                              <p>
+                              <p class="three-line">
                                  creating user and customer experiences designed to
                                   have engaging user interfaces (UI) and deliver 
                                   tangible business results
@@ -49,7 +49,7 @@
                            </figure>
                            <div class="service-box-item-content">
                               <h4>Web Design</h4>
-                              <p>
+                              <p class="three-line">
                                  We Create Beautiful Designs and Interesting Concepts. 
                                  Get in Touch and Request a Quote! It's like Choosing an 
                                  Interior Designing for Your Home. 
@@ -75,7 +75,7 @@
                             </figure>
                            <div class="service-box-item-content">
                               <h4>Web Development</h4>
-                              <p>
+                              <p class="three-line">
                                  Our professional web development services follow proven and tested
                                   processes that ensure the best possible results. 
                                  You are assured of the desired quality outcome within the
@@ -99,7 +99,7 @@
                            </figure>
                            <div class="service-box-item-content">
                               <h4>App Development</h4>
-                              <p>
+                              <p class="three-line">
                                  provide end-to-end organization, conceptualization,
                                  design, optimization, and maintenance of your mobile app project.
                               </p>
@@ -285,272 +285,312 @@
                   active
                   >
                      <!-- portfolio section -->
-                        <div class="portfolio-img-con position-relative w-100 float-left wow row" >
-                           <b-col cols="8">
+                     <b-row>
+                           <b-col xl="6" cols="12" class="mb-5">
                                  <div class="content-portfolio">
                                     <div class="position-relative">
-                                       <figure>
+                                       <figure class="m-0">
                                           <nuxt-img 
                                              format="webp" 
                                              loading="lazy"
                                              preload 
                                              src="/image/vip.png" 
-                                             class="img-fluid"
+                                             class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
                                        </figure>
                                     </div>
-                                    <div class="portfolio-img-content text-left">
-                                          <div class="portfolio-img-title d-inline-block">
-                                             <h4>
-                                                VIP Worker System
-                                             </h4>
-                                             <p>
-                                                
-                                             </p>
-                                          </div>
-                                       <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalWPWAF-icon">
-                                       <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                                    </a> 
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         Worker System
+                                       </h4>
+                                       <p>
+                                          Nuxt Js And Laravel API
+                                       </p>
                                     </div>
-                                    
                                  </div>
                            </b-col>
-                           
-                           <b-col cols="4">
-                              <div class="colors fruits position-relative">
-                                 <a href="#" data-toggle="modal" data-target="#modalporfolio2">
-                                    <div class="portfolio-img position-relative">
-                                       <figure>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
                                           <nuxt-img 
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/vip.png" 
-                                             class="img-fluid"
+                                             src="/image/pms.png" 
+                                             class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
                                        </figure>
                                     </div>
-                                 </a>
-                                    <div class="portfolio-img-content text-left">
-                                       <div class="portfolio-img-title d-inline-block">
-                                          <h4 >Furni furniture UI Design</h4>
-                                          <p >Dolar repellendus temporibus...</p>
-                                       </div>
-                                    <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio2-icon">
-                                    <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                                    </a>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         Property System
+                                       </h4>
+                                       <p>
+                                          Nuxt Js And Laravel API
+                                       </p>
+                                    </div>
                                  </div>
-                                 
-                              </div>                              
                            </b-col>
-
-                           <div class="filterDiv cars position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalporfolio3">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img3.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
-                                 </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4 >Mobile UI Design</h4>
-                                       <p >Dolar repellendus temporibus...</p>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/e_learning.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
                                     </div>
-                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio3-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                              </div>
-                           
-                           </div>
-                           <div class="filterDiv colors position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalporfolio4">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img4.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
-                                 </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4 >Businesscard UI Design</h4>
-                                       <p >Dolar repellendus temporibus...</p>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         E learning System
+                                       </h4>
+                                       <p>
+                                         Nuxt Js And Laravel API
+                                       </p>
                                     </div>
-                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio4-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                              </div>
-                              
-                           </div>
-                           <div class="filterDiv cars animals position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalporfolio5">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img5.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
                                  </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4 >Real estate UI Design</h4>
-                                       <p >Dolar repellendus temporibus...</p>
+                           </b-col>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/e_learning_website.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
                                     </div>
-                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio5-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                              </div>
-                              
-                           </div>
-                        </div>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         E learning Website
+                                       </h4>
+                                       <p>
+                                          Nuxt SSR And Laravel Api 
+                                       </p>
+                                    </div>
+                                 </div>
+                           </b-col>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/cms.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
+                                    </div>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         CMS Website
+                                       </h4>
+                                       <p>
+                                         Nuxt SSR And Laravel Api
+                                       </p>
+                                    </div>
+                                 </div>
+                           </b-col>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/worker.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
+                                    </div>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         Worker System
+                                       </h4>
+                                       <p>
+                                         Yii Framework
+                                       </p>
+                                    </div>
+                                 </div>
+                           </b-col>
+                     </b-row>
                      <!-- portfolio section -->
                   </b-tab>
 
-                  <b-tab title="Products">
+                  <b-tab title="System">
                      <!-- portfolio section -->
-                     <div class="portfolio-img-con position-relative w-100 float-left wow fadeInUp" >
-                           <div class="filterDiv cars position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalWPWAF">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img1.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
-                                 </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4>Application UI Design</h4>
-                                       <p>Dolar repellendus temporibus...</p>
+                     <b-row>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/vip.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
                                     </div>
-                                 <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalWPWAF-icon">
-                                 <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                              </a> 
-                              </div>
-                              
-                           </div>
-                           <div class="filterDiv colors fruits position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalporfolio2">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img2.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
-                                 </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4 >Furni furniture UI Design</h4>
-                                       <p >Dolar repellendus temporibus...</p>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         Worker System
+                                       </h4>
+                                       <p>
+                                          Nuxt Js And Laravel API
+                                       </p>
                                     </div>
-                                 <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio2-icon">
-                                 <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                                 </a>
-                              </div>
-                              
-                           </div>
-                           <div class="filterDiv cars position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalporfolio3">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img3.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
                                  </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4 >Mobile UI Design</h4>
-                                       <p >Dolar repellendus temporibus...</p>
+                           </b-col>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/pms.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
                                     </div>
-                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio3-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                              </div>
-                           
-                           </div>
-                           <div class="filterDiv colors position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalporfolio4">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img4.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         Property System
+                                       </h4>
+                                       <p>
+                                          Nuxt Js And Laravel API
+                                       </p>
+                                    </div>
                                  </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4 >Businesscard UI Design</h4>
-                                       <p >Dolar repellendus temporibus...</p>
+                           </b-col>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/e_learning.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
                                     </div>
-                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio4-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                              </div>
-                              
-                           </div>
-                           <div class="filterDiv cars animals position-relative">
-                              <a href="#" data-toggle="modal" data-target="#modalporfolio5">
-                                 <div class="portfolio-img position-relative">
-                                    <figure>
-                                       <nuxt-img 
-                                          format="webp" 
-                                          loading="lazy"
-                                          preload 
-                                          src="/image/portfolio-img5.png" 
-                                          class="img-fluid"
-                                          alt="portfolio-img1"
-                                       />
-                                    </figure>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         E learning System
+                                       </h4>
+                                       <p>
+                                         Nuxt Js And Laravel API
+                                       </p>
+                                    </div>
                                  </div>
-                              </a>
-                                 <div class="portfolio-img-content text-left">
-                                    <div class="portfolio-img-title d-inline-block">
-                                       <h4 >Real estate UI Design</h4>
-                                       <p >Dolar repellendus temporibus...</p>
+                           </b-col>
+                           <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/worker.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
                                     </div>
-                              <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio5-icon"><i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                              </div>
-                              
-                           </div>
-                        </div>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         Worker System
+                                       </h4>
+                                       <p>
+                                         Yii Framework
+                                       </p>
+                                    </div>
+                                 </div>
+                           </b-col>
+                     </b-row>
                      <!-- portfolio section -->
+                  </b-tab>
+
+                  <b-tab title="Website">
+                     <b-row>
+                        <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/e_learning_website.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
+                                    </div>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         E learning Website
+                                       </h4>
+                                       <p>
+                                          Nuxt SSR And Laravel Api 
+                                       </p>
+                                    </div>
+                                 </div>
+                        </b-col>
+                        <b-col xl="6" cols="12" class="mb-5">
+                                 <div class="content-portfolio">
+                                    <div class="position-relative">
+                                       <figure class="m-0">
+                                          <nuxt-img 
+                                             format="webp" 
+                                             loading="lazy"
+                                             preload 
+                                             src="/image/cms.png" 
+                                             class="img-fluid opacity-75"
+                                             alt="portfolio-img1"
+                                          />
+                                       </figure>
+                                    </div>
+                                    <div class="portfolio-title">
+                                       <h4>
+                                         CMS Website
+                                       </h4>
+                                       <p>
+                                         Nuxt SSR And Laravel Api
+                                       </p>
+                                    </div>
+                                 </div>
+                        </b-col>
+                     </b-row>
+                  </b-tab>
+
+                  <b-tab title="Mobile">
                   </b-tab>
                </b-tabs>
                <!-- <button class=" active active_button" @click="filterSelection('all')"> All </button>
@@ -925,13 +965,13 @@ export default {
           content: "Rong Marin | Web Developer",
         },
         { 
-        //  hid: 'og:image', property: 'og:image', content: require('../assets/image/logo.jpg')
+          hid: 'og:image', property: 'og:image', content: require('../static/image/img_seo.png')
         },
         {
           hid: "description",
           name: 'description',
           property: "description",
-          content: "គ្រូអាយធីចិត្តល្អ |Etec Center | Kroit | korit.net | ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under school category.",
+          content: "Rong Marin website is clean and concise. This web developer portfolio consists of three sections – the homepage with his bio, a dedicated project page, and a contact page.An interesting aspect of his portfolio’s design is that visitors can switch between light and dark themes by clicking on the options in the lower-left corner of the website.",
         },
         { 
           hid: 'og-url', property: 'og:url', 

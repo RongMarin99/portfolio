@@ -152,7 +152,7 @@
                                        />
                                     </figure>
                                     <div class="best-award-title d-inline-block ml-0">
-                                       <p class="mb-0 d-inline-block count">2</p>
+                                       <p class="mb-0 d-inline-block count">4</p>
                                        <p class="mb-0 d-inline-block">+</p><br>
                                        <span>Customers</span>
                                     </div>
