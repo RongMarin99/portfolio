@@ -1,16 +1,11 @@
 <template>
     <div>
-      <LazyHydrate when-visible>
-        <Header></Header>
-      </LazyHydrate>
       
-      <LazyHydrate when-visible>
+        <Header></Header>
+      
         <Nuxt></Nuxt>
-      </LazyHydrate>
 
-      <LazyHydrate never>
         <Footer></Footer>
-      </LazyHydrate>
      
     </div>
 </template>
