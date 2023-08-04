@@ -10,7 +10,7 @@
                      format="webp" 
                      loading="lazy"
                      preload 
-                     src="/image/logo.png" 
+                     src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/fisvoektoyrsfzq0t5yg.png" 
                      class="img-fluid"
                      alt="footer-logo" 
                   />

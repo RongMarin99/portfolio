@@ -18,7 +18,7 @@
                                  format="webp" 
                                  loading="lazy"
                                  preload 
-                                 src="/image/logo.png" 
+                                 src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/fisvoektoyrsfzq0t5yg.png" 
                                  class="img-fluid" 
                               />
                            </b-navbar-brand>
@@ -115,7 +115,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/banner-right-img.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/ypthlukmndlenkv9emws.png" 
                                     id="banner-right-img"
                                     alt="banner-right-img"
                                  />
@@ -127,7 +127,7 @@
                                           format="webp" 
                                           loading="lazy"
                                           preload 
-                                          src="/image/cup-img.png" 
+                                          src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/p9djupbltc9cmtnzjgkt.png" 
                                           class="img-fluid"
                                           alt="cup-img"
                                        />

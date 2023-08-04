@@ -28,7 +28,7 @@ export default{
             content: "Rong Marin | Web Developer",
           },
           { 
-            hid: 'og:image', property: 'og:image', content: require('@/static/image/logo.png')
+            hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141487/img_seo_rzwc9z.png'
           },
           {
             hid: "description",

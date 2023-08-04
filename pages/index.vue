@@ -19,7 +19,7 @@
                                  format="webp" 
                                  loading="lazy"
                                  preload 
-                                 src="/image/service-icon1.png" 
+                                 src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/xvbyvxkdc83azg4xwhig.png" 
                                  class="img-fluid"
                                  alt="service-icon"
                               />
@@ -42,7 +42,7 @@
                                  format="webp" 
                                  loading="lazy"
                                  preload 
-                                 src="/image/service-icon2.png" 
+                                 src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/egej4psyv0l7letay4y0.png" 
                                  class="img-fluid"
                                  alt="service-icon"
                               />
@@ -68,7 +68,7 @@
                                  format="webp" 
                                  loading="lazy"
                                  preload 
-                                 src="/image/service-icon3.png" 
+                                 src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/c1h682x5mhlttcrv07yr.png" 
                                  class="img-fluid"
                                  alt="service-icon"
                               />
@@ -92,7 +92,7 @@
                                  format="webp" 
                                  loading="lazy"
                                  preload 
-                                 src="/image/service-icon4.png" 
+                                 src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/eqdbcxb2dvr1s5kf0slc.png" 
                                  class="img-fluid"
                                  alt="service-icon"
                               />
@@ -294,7 +294,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/vip.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/bn7dromjqhwfh7wbiurp.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -318,7 +318,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/pms.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/hzeanvfmaqfw5i12vo41.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -342,7 +342,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/e_learning.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/ljx5yazwoltedcz0sqyb.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -366,7 +366,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/e_learning_website.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/pcyynryptshgsca6peft.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -390,7 +390,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/cms.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/guzwf0p16yqatcdavvjw.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -414,7 +414,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/worker.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/jzncvhfe8lp8cjtt1s2l.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -438,28 +438,28 @@
                      <!-- portfolio section -->
                      <b-row>
                            <b-col xl="6" cols="12" class="mb-5">
-                                 <div class="content-portfolio">
-                                    <div class="position-relative">
-                                       <figure class="m-0">
-                                          <nuxt-img 
-                                             format="webp" 
-                                             loading="lazy"
-                                             preload 
-                                             src="/image/vip.png" 
-                                             class="img-fluid opacity-75"
-                                             alt="portfolio-img1"
-                                          />
-                                       </figure>
-                                    </div>
-                                    <div class="portfolio-title">
-                                       <h4>
-                                         Worker System
-                                       </h4>
-                                       <p>
-                                          Nuxt Js And Laravel API
-                                       </p>
-                                    </div>
+                              <div class="content-portfolio">
+                                 <div class="position-relative">
+                                    <figure class="m-0">
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/bn7dromjqhwfh7wbiurp.png" 
+                                          class="img-fluid opacity-75"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
                                  </div>
+                                 <div class="portfolio-title">
+                                    <h4>
+                                       Worker System
+                                    </h4>
+                                    <p>
+                                       Nuxt Js And Laravel API
+                                    </p>
+                                 </div>
+                              </div>
                            </b-col>
                            <b-col xl="6" cols="12" class="mb-5">
                                  <div class="content-portfolio">
@@ -469,31 +469,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/pms.png" 
-                                             class="img-fluid opacity-75"
-                                             alt="portfolio-img1"
-                                          />
-                                       </figure>
-                                    </div>
-                                    <div class="portfolio-title">
-                                       <h4>
-                                         Property System
-                                       </h4>
-                                       <p>
-                                          Nuxt Js And Laravel API
-                                       </p>
-                                    </div>
-                                 </div>
-                           </b-col>
-                           <b-col xl="6" cols="12" class="mb-5">
-                                 <div class="content-portfolio">
-                                    <div class="position-relative">
-                                       <figure class="m-0">
-                                          <nuxt-img 
-                                             format="webp" 
-                                             loading="lazy"
-                                             preload 
-                                             src="/image/e_learning.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/ljx5yazwoltedcz0sqyb.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -509,6 +485,31 @@
                                     </div>
                                  </div>
                            </b-col>
+
+                           <b-col xl="6" cols="12" class="mb-5">
+                              <div class="content-portfolio">
+                                 <div class="position-relative">
+                                    <figure class="m-0">
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/hzeanvfmaqfw5i12vo41.png" 
+                                          class="img-fluid opacity-75"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
+                                 </div>
+                                 <div class="portfolio-title">
+                                    <h4>
+                                       Property System
+                                    </h4>
+                                    <p>
+                                       Nuxt Js And Laravel API
+                                    </p>
+                                 </div>
+                              </div>
+                           </b-col>
                            <b-col xl="6" cols="12" class="mb-5">
                                  <div class="content-portfolio">
                                     <div class="position-relative">
@@ -517,7 +518,7 @@
                                              format="webp" 
                                              loading="lazy"
                                              preload 
-                                             src="/image/worker.png" 
+                                             src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/jzncvhfe8lp8cjtt1s2l.png" 
                                              class="img-fluid opacity-75"
                                              alt="portfolio-img1"
                                           />
@@ -540,52 +541,52 @@
                   <b-tab title="Website">
                      <b-row>
                         <b-col xl="6" cols="12" class="mb-5">
-                                 <div class="content-portfolio">
-                                    <div class="position-relative">
-                                       <figure class="m-0">
-                                          <nuxt-img 
-                                             format="webp" 
-                                             loading="lazy"
-                                             preload 
-                                             src="/image/e_learning_website.png" 
-                                             class="img-fluid opacity-75"
-                                             alt="portfolio-img1"
-                                          />
-                                       </figure>
-                                    </div>
-                                    <div class="portfolio-title">
-                                       <h4>
-                                         E learning Website
-                                       </h4>
-                                       <p>
-                                          Nuxt SSR And Laravel Api 
-                                       </p>
-                                    </div>
+                              <div class="content-portfolio">
+                                 <div class="position-relative">
+                                    <figure class="m-0">
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/pcyynryptshgsca6peft.png" 
+                                          class="img-fluid opacity-75"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
                                  </div>
+                                 <div class="portfolio-title">
+                                    <h4>
+                                       E learning Website
+                                    </h4>
+                                    <p>
+                                       Nuxt SSR And Laravel Api 
+                                    </p>
+                                 </div>
+                              </div>
                         </b-col>
                         <b-col xl="6" cols="12" class="mb-5">
-                                 <div class="content-portfolio">
-                                    <div class="position-relative">
-                                       <figure class="m-0">
-                                          <nuxt-img 
-                                             format="webp" 
-                                             loading="lazy"
-                                             preload 
-                                             src="/image/cms.png" 
-                                             class="img-fluid opacity-75"
-                                             alt="portfolio-img1"
-                                          />
-                                       </figure>
-                                    </div>
-                                    <div class="portfolio-title">
-                                       <h4>
-                                         CMS Website
-                                       </h4>
-                                       <p>
-                                         Nuxt SSR And Laravel Api
-                                       </p>
-                                    </div>
+                              <div class="content-portfolio">
+                                 <div class="position-relative">
+                                    <figure class="m-0">
+                                       <nuxt-img 
+                                          format="webp" 
+                                          loading="lazy"
+                                          preload 
+                                          src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/guzwf0p16yqatcdavvjw.png" 
+                                          class="img-fluid opacity-75"
+                                          alt="portfolio-img1"
+                                       />
+                                    </figure>
                                  </div>
+                                 <div class="portfolio-title">
+                                    <h4>
+                                       CMS Website
+                                    </h4>
+                                    <p>
+                                       Nuxt SSR And Laravel Api
+                                    </p>
+                                 </div>
+                              </div>
                         </b-col>
                      </b-row>
                   </b-tab>
@@ -616,7 +617,7 @@
                            format="webp" 
                            loading="lazy"
                            preload 
-                           src="/image/tastimonials-img.png" 
+                           src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/wblulsrnypzbca73magl.png" 
                            class="img-fluid"
                            alt="tastimonials-img"
                         />
@@ -635,7 +636,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/comma-icon.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/xcyot7xgkarwdnbea3m8.png" 
                                     class="img-fluid"
                                     alt="comma-icon"
                                  />
@@ -685,7 +686,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/comma-icon.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/xcyot7xgkarwdnbea3m8.png" 
                                     class="img-fluid"
                                     alt="comma-icon"
                                  />
@@ -892,7 +893,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/phone-icon.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/ndmiugoihotzbmvwztt9.png" 
                                     class="img-fluid"
                                     alt="phone-img"
                                  />
@@ -965,7 +966,7 @@ export default {
           content: "Rong Marin | Web Developer",
         },
         { 
-          hid: 'og:image', property: 'og:image', content: require('../static/image/img_seo.png')
+          hid: 'og:image', property: 'og:image', content: 'https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141487/img_seo_rzwc9z.png'
         },
         {
           hid: "description",
