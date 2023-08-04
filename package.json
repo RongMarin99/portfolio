@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "nuxt",
-    "build": "node_modules/nuxt/bin/nuxt.js build -c ./nuxt.config.js",
-    "start": "node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js",
+    "build": "nuxt build",
+    "start": "nuxt start",
     "generate": "nuxt generate",
-    "vercel-build": "yarn global add node-gyp sharp",
-    "render-build": "npm run build"
+    "vercel-build": "yarn global add node-gyp sharp"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
