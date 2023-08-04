@@ -12,7 +12,6 @@
 <script>
 export default{
     components: {
-      LazyHydrate,
       Header: () => import('~/components/Header/index.vue'),
       Footer: () => import('~/components/Footer/index.vue')
     },
