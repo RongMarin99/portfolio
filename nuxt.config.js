@@ -48,7 +48,7 @@ export default {
       {
 				rel: 'icon',
 				type: 'image/x-icon',
-				href: '/icon_old.png'
+				href: '/icon.png'
 			},
       // {
       //   rel: 'stylesheet',

@@ -24,15 +24,15 @@ export default{
     },
     head () {
       return {
-        title: "KroIT | Etec Center | គ្រូអាយធីចិត្តល្អ | Etec | គ្រូអាយធី | IT | Code",
-        htmlAttrs: {
-          lang: this.$i18n.locale
-        },
+        title: "រ៉ុង ម៉ារីន | Rong Marin",
+        // htmlAttrs: {
+        //   lang: this.$i18n.locale
+        // },
         meta: [
           {
             hid: "og:title",
             property: "og:title",
-            content: "KroIT | ETEC I.T Training Center",
+            content: "Rong Marin | Web Developer",
           },
           { 
             hid: 'og:image', property: 'og:image', content: require('@/static/image/logo.png')
@@ -41,7 +41,7 @@ export default{
             hid: "description",
             name: 'description',
             property: "description",
-            content: "គ្រូអាយធីចិត្តល្អ |Etec Center | Kroit | korit.net | ETEC I.T Training Center is a School located in Phnom Penh, KH. The business is listed under school category.",
+            content: "Rong Marin website is clean and concise. This web developer portfolio consists of three sections – the homepage with his bio, a dedicated project page, and a contact page.An interesting aspect of his portfolio’s design is that visitors can switch between light and dark themes by clicking on the options in the lower-left corner of the website.",
           },
           { 
             hid: 'og-url', property: 'og:url', 
@@ -56,12 +56,12 @@ export default{
         }
     },
     methods: {
-        switchLang(locale){
-          if (this.$i18n.locale !== locale) {
-              this.$i18n.locale = locale;
-              //cookie.set('lang',locale)
-          }
-        },
+        // switchLang(locale){
+        //   if (this.$i18n.locale !== locale) {
+        //       this.$i18n.locale = locale;
+        //       //cookie.set('lang',locale)
+        //   }
+        // },
         onSearch(){
           this.$router.push({path: `/Search/${this.search}`});
         }

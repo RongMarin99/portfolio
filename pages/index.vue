@@ -955,9 +955,9 @@ export default {
   head () {
     return {
       title: "រ៉ុង ម៉ារីន | Rong Marin",
-      htmlAttrs: {
-        lang: this.$i18n.locale
-      },
+      // htmlAttrs: {
+      //   lang: this.$i18n.locale
+      // },
       meta: [
         {
           hid: "og:title",
@@ -974,7 +974,8 @@ export default {
           content: "Rong Marin website is clean and concise. This web developer portfolio consists of three sections – the homepage with his bio, a dedicated project page, and a contact page.An interesting aspect of his portfolio’s design is that visitors can switch between light and dark themes by clicking on the options in the lower-left corner of the website.",
         },
         { 
-          hid: 'og-url', property: 'og:url', 
+            hid: 'og-url', property: 'og:url', 
+            content: this.web_url
         },
       ]
     }
