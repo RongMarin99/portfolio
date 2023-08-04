@@ -103,8 +103,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    'nuxt-material-design-icons-iconfont',
-			'nuxt-i18n',
       '@nuxtjs/sitemap',
       '@nuxt/image',
   ],
@@ -112,11 +110,11 @@ export default {
     hostname: 'https://kroit.net',
     path: '/sitemap',
     gzip: true,
-    i18n: true,
-    i18n: {
-      locales: ['en', 'kh'],
-      routesNameSeparator: '___'
-    },
+   // i18n: true,
+    // i18n: {
+    //   locales: ['en', 'kh'],
+    //   routesNameSeparator: '___'
+    // },
     defaults: {
       lastmod: new Date(),
       changefreq: 'weekly',
