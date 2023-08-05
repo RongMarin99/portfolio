@@ -1,5 +1,117 @@
 <template>
-  <div>
+  <div class="mt-5">
+      
+      <section class="banner-main-con" id="home">
+         <div class="container pl-0 pr-0">
+            <!--banner-start-->
+            <div class="footer-social-icon banner-social-icon mb-0">
+               <ul class="mb-0 list-unstyled">
+                  <li class="">
+                     <a href="https://www.facebook.com/marin.rong">
+                        <i class="d-flex 
+                           align-items-center justify-content-center">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z"/></svg>
+                        </i>
+                     </a>
+                  </li>
+                  <li class="mt-3 mb-3">
+                     <a href="https://t.me/SakKaRin9">
+                        <i class=" d-flex 
+                           align-items-center justify-content-center ml-0 mr-0 ">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0V19l3.249-3.277"/></svg>   
+                        </i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://www.linkedin.com/in/rong-marin-a97046260/">
+                        <i class="
+                           d-flex align-items-center 
+                           justify-content-center"
+                        >
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 1.25a2.75 2.75 0 1 0 0 5.5a2.75 2.75 0 0 0 0-5.5ZM3.75 4a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0Zm-1.5 4A.75.75 0 0 1 3 7.25h4a.75.75 0 0 1 .75.75v13a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75V8Zm1.5.75v11.5h2.5V8.75h-2.5ZM9.25 8a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v.434l.435-.187a7.792 7.792 0 0 1 2.358-.595C20.318 7.4 22.75 9.58 22.75 12.38V21a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-7a1.25 1.25 0 0 0-2.5 0v7a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75V8Zm1.5.75v11.5h2.5V14a2.75 2.75 0 1 1 5.5 0v6.25h2.5v-7.87c0-1.904-1.661-3.408-3.57-3.234a6.31 6.31 0 0 0-1.904.48l-1.48.635a.75.75 0 0 1-1.046-.69V8.75h-2.5Z" clip-rule="evenodd"/></svg>
+                        </i></a>
+                  </li>
+               </ul>
+            </div>
+            <div class="banner-con text-lg-left text-center">
+               <div class="row">
+                  <div class="col-lg-7 col-sm-12 d-flex justify-content-center flex-column">
+                     <div class="banner-left-con wow slideInLeft">
+                        <div class="banner-heading">
+                           <h2>Hello, I Am</h2>                                 
+                           <ul class="dynamic-txts">
+                              <li><h1>Rin Developer</h1></li>
+                              </ul>
+                           <p>Don't Tell someone about 
+                              your plan, <br> show them about your result. 
+                           </p>
+                        </div>
+                        <div class="banner-btn generic-btn d-inline-block">
+                           <a href="#Contact">Hire Me</a>
+                        </div>
+                        <a href="#Portfolio" class="See-btn">See My Work</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-5 col-sm-12">
+                     <div class="banner-right-con position-relative wow slideInRight" id="banner-right-con">
+                        <figure class="mb-0">
+                           <nuxt-img 
+                              format="webp" 
+                              loading="lazy"
+                              preload 
+                              src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/ypthlukmndlenkv9emws.png" 
+                              id="banner-right-img"
+                              alt="banner-right-img"
+                           />
+                        </figure>
+                        <div class="best-award-con d-inline-block wow bounceInUp" data-wow-duration="1s" data-wow-delay="1s">
+                           <div class="best-award-inner-con">
+                              <figure class="mb-0">
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141893/p9djupbltc9cmtnzjgkt.png" 
+                                    class="img-fluid"
+                                    alt="cup-img"
+                                 />
+                              </figure>
+                              <div class="best-award-title">
+                                 <p class="mb-0">Best Design<br>
+                                    Award.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="best-award-con d-inline-block happy-con wow bounceInUp " data-wow-duration="1s" data-wow-delay="1s">
+                           <div class="best-award-inner-con text-center">
+                              <figure>
+                                 <nuxt-img 
+                                    format="webp" 
+                                    loading="lazy"
+                                    preload 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/pqhvgzfo5a0xxfwqlxss.png" 
+                                    class="img-fluid"
+                                    alt="admin-icon"
+                                 />
+                              </figure>
+                              <div class="best-award-title d-inline-block ml-0">
+                                 <p class="mb-0 d-inline-block count">4</p>
+                                 <p class="mb-0 d-inline-block">+</p><br>
+                                 <span>Customers</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cursor"></div>
+                        <div class="cursor2"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--banner-end-->
+         </div>
+      </section>
+
       <!-- service section -->
       <section class="w-100 float-left service-con padding-top padding-bottom position-relative" id="service-con" >
          <div class="container">
@@ -605,239 +717,6 @@
       <!-- portfolio section -->
 
 
-
-      <!-- tastimonials section -->
-      <section class="w-100 float-left padding-top padding-bottom tastimonials-con position-relative text-lg-left text-center" id="testimonials">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-5">
-                  <div class="tastimonials-left-con wow slideInLeft" >
-                     <figure class="mb-0">
-                        <nuxt-img 
-                           format="webp" 
-                           loading="lazy"
-                           preload 
-                           src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141895/wblulsrnypzbca73magl.png" 
-                           class="img-fluid"
-                           alt="tastimonials-img"
-                        />
-                     </figure>
-                  </div>
-               </div>
-               <div class="col-lg-7">
-                  <div id="carouselExampleControls" class="carousel slide wow slideInRight" data-ride="carousel" >
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="testimonials-content">
-                              <h6>Testimonials</h6>
-                              <h2>Happy Clients Feedback</h2>
-                              <figure class="mb-0">
-                                 <nuxt-img 
-                                    format="webp" 
-                                    loading="lazy"
-                                    preload 
-                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/xcyot7xgkarwdnbea3m8.png" 
-                                    class="img-fluid"
-                                    alt="comma-icon"
-                                 />
-                              </figure>
-                              <div class="testimonials-inner-content">
-                                 <p>
-                                    You're really good at focusing on what customers
-                                     need and require. You have a real instinct to 
-                                     understand our customers. Good work!
-                                 </p>
-                                 <span class="d-block auther-name">Rong Marin</span>
-                                 <span class="d-block">CEO  of the company</span>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="testimonials-content">
-                              <h6>Testimonials</h6>
-                              <h2>Happy Clients Feedback</h2>
-                              <figure class="mb-0">
-                                 <nuxt-img 
-                                    format="webp" 
-                                    loading="lazy"
-                                    preload 
-                                    src="/image/comma-icon.png" 
-                                    class="img-fluid"
-                                    alt="comma-icon"
-                                 />
-                              </figure>
-                              <div class="testimonials-inner-content">
-                                 <p>
-                                    You’re really good at following up with the client so 
-                                    as to ensure that they are never left in the dark.
-                                     Keep it up!
-                                 </p>
-                                 <span class="d-block auther-name">Rong Marin</span>
-                                 <span class="d-block">CEO  of the company</span>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="testimonials-content">
-                              <h6>Testimonials</h6>
-                              <h2>Happy Clients Feedback</h2>
-                              <figure class="mb-0">
-                                 <nuxt-img 
-                                    format="webp" 
-                                    loading="lazy"
-                                    preload 
-                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/xcyot7xgkarwdnbea3m8.png" 
-                                    class="img-fluid"
-                                    alt="comma-icon"
-                                 />
-                              </figure>
-                              <div class="testimonials-inner-content">
-                                 <p>
-                                    You’re really good at obtaining first-hand customer 
-                                    information and using this information to 
-                                    improve our products and services. 
-                                    You should show the rest of us how you go about obtaining 
-                                    this information.
-                                 </p>
-                                 <span class="d-block auther-name">Rong Marin</span>
-                                 <span class="d-block">CEO  of the company</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                     <i class="fas fa-arrow-left d-flex align-items-center justify-content-center"></i>
-                     <span class="sr-only">Previous</span>
-                     </a>
-                     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                     <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                     <span class="sr-only">Next</span>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- tastimonials section -->
-
-      <!-- blog section -->
-      <section class="w-100 float-left blog-con padding-top padding-bottom position-relative" id="blog">
-         <div class="container">
-            <div class="blog-inner-con position-relative">
-               <div class="generic-title text-center">
-                  <h6>Latest News</h6>
-                  <h2 class="mb-0">Blog & Articles</h2>
-               </div>
-               <div class="blog-box wow fadeInUp" >
-                  <div class="row">
-                     <div class="col-lg-4">
-                        <div class="blog-box-item">
-                           <div class="blog-img w-100">
-                              <a href="#">
-                                 <figure class="mb-0">
-                                    <nuxt-img 
-                                       format="webp" 
-                                       loading="lazy"
-                                       width="350"
-                                       preload 
-                                       src="https://admin.pchbiz.com/image/upload/contents/623d85c0156de3.75780111.webp" 
-                                       alt="blog-img"
-                                    />
-                                 </figure>
-                              </a>
-                           </div>
-                           <div class="blog-content">
-                              <div class="blog-auteher-title">
-                                 <span>By Rong Marin</span>
-                                 <span class="float-lg-right">Aug 2, 2023</span>
-                              </div>
-                              <a href="#" data-toggle="modal" data-target="#blog-model-1">
-                                 <h4 class="two-line">
-                                    NLP (Neuro-Linguistic Programming Therapy) ជាអ្វី?
-                                 </h4>
-                              </a>
-                              <p class="three-line">
-                                 ធ្លាប់លឺថា NLP អាចផ្លាស់ប្តូរជីវិតមនុស្សបាន តែមិនដឹងថា NLP ជាអ្វី? គោលដៅរបស់ NLP គឺដើម្បីជួយអតិថិជនឱ្យយល់ថាវិធីដែលមនុស្សម្នាក់មើលពិភពលោកប៉ះពាល់ដល់របៀបដែលមនុស្សម្នាក់រស់នៅក្នុងពិភពលោក 
-                              </p>
-                              <a href="#" data-toggle="modal" data-target="#blog-model-1">Read More</a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4">
-                        <div class="blog-box-item">
-                           <div class="blog-img">
-                              <a href="#" data-toggle="modal" data-target="#blog-model-2">
-                                 <figure class="mb-0">
-                                    <nuxt-img 
-                                       format="webp" 
-                                       loading="lazy"
-                                       preload 
-                                       width="350"
-                                       src="https://admin.pchbiz.com/image/upload/contents/623d2d1b312a34.28581072.webp" 
-                                       class="img-fluid"
-                                       alt="blog-img"
-                                    />
-                                 </figure>
-                              </a>
-                           </div>
-                           <div class="blog-content">
-                              <div class="blog-auteher-title">
-                                 <span>By Rong Marin</span>
-                                 <span class="float-lg-right">Aug 2, 2023</span>
-                              </div>
-                              <a href="#" data-toggle="modal" data-target="#blog-model-2">
-                                 <h4 class="two-line">
-                                    ហេតុអ្វីបានជាការគិតធំគឺសំខាន់ជាងចំណេះដឹងបច្ចេកទេសនេះជាសម្តីរបស់លោក Jack Ma
-                                 </h4>
-                              </a>
-                              <p class="three-line">
-                                 ការកសាងក្រុមហ៊ុនពាណិជ្ជកម្មអេឡិចត្រូនិកដ៏ធំបំផុតមួយរបស់ពិភពលោក មិនត្រូវការចំណេះដឹងឯកទេស ឬបច្ចេកទេស គណិតវិទ្យាកម្រិតទេពកោសល្យ ឬសូម្បីតែផែនការអាជីវកម្មនោះទេ។ ដូច្នេះតើវាយកអ្វី? នេះជារឿងរបស់លោក Jack Ma 
-                              </p>
-                              <a href="#" data-toggle="modal" data-target="#blog-model-2">Read More</a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4">
-                        <div class="blog-box-item mb-0">
-                           <div class="blog-img">
-                              <a href="#" data-toggle="modal" data-target="#blog-model-3">
-                                 <figure class="mb-0">
-                                    <nuxt-img 
-                                       format="webp" 
-                                       loading="lazy"
-                                       preload 
-                                       width="350"
-                                       src="https://admin.pchbiz.com/image/upload/contents/624410749418d3.30793925.webp" 
-                                       class="img-fluid"
-                                       alt="blog-img"
-                                    />
-                                 </figure>
-                              </a>
-                           </div>
-                           <div class="blog-content">
-                              <div class="blog-auteher-title">
-                                 <span>By Rong Marin</span>
-                                 <span class="float-lg-right">Aug 2, 2023</span>
-                              </div>
-                              <a href="#" data-toggle="modal" data-target="#blog-model-3">
-                                 <h4 class="two-line">
-                                    រាំមួយចំនុចដែលធ្វើឲ្យក្រុមហ៊ុន Apple ទទួលបានជោគជ័យ
-                                 </h4>
-                              </a>
-                              <p class="three-line">
-                                 សំណួរដ៏គួរឱ្យចាប់អារម្មណ៍មួយបន្ថែមទៀតដែលត្រូវបានសួរអំពីអ្នកវិភាគឧស្សាហកម្មដែលបានតាមដាន Apple តាំងពីឆ្នាំ 1981 គឺជាមូលហេតុដែល Apple ជោគជ័យខ្លាំង។ វាជាសំណួរដ៏ស្មោះត្រង់មួយព្រោះចំពោះអ្នកដែលមិនស្គាល់ Apple
-                              </p>
-                              <a href="#" data-toggle="modal" data-target="#blog-model-3">Read More</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- blog section -->
-
       <!-- form section -->
       <section class="w-100 float-left form-main-con padding-top padding-bottom" id="Contact">
          <div class="container">
@@ -858,7 +737,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/location-icon.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/fwnn3lnbz8awrbxhwa2p.png" 
                                     class="img-fluid"
                                     alt="location-img"
                                  />
@@ -876,7 +755,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/message-icon.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/z03watndzckohnsplqtw.png" 
                                     class="img-fluid"
                                     alt="message-img"
                                  />

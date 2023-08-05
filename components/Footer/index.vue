@@ -1,5 +1,6 @@
 <template>
   <div>
+   
      <!-- weight footer section -->
      <div class="w-100 float-left weight-footer-con position-relative">
          <div class="container">
