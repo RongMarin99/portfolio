@@ -146,7 +146,7 @@
                                           format="webp" 
                                           loading="lazy"
                                           preload 
-                                          src="/image/admin-icon.png" 
+                                          src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/pqhvgzfo5a0xxfwqlxss.png" 
                                           class="img-fluid"
                                           alt="admin-icon"
                                        />

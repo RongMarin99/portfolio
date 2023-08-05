@@ -647,60 +647,8 @@
                                      need and require. You have a real instinct to 
                                      understand our customers. Good work!
                                  </p>
-                                 <span class="d-block auther-name">Rong Marin</span>
-                                 <span class="d-block">CEO  of the company</span>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="testimonials-content">
-                              <h6>Testimonials</h6>
-                              <h2>Happy Clients Feedback</h2>
-                              <figure class="mb-0">
-                                 <nuxt-img 
-                                    format="webp" 
-                                    loading="lazy"
-                                    preload 
-                                    src="/image/comma-icon.png" 
-                                    class="img-fluid"
-                                    alt="comma-icon"
-                                 />
-                              </figure>
-                              <div class="testimonials-inner-content">
-                                 <p>
-                                    You’re really good at following up with the client so 
-                                    as to ensure that they are never left in the dark.
-                                     Keep it up!
-                                 </p>
-                                 <span class="d-block auther-name">Rong Marin</span>
-                                 <span class="d-block">CEO  of the company</span>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="testimonials-content">
-                              <h6>Testimonials</h6>
-                              <h2>Happy Clients Feedback</h2>
-                              <figure class="mb-0">
-                                 <nuxt-img 
-                                    format="webp" 
-                                    loading="lazy"
-                                    preload 
-                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141892/xcyot7xgkarwdnbea3m8.png" 
-                                    class="img-fluid"
-                                    alt="comma-icon"
-                                 />
-                              </figure>
-                              <div class="testimonials-inner-content">
-                                 <p>
-                                    You’re really good at obtaining first-hand customer 
-                                    information and using this information to 
-                                    improve our products and services. 
-                                    You should show the rest of us how you go about obtaining 
-                                    this information.
-                                 </p>
-                                 <span class="d-block auther-name">Rong Marin</span>
-                                 <span class="d-block">CEO  of the company</span>
+                                 <span class="d-block auther-name">Heng Sopheakna</span>
+                                 <span class="d-block">CEO of the company</span>
                               </div>
                            </div>
                         </div>
@@ -858,7 +806,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/location-icon.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/fwnn3lnbz8awrbxhwa2p.png" 
                                     class="img-fluid"
                                     alt="location-img"
                                  />
@@ -876,7 +824,7 @@
                                     format="webp" 
                                     loading="lazy"
                                     preload 
-                                    src="/image/message-icon.png" 
+                                    src="https://res.cloudinary.com/dzyvt6pim/image/upload/v1691141894/z03watndzckohnsplqtw.png" 
                                     class="img-fluid"
                                     alt="message-img"
                                  />
