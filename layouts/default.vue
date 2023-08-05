@@ -1,11 +1,8 @@
 <template>
     <div>
-      <div class="header-and-banner-con w-100 float-left">
-         <div class="header-and-banner-inner-con">
-          <Header></Header>
-        </div>
-      </div>
-
+      
+        <Header></Header>
+      
         <Nuxt></Nuxt>
 
         <Footer></Footer>
@@ -91,18 +88,8 @@ body {
   margin-top: 10px;
   margin-left:5px;
 }
-.navbar-light .navbar-nav .nav-link {
-  color:#07003b;
-}
-a{
-  text-decoration: none !important;
-}
-/* a.nuxt-link-active {
-  color: #FD7237 !important;
-} */
-/* exact link will show the primary color for only the exact matching link */
-a.nuxt-link-exact-active {
-  color: #FD7237 !important;
-}
+li a.nuxt-link-exact-active {
+    color: #FD7237 !important;
+  }
   
 </style>
