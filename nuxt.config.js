@@ -61,7 +61,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/style/main.scss',
-    '~/assets/css/animate.css',
     '~/assets/css/super-classes.css',
     '~/assets/css/style.css',
     '~/assets/css/mobile.css'
